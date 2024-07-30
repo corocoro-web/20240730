@@ -28,6 +28,10 @@
     &__nav {
         color: $black;
 
+        &__nav__list__inner {
+            padding: 32px;
+        }
+
         &__accordion__ttl {
             padding: 32px;
         }
