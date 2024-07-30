@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.footer {
+    max-width: calc(1440px - 280px);
+    margin: 0 auto;
+    position: relative;
+    left: 280px;
+    padding: 117px 0 26px;
+
+    &__inner {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 109px;
+    }
+
+    &__info__logo {
+        display: inline-block;
+        width: 222px;
+        margin-bottom: 39px;
+    }
+
+    &__info__content {
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+        font-weight: 400;
+        line-height: 1.0;
+    }
+
+    &__info__wrapper {
+        display: flex;
+
+        & dt {
+            margin-right: 16px;
+            margin-bottom: 16px;
+        }
+
+        & dd {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__nav {
+        padding-top: 28px;
+
+        &__lists {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.0;
+        }
+
+        &__wrapper {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__copy {
+        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+        font-weight: 400;
+        line-height: 1.0;
+        text-align: right;
+        margin-right: 56px;
+
+        &__wrapper {
+            text-align: right;
+        }
+    }
+
+}

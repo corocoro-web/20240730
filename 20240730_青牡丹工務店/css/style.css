@@ -1,0 +1,766 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
+  /*-----Google Fonts------*/
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+main {
+  text-align: left;
+  position: relative;
+  left: 280px;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+div {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+button {
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.brtb {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .brtb {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .brtb {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp {
+    display: block;
+  }
+}
+
+.tb {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .tb {
+    display: block;
+  }
+}
+
+.brsp {
+  display: none;
+}
+@media (max-width: 768px) {
+  .brsp {
+    display: block;
+  }
+}
+
+img {
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ttl {
+  display: flex;
+  flex-direction: column;
+}
+
+.ttl-ja {
+  font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.ttl-en {
+  font-family: "Kanit", sans-serif;
+  font-size: clamp(4.5rem, 3.268rem + 5.26vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  /* テキストの中を透明にする */
+  -webkit-text-stroke-width: 1px;
+  /* 文字の枠線の幅 */
+  -webkit-text-stroke-color: #4282B8;
+  /* 文字の枠線の色 */
+}
+
+.btn-more {
+  position: relative;
+  display: inline-block;
+  padding: 22px 0;
+  width: 240px;
+  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid #000;
+  text-align: center;
+}
+.btn-more::after {
+  content: "●";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  font-size: 0.625rem;
+  top: 25px;
+  right: 20px;
+}
+
+.contact__btn {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 22px 40px 22px 68px;
+  margin-left: 64px;
+}
+.contact__btn::before {
+  position: absolute;
+  content: "";
+  background: url(../../images/top/mail-icon.svg) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  top: 26px;
+  left: 20px;
+  z-index: 3;
+}
+.contact__btn::after {
+  content: "●";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  font-size: 0.625rem;
+  top: 26px;
+  right: 20px;
+}
+
+/*@use "base/animations.scss";*/
+.header {
+  background-color: #fff;
+  width: 280px;
+  height: 100%;
+  position: fixed;
+  font-weight: 700;
+  line-height: 1;
+  font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.header__inner {
+  padding: 74px 40px 0;
+}
+.header__logo a {
+  display: inline-block;
+  width: 200px;
+  height: 121px;
+  margin-bottom: 57px;
+}
+.header__nav {
+  color: #000;
+}
+.header__nav__accordion__ttl {
+  padding: 32px;
+}
+.header__nav__accordion__ttl::-webkit-details-marker {
+  /* Safari-デフォルトの三角形を削除*/
+  display: none;
+}
+
+.footer {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  left: 280px;
+  padding: 117px 0 26px;
+}
+.footer__inner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 109px;
+}
+.footer__info__logo {
+  display: inline-block;
+  width: 222px;
+  margin-bottom: 39px;
+}
+.footer__info__content {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+  font-weight: 400;
+  line-height: 1;
+}
+.footer__info__wrapper {
+  display: flex;
+}
+.footer__info__wrapper dt {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.footer__info__wrapper dd {
+  margin-bottom: 16px;
+}
+.footer__nav {
+  padding-top: 28px;
+}
+.footer__nav__lists {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.footer__nav__wrapper {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.footer__copy {
+  font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+  font-weight: 400;
+  line-height: 1;
+  text-align: right;
+  margin-right: 56px;
+}
+.footer__copy__wrapper {
+  text-align: right;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  height: 989px;
+}
+.main::before {
+  background: url(../../images/top/mv-bg-blue.png) no-repeat center center/contain;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  /*効かない*/
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 727px;
+}
+.main__inner {
+  position: absolute;
+  /* 内部要素も相対位置で配置されるようにするため */
+  background-color: #F8F8F8;
+  top: 40px;
+  left: 0;
+  overflow: hidden;
+  width: 1120px;
+  max-width: 1120px;
+  height: 873px;
+  border-radius: 50px;
+  padding: 64px 40px;
+  z-index: 2;
+}
+.main__copy-ttl {
+  max-width: 540px;
+  font-size: clamp(1.5rem, 0.62rem + 3.76vw, 4rem);
+  line-height: 1;
+  font-weight: 700;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 21px;
+  position: absolute;
+  z-index: 3;
+  bottom: 126px;
+  left: 45%;
+}
+.main__copy-ttl-sub__txt {
+  position: absolute;
+  font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+  font-weight: 700;
+  line-height: 2;
+  text-align: left;
+  bottom: 63px;
+  right: 17%;
+}
+.main__images {
+  position: relative;
+  display: block;
+}
+.main__image01 {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 31px;
+  width: 195px;
+}
+.main__image02 {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 74%;
+  width: 256px;
+  height: 252px;
+}
+.main__image03 {
+  position: absolute;
+  z-index: 3;
+  top: 343px;
+  left: 48px;
+  width: 314px;
+}
+.main__image04 {
+  position: absolute;
+  z-index: 3;
+  top: 255px;
+  left: 40%;
+  width: 206px;
+}
+.main__image05 {
+  position: absolute;
+  z-index: 3;
+  top: 326px;
+  left: 83%;
+  width: 162px;
+}
+
+.images {
+  background-color: #F8F8F8;
+  height: 486px;
+  padding: 63px 0;
+}
+.images__inner {
+  position: relative;
+}
+.images__items img {
+  width: 360px;
+  height: 360px;
+  z-index: 2;
+}
+.images__txt {
+  position: absolute;
+  z-index: 3;
+  writing-mode: vertical-rl;
+  /* 縦書きの方向。右から左へ縦書き */
+  text-orientation: upright;
+  /* 文字の向きを直立させる */
+  color: #000;
+  background-color: #F8F8F8;
+  font-size: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.47em;
+  /*未調整*/
+  top: 190px;
+  right: 182px;
+  width: 172px;
+  height: 452px;
+}
+.images__txt h2 {
+  padding: 30px 26px 10px;
+}
+.images__txt span {
+  color: #4282B8;
+}
+.images__txt::before {
+  /*効かない*/
+  background: url(../../images/top/interview_01.png) no-repeat center center/contain;
+  content: "";
+  position: absolute;
+  width: 161px;
+  height: 213px;
+  z-index: 10;
+  top: 186px;
+  left: -186px;
+}
+
+.about {
+  padding: 71px 0 85px;
+}
+.about__ttl-en {
+  margin-bottom: 40px;
+}
+.about__txt {
+  width: 429px;
+  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.service {
+  position: relative;
+  padding: 49px 158px 100px 0;
+  overflow: hidden;
+}
+.service::before {
+  position: absolute;
+  content: "";
+  background-color: #F8F8F8;
+  top: 0;
+  left: 192px;
+  overflow: hidden;
+  /*max-width: 886px;/*要調整*/
+  max-width: 968px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 0 0 50px;
+  z-index: -1;
+  /* 擬似要素の上に表示されるようにするため */
+}
+.service__ttl {
+  margin-bottom: 64px;
+}
+.service__item {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  gap: 56px;
+  margin-bottom: 92px;
+}
+.service__item img {
+  /*効かない*/
+  width: 516px;
+  height: 464px;
+}
+.service__item01, .service__item03 {
+  flex-direction: row-reverse;
+}
+.service__item:last-child {
+  margin-bottom: 0;
+}
+.service img {
+  z-index: 2;
+}
+.service__content {
+  width: 43%;
+}
+.service__content-number01, .service__content-number03 {
+  position: relative;
+  left: -77px;
+  font-family: "Kanit", sans-serif;
+  color: #B1C6DC;
+  font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+}
+.service__content-number02 {
+  position: relative;
+  right: -310px;
+  font-family: "Kanit", sans-serif;
+  color: #B1C6DC;
+  font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+}
+.service__content__ttl {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background-color: #fff;
+  padding: 10px 16px;
+  margin-bottom: 47px;
+}
+.service__content__txt {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.news {
+  padding: 107px 0 132px;
+}
+.news__ttl {
+  margin-bottom: 48px;
+}
+.news__lists {
+  border-top: 1px solid #B1C6DC;
+}
+.news__list {
+  position: relative;
+  font-weight: 700;
+  line-height: 1;
+}
+.news__list::after {
+  position: absolute;
+  content: "";
+  background: url(../../images/top/arrow-icon.svg) no-repeat center center/contain;
+  width: 4px;
+  height: 4px;
+}
+.news__list dt {
+  padding-top: 32px;
+  margin-bottom: 24px;
+}
+.news__list__event {
+  border: 1px solid #B1C6DC;
+  color: #4282B8;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 5px 16px;
+}
+.news__list__date {
+  color: #4282B8;
+  font-size: 0.875rem;
+  margin-left: 16px;
+}
+.news__list dd {
+  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  border-bottom: 1px solid #B1C6DC;
+  padding-bottom: 32px;
+}
+
+.contact {
+  background-color: #F8F8F8;
+  border-radius: 50px 0px 0px 50px;
+  padding: 32px 0 55px 24px;
+}
+.contact__ttl {
+  margin-bottom: 20px;
+}
+.contact__ttl__ttl-en {
+  margin-bottom: 39px;
+}
+.contact__wrapper {
+  display: flex;
+}
+.contact__tel {
+  border-right: 1px solid #000;
+  padding: 0 32px;
+  line-height: 1;
+}
+.contact__content {
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.contact__content-small {
+  font-size: 0.75rem;
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */

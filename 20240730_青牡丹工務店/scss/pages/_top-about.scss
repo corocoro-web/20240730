@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.about {
+    padding: 71px 0 85px;
+
+    &__ttl-en {
+        margin-bottom: 40px;
+    }
+
+    &__txt {
+        width: 429px;
+        font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+}

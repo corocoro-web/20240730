@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.header {
+    background-color: $white;
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    font-weight: 700;
+    line-height: 1.0;
+    font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
+    background-color: $white;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    &__inner {
+        padding: 74px 40px 0;
+    }
+
+    &__logo a {
+        display: inline-block;
+        width: 200px;
+        height: 121px;
+        margin-bottom: 57px;
+    }
+
+    &__nav {
+        color: $black;
+
+        &__accordion__ttl {
+            padding: 32px;
+        }
+
+        &__accordion__ttl::-webkit-details-marker {
+            /* Safari-デフォルトの三角形を削除*/
+            display: none;
+        }
+    }
+
+}

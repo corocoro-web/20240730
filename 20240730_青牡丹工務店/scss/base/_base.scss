@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $white;
+    color: $black;
+    overflow-x: hidden;
+    /*-----Google Fonts------*/
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main {
+    text-align: left;
+    position: relative;
+    left: 280px;
+    width: calc(1440px - 280px);
+    margin: 0 auto;
+}
+
+div {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+button {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+
+.brtb {
+    display: none;
+
+    @include mq($lg) {
+        display: block;
+    }
+
+    @include mq($md) {
+        display: none;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include mq($md) {
+        display: block;
+    }
+}
+
+.tb {
+    display: none;
+
+    @include mq($lg) {
+        display: block;
+    }
+}
+
+.brsp {
+    display: none;
+
+    @include mq($md) {
+        display: block;
+    }
+}
+
+img {
+    overflow: hidden;
+}

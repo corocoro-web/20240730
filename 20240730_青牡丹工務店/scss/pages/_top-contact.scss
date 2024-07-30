@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.contact {
+    background-color: $gray;
+    border-radius: 50px 0px 0px 50px;
+    padding: 32px 0 55px 24px;
+
+    &__ttl {
+        margin-bottom: 20px;
+
+        &__ttl-en {
+            margin-bottom: 39px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__tel {
+        border-right: 1px solid $black;
+        padding: 0 32px;
+        line-height: 1.0;
+    }
+
+    &__content {
+        font-family: "Kanit", sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+
+        &-small {
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    }
+}

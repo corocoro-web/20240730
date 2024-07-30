@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.news {
+    padding: 107px 0 132px;
+
+    &__ttl {
+        margin-bottom: 48px;
+    }
+
+    &__lists {
+        border-top: 1px solid $l-blue;
+    }
+
+    &__list {
+        position: relative;
+        font-weight: 700;
+        line-height: 1.0;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background: url(../../images/top/arrow-icon.svg)no-repeat center center / contain;
+            width: 4px;
+            height: 4px;
+        }
+
+        & dt {
+            padding-top: 32px;
+            margin-bottom: 24px;
+        }
+
+        &__event {
+            border: 1px solid $l-blue;
+            color: $blue;
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 5px 16px;
+        }
+
+        &__date {
+            color: $blue;
+            font-size: 0.875rem;
+            margin-left: 16px;
+        }
+
+        & dd {
+            font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+            border-bottom: 1px solid $l-blue;
+            padding-bottom: 32px;
+        }
+    }
+}

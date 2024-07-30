@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.btn-more {
+    position: relative;
+    display: inline-block;
+    padding: 22px 0;
+    width: 240px;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    font-weight: 700;
+    border-radius: 10px;
+    border: 1px solid $black;
+    text-align: center;
+
+    &::after {
+        content: "●";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        font-size: 0.625rem;
+        top: 25px;
+        right: 20px;
+
+    }
+}
+
+.contact__btn {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: $white;
+    padding: 22px 40px 22px 68px;
+    margin-left: 64px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background: url(../../images/top/mail-icon.svg) no-repeat center center / contain;
+        width: 20px;
+        height: 20px;
+        top: 26px;
+        left: 20px;
+        z-index: 3;
+    }
+
+    &::after {
+        content: "●";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        font-size: 0.625rem;
+        top: 26px;
+        right: 20px;
+    }
+}

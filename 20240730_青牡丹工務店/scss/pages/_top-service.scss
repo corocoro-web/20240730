@@ -1,0 +1,100 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.service {
+    position: relative;
+    padding: 49px 158px 100px 0;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-color: $gray;
+        top: 0;
+        left: 192px;
+        overflow: hidden;
+        /*max-width: 886px;/*要調整*/
+        max-width: calc(1440px - 280px - 192px);
+        width: 100%;
+        height: 100%;
+        border-radius: 50px 0 0 50px;
+        z-index: -1;
+        /* 擬似要素の上に表示されるようにするため */
+    }
+
+    &__ttl {
+        margin-bottom: 64px;
+    }
+
+    &__item {
+        display: flex;
+        /*flex-wrap: wrap;*/
+        gap: 56px;
+        margin-bottom: 92px;
+
+        & img {
+            /*効かない*/
+            width: 516px;
+            height: 464px;
+        }
+    }
+
+    &__item01,
+    &__item03 {
+        flex-direction: row-reverse;
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+
+    & img {
+        z-index: 2;
+    }
+
+    &__content {
+        width: 43%;
+
+        &-number01,
+        &-number03 {
+            position: relative;
+            left: -77px;
+            font-family: "Kanit", sans-serif;
+            color: $l-blue;
+            font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);
+            font-weight: 700;
+            line-height: 1.0;
+            z-index: 1;
+        }
+
+        &-number02 {
+            position: relative;
+            right: -310px;
+            font-family: "Kanit", sans-serif;
+            color: $l-blue;
+            font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);
+            font-weight: 700;
+            line-height: 1.0;
+            z-index: 1;
+        }
+
+        &__ttl {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.0;
+            background-color: $white;
+            padding: 10px 16px;
+            margin-bottom: 47px;
+        }
+
+        &__txt {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+    }
+
+}

@@ -1,0 +1,20 @@
+@use "base/reset";
+@use "abstracts/variables" as *;
+@use "abstracts/mixin" as *;
+
+@use "base/base.scss";
+@use "base/inner";
+@use "base/ttl";
+@use "base/_btn";
+/*@use "base/animations.scss";*/
+
+@use "layout/header";
+@use "layout/footer";
+
+
+@use "pages/top-main";
+@use "pages/top-images";
+@use "pages/top-about";
+@use "pages/top-service";
+@use "pages/top-news";
+@use "pages/top-contact";

@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.ttl {
+    display: flex;
+    flex-direction: column;
+}
+
+.ttl-ja {
+    font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.0;
+    margin-bottom: 20px;
+}
+
+.ttl-en {
+    font-family: "Kanit", sans-serif;
+    font-size: clamp(4.5rem, 3.268rem + 5.26vw, 8rem);
+    font-weight: 700;
+    line-height: 1.0;
+
+    color: transparent;
+    /* テキストの中を透明にする */
+    -webkit-text-stroke-width: 1px;
+    /* 文字の枠線の幅 */
+    -webkit-text-stroke-color: $blue;
+    /* 文字の枠線の色 */
+}

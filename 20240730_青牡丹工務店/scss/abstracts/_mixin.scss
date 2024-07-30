@@ -1,0 +1,9 @@
+@use "../abstracts/variables" as *;
+
+
+
+@mixin mq($bp) {
+    @media (max-width: ($bp)) {
+        @content;
+    }
+}

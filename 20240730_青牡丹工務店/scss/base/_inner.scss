@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixin" as *;
+
+.inner {
+    max-width: calc(1440px - 280px);
+    width: 100%;
+    margin: 0 auto;
+}
