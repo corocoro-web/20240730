@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!--==============モーダルのcss===============-->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <!--==============独自のcss===============-->
     <link rel="stylesheet" href="css/style.css">
     <!--===============Google Fonts(Kanit)(Zenkaku Gothic New)===============-->
@@ -174,33 +177,24 @@
                         <span class="news__ttl--en ttl--en">NEWS</span>
                     </h2>
 
-                    <button id="openModal">モーダルを開く</button>
-
-                    <!-- モーダルエリアここから -->
-                    <section id="modalArea" class="modalArea">
-                        <div id="modalBg" class="modalBg"></div>
-                        <div class="modalWrapper">
-                            <div class="modalContents">
-                                <h1>ユアコーディング</h1>
-                                <p>ユアコーディングはコーディングに
-                                    特化したフリーランス
-                                    デザインに注力されたい方の
-                                    助けになります</p>
-                            </div>
-                            <div id="closeModal" class="closeModal">
-                                ×
-                            </div>
-                        </div>
-                    </section>
 
                     <dl class="news__lists">
                         <div class="news__lists-inner">
-                            <a class="news__list" href="">
+                            <a class="news__list modal-open" href="#info">
                                 <dt><span class="news__list--event">イベント情報</span>
                                     <time datetime="2024-06-03" class="news__list--date">2024.06.03</time>
                                 </dt>
                                 <dd>住宅設計相談会を実施します。弊社建築士と将来の家造りを真剣に考えませんか？</dd>
                             </a>
+                        </div>
+                        <div id="info" class="news__list-modal">
+                            <dl>
+                                <dt><span class="news__list--event">イベント情報</span>
+                                    <time datetime="2024-06-03" class="news__list--date">2024.06.03</time>
+                                </dt>
+                                <dd>住宅設計相談会を実施します。弊社建築士と将来の家造りを真剣に考えませんか？</dd>
+                            </dl>
+                            <img src="images/top/news01.jpg" alt="リビングダイニングの写真">
                         </div>
                         <div class="news__lists-inner">
                             <a class="news__list" href="">
@@ -310,6 +304,10 @@
     </div>
     <!--==============jQueryのjs=============-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--==============jquery-cookieのjs=============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!--==============Modaalのjs=============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
     <!--==============slickのjs===============-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--==============独自のjs=============-->

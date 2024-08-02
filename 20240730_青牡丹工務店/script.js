@@ -29,14 +29,27 @@ $(window).on('load', function () {
 
 
 //======================モーダル================//
-$(function () {
-    $('#openModal').on('click', function () {
-        $('#modalArea').toggleClass('is-show');
+$(document).ready(function () {
+    // 初回のみアクセスフラグを設定
+    var access = $.cookie('access');
+    if (!access) {
+        $.cookie('access', true);
+    }
+
+    // モーダル表示
+    $(".modal-open").modaal({
+        start_open: false, // 初回も自動で開かない
+        overlay_close: true, // モーダル背景クリック時に閉じるか
+        before_open: function () { // モーダルが開く前に行う動作
+            $('html').css('overflow-y', 'hidden'); /* 縦スクロールバーを出さない */
+        },
+        after_close: function () { // モーダルが閉じた後に行う動作
+            $('html').css('overflow-y', 'scroll'); /* 縦スクロールバーを出す */
+        }
     });
-    $('#closeModal').on('click', function () {
-        $('#modalArea').toggleClass('is-show');
-    });
-    $('#modalBg').on('click', function () {
-        $('#modalArea').toggleClass('is-show');
+
+    // リンククリック時にモーダルを開く
+    $(".modal-open").on('click', function () {
+        $("#info").modaal('open');
     });
 });

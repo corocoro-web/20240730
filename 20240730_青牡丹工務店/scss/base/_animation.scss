@@ -49,66 +49,30 @@
 
 
 /*------------------モーダル-------------------*/
-/* モーダルCSSここから */
-.modalArea {
-    visibility: hidden;
-    /* displayではなくvisibility */
-    opacity: 0;
-    position: fixed;
-    z-index: 10;
-    /* サイトによってここの数値は調整 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: .4s;
+/*infoエリアをはじめは非表示*/
+.news__list-modal {
+    display: none;
+
+    & img {
+        width: 656px;
+    }
 }
 
-.modalBg {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(30, 30, 30, 0.9);
+/*モーダルの横幅を変更したい場合*/
+.modaal-container {
+    max-width: 600px;
+    display: none;
 }
 
-.modalWrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 500px;
-    padding: 10px 30px;
-    background-color: #fff;
+/*モーダルのボタンの色を変更したい場合*/
+.modaal-close:after,
+.modaal-close:before {
+    background: #ccc;
 }
 
-.closeModal {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    cursor: pointer;
-}
-
-.is-show {
-    /* モーダル表示用クラス */
-    visibility: visible;
-    opacity: 1;
-}
-
-/* モーダルCSSここまで */
-
-
-/* 以下ボタンスタイル */
-button {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #282828;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-#openModal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+    background: #666;
 }

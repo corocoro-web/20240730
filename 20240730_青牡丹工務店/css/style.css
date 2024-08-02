@@ -288,7 +288,7 @@ img {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 1441px) {
+@media (max-width: 1440px) {
   .inner {
     margin: 0;
   }
@@ -426,7 +426,7 @@ img {
   padding: 117px 0 26px;
   margin: 0 auto;
 }
-@media (max-width: 1441px) {
+@media (max-width: 1440px) {
   .footer {
     margin: 0;
   }
@@ -514,7 +514,7 @@ img {
   padding: 64px 40px;
   z-index: 2;
 }
-@media (max-width: 1441px) {
+@media (max-width: 1440px) {
   .main-inner {
     width: calc(100% - 280px - 40px);
     max-width: 1120px;
@@ -642,7 +642,7 @@ img {
   max-width: 1160px;
   margin: 0 auto;
 }
-@media (max-width: 1441px) {
+@media (max-width: 1440px) {
   .about {
     margin: 0;
   }
