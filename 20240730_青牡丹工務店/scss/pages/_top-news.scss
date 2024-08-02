@@ -20,9 +20,11 @@
         &::after {
             position: absolute;
             content: "";
-            background: url(../../images/top/arrow-icon.svg)no-repeat center center / contain;
-            width: 4px;
-            height: 4px;
+            background: url(../images/top/arrow-icon.svg)no-repeat center center / contain;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            right: 100px;
         }
 
         & dt {
@@ -30,7 +32,7 @@
             margin-bottom: 24px;
         }
 
-        &__event {
+        &--event {
             border: 1px solid $l-blue;
             color: $blue;
             font-size: 0.875rem;
@@ -38,7 +40,7 @@
             padding: 5px 16px;
         }
 
-        &__date {
+        &--date {
             color: $blue;
             font-size: 0.875rem;
             margin-left: 16px;

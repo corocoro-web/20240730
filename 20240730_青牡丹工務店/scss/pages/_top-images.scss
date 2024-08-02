@@ -3,17 +3,21 @@
 
 .images {
     background-color: $gray;
-    height: 486px;
     padding: 63px 0;
 
-    &__inner {
+    &-inner {
         position: relative;
+    }
+
+    &__items {
+        display: flex;
+        padding-left: 48px;
     }
 
     &__items img {
         width: 360px;
         height: 360px;
-        z-index: 2;
+        margin-left: 48px;
     }
 
     &__txt {
@@ -45,7 +49,7 @@
 
         &::before {
             /*効かない*/
-            background: url(../../images/top/interview_01.png) no-repeat center center / contain;
+            background: url(../images/top/interview_01.png) no-repeat center center / contain;
             content: "";
             position: absolute;
             width: 161px;

@@ -3,8 +3,14 @@
 
 .about {
     padding: 71px 0 85px;
+    max-width: 1160px;
+    margin: 0 auto;
 
-    &__ttl-en {
+    @include mq($xl) {
+        margin: 0;
+    }
+
+    &__ttl--en {
         margin-bottom: 40px;
     }
 

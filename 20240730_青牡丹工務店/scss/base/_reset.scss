@@ -176,4 +176,11 @@ select {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    min-height: 0vw;
+    /*clamp()がsafariで動かない場合の対応*/
+}
+
+a[href^="tel:"] {
+    pointer-events: none;
+    /*PCからの電話発信を不可にする設定*/
 }

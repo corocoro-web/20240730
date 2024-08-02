@@ -13,8 +13,10 @@
     top: 0;
     left: 0;
     z-index: 10;
+    overflow-y: auto;
+    /*内容をスクロールしても表示固定*/
 
-    &__inner {
+    &-inner {
         padding: 74px 40px 0;
     }
 
@@ -22,24 +24,39 @@
         display: inline-block;
         width: 200px;
         height: 121px;
-        margin-bottom: 57px;
+        margin-bottom: 25px;
     }
 
-    &__nav {
+    &-nav {
         color: $black;
 
-        &__nav__list__inner {
-            padding: 32px;
+        &__accordion-ttl {
+            padding: 32px 0;
+            border-bottom: 1px solid $l-blue;
+
+            &::-webkit-details-marker {
+                /* Safari-デフォルトの三角形を削除*/
+                display: none;
+            }
         }
 
-        &__accordion__ttl {
-            padding: 32px;
+        &__accordion-box {
+            padding: 32px 0;
+            border-bottom: 1px solid $l-blue;
         }
 
-        &__accordion__ttl::-webkit-details-marker {
-            /* Safari-デフォルトの三角形を削除*/
-            display: none;
+        &__accordion-txt {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
+
+
+
     }
 
 }

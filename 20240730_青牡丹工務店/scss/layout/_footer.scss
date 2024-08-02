@@ -3,12 +3,17 @@
 
 .footer {
     max-width: calc(1440px - 280px);
-    margin: 0 auto;
     position: relative;
     left: 280px;
     padding: 117px 0 26px;
+    margin: 0 auto;
 
-    &__inner {
+
+    @include mq($xl) {
+        margin: 0;
+    }
+
+    &-inner {
         width: 100%;
         margin: 0 auto;
         display: flex;
@@ -16,13 +21,13 @@
         gap: 109px;
     }
 
-    &__info__logo {
+    &__info-logo {
         display: inline-block;
         width: 222px;
         margin-bottom: 39px;
     }
 
-    &__info__content {
+    &__info-content {
         display: flex;
         flex-direction: column;
         font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
@@ -30,7 +35,7 @@
         line-height: 1.0;
     }
 
-    &__info__wrapper {
+    &__info-wrapper {
         display: flex;
 
         & dt {
@@ -43,7 +48,7 @@
         }
     }
 
-    &__nav {
+    &-nav {
         padding-top: 28px;
 
         &__lists {
@@ -66,7 +71,7 @@
         text-align: right;
         margin-right: 56px;
 
-        &__wrapper {
+        &-wrapper {
             text-align: right;
         }
     }

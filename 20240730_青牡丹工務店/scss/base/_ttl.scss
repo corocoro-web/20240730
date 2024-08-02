@@ -6,14 +6,14 @@
     flex-direction: column;
 }
 
-.ttl-ja {
+.ttl--ja {
     font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
     font-weight: 700;
     line-height: 1.0;
     margin-bottom: 20px;
 }
 
-.ttl-en {
+.ttl--en {
     font-family: "Kanit", sans-serif;
     font-size: clamp(4.5rem, 3.268rem + 5.26vw, 8rem);
     font-weight: 700;

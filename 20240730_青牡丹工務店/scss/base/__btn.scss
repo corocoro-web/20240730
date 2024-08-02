@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixin" as *;
 
-.btn-more {
+.btn--more {
     position: relative;
     display: inline-block;
     padding: 22px 0;
@@ -37,7 +37,7 @@
     &::before {
         position: absolute;
         content: "";
-        background: url(../../images/top/mail-icon.svg) no-repeat center center / contain;
+        background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
         width: 20px;
         height: 20px;
         top: 26px;
