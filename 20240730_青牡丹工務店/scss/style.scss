@@ -6,7 +6,7 @@
 @use "base/inner";
 @use "base/ttl";
 @use "base/_btn";
-/*@use "base/animations.scss";*/
+
 
 @use "layout/header";
 @use "layout/footer";
@@ -18,3 +18,5 @@
 @use "pages/top-service";
 @use "pages/top-news";
 @use "pages/top-contact";
+
+@use "base/animation";
