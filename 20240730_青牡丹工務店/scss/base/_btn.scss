@@ -22,6 +22,12 @@
         right: 20px;
 
     }
+
+    &:hover {
+        color: $white;
+        background-color: $black;
+        opacity: 1.0;
+    }
 }
 
 .contact__btn {
@@ -40,9 +46,10 @@
         background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
         width: 20px;
         height: 20px;
-        top: 26px;
-        left: 20px;
+        top: 23px;
+        left: 35px;
         z-index: 3;
+        color: $white;
     }
 
     &::after {
@@ -53,5 +60,11 @@
         font-size: 0.625rem;
         top: 26px;
         right: 20px;
+    }
+
+    &:hover {
+        color: $white;
+        background-color: $black;
+        opacity: 1.0;
     }
 }

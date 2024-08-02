@@ -339,6 +339,11 @@ img {
   top: 25px;
   right: 20px;
 }
+.btn--more:hover {
+  color: #fff;
+  background-color: #000;
+  opacity: 1;
+}
 
 .contact__btn {
   position: relative;
@@ -356,9 +361,10 @@ img {
   background: url(../images/top/mail-icon.svg) no-repeat center center/contain;
   width: 20px;
   height: 20px;
-  top: 26px;
-  left: 20px;
+  top: 23px;
+  left: 35px;
   z-index: 3;
+  color: #fff;
 }
 .contact__btn::after {
   content: "●";
@@ -368,6 +374,11 @@ img {
   font-size: 0.625rem;
   top: 26px;
   right: 20px;
+}
+.contact__btn:hover {
+  color: #fff;
+  background-color: #000;
+  opacity: 1;
 }
 
 .header {
@@ -785,6 +796,94 @@ img {
   padding-bottom: 32px;
 }
 
+#modal-1 {
+  display: none;
+}
+
+#modal-1.is-open {
+  display: block;
+}
+
+.modal__btn {
+  display: block;
+}
+.modal__btn dt {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  padding-top: 32px;
+}
+.modal__btn dt {
+  margin-bottom: 24px;
+}
+.modal__btn dd {
+  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 22px;
+}
+
+.modal__overlay {
+  pointer-events: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 16px 102px 24px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 860px;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.modal__container img {
+  width: 656px;
+  margin-bottom: 35px;
+}
+.modal__container dt {
+  margin-bottom: 16px;
+}
+.modal__container dd {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.modal__container p {
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 61px;
+}
+
+.modal__close {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 中央寄せ */
+  bottom: 55px;
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 1300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .contact {
   background-color: #F8F8F8;
   border-radius: 50px 0px 0px 50px;
@@ -816,7 +915,7 @@ img {
 
 /*------------------ローディング-------------------*/
 /* Loading背景画面設定　*/
-#splash {
+.loading {
   /*fixedで全面に固定*/
   position: fixed;
   width: 100%;
@@ -827,7 +926,7 @@ img {
 }
 
 /* Loading画像中央配置　*/
-#splash_logo {
+.loading__logo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -835,7 +934,7 @@ img {
 }
 
 /* Loading アイコンの大きさ設定　*/
-#splash_logo img {
+.loading__logo img {
   width: 260px;
 }
 
@@ -858,7 +957,6 @@ img {
   }
 }
 /*------------------モーダル-------------------*/
-/*infoエリアをはじめは非表示*/
 .news__list-modal {
   display: none;
 }
@@ -868,7 +966,7 @@ img {
 
 /*モーダルの横幅を変更したい場合*/
 .modaal-container {
-  max-width: 600px;
+  max-width: 860px;
 }
 
 /*モーダルのボタンの色を変更したい場合*/

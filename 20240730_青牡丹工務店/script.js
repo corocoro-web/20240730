@@ -22,9 +22,20 @@ $(function () {
 
 //======================ローディング================//
 $(window).on('load', function () {
-    // ローディング画面を1.5秒（1500ms）待機してからフェードアウト
-    $("#splash_logo").delay(500).fadeOut('slow');
-    $("#splash").delay(1000).fadeOut('slow'); // 画像のフェードアウト後に全体をフェードアウト
+    // クッキーまたはローカルストレージをチェックして、初回アクセスかどうかを判定
+    var isVisited = localStorage.getItem('visited');
+
+    if (!isVisited) {
+        // 初回アクセス時のみローディング画面を表示
+        $("#splash_logo").delay(500).fadeOut('slow');
+        $("#splash").delay(1000).fadeOut('slow', function () {
+            // ローディング画面がフェードアウトした後に初回アクセスを記録
+            localStorage.setItem('visited', 'true');
+        });
+    } else {
+        // 2回目以降のアクセスではローディング画面を表示せずにすぐに非表示にする
+        $("#splash").hide();
+    }
 });
 
 
@@ -52,4 +63,11 @@ $(document).ready(function () {
     $(".modal-open").on('click', function () {
         $("#info").modaal('open');
     });
+});
+
+//======================モーダル（Micromodal）================//
+
+MicroModal.init({
+    openClass: 'is-open',
+    disableScroll: true,
 });
