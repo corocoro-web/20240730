@@ -13,24 +13,7 @@
     }
 
     &__list {
-        position: relative;
         font-weight: 700;
-        line-height: 1.0;
-
-        &::after {
-            position: absolute;
-            content: "";
-            background: url(../images/top/arrow-icon.svg)no-repeat center center / contain;
-            width: 16px;
-            height: 16px;
-            top: 50%;
-            right: 100px;
-        }
-
-        & dt {
-            padding-top: 32px;
-            margin-bottom: 24px;
-        }
 
         &--event {
             border: 1px solid $l-blue;
@@ -45,12 +28,6 @@
             font-size: 0.875rem;
             margin-left: 16px;
         }
-
-        & dd {
-            font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
-            border-bottom: 1px solid $l-blue;
-            padding-bottom: 32px;
-        }
     }
 }
 
@@ -64,8 +41,21 @@
     display: block;
 }
 
+#modal-2.is-open {
+    display: block;
+}
+
+#modal-3.is-open {
+    display: block;
+}
+
+
+
 .modal__btn {
     display: block;
+    width: 100%;
+    text-align: left;
+    position: relative;
 
     & dt {
         font-family: "Zen Kaku Gothic New", sans-serif;
@@ -82,6 +72,17 @@
         font-weight: 700;
         line-height: 1.0;
         padding-bottom: 22px;
+        border-bottom: 1px solid $l-blue;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        background: url(../images/top/arrow-icon.svg)no-repeat center center / contain;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        right: 100px;
     }
 }
 
