@@ -71,3 +71,55 @@ MicroModal.init({
     openClass: 'is-open',
     disableScroll: true,
 });
+
+
+
+//======================アコーディオン================//
+
+$(document).ready(function () {
+    $('.header-nav__accordion-ttl').each(function () {
+        const $summary = $(this);
+        const $details = $summary.parent();
+        const $content = $summary.next('.header-nav__accordion-box');
+
+        // 初期状態を閉じた状態にする
+        $details.removeAttr('open');
+        $summary.removeClass('open');
+
+        function openAccordion() {
+            $details.attr('open', 'open');
+            $content.css('maxHeight', '0').animate({ maxHeight: $content.prop('scrollHeight') + 'px', opacity: '1' }, 300);
+            $summary.addClass('open');
+        }
+
+        function closeAccordion() {
+            $content.animate({ maxHeight: '0', opacity: '0' }, 300, function () {
+                $details.removeAttr('open');
+                $summary.removeClass('open');
+                $content.css('maxHeight', '');
+            });
+        }
+
+        $summary.hover(
+            function () {
+                openAccordion();
+            },
+            function () {
+                // ホバー解除で何もしない
+            }
+        );
+
+        $details.on('mouseleave', function () {
+            closeAccordion();
+        });
+
+        $summary.on('click', function (e) {
+            e.preventDefault();
+            if ($details.attr('open')) {
+                closeAccordion();
+            } else {
+                openAccordion();
+            }
+        });
+    });
+});

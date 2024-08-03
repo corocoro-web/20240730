@@ -394,7 +394,6 @@ img {
   left: 0;
   z-index: 2;
   overflow-y: auto;
-  /*内容をスクロールしても表示固定*/
 }
 .header-inner {
   padding: 74px 40px 0;
@@ -408,13 +407,50 @@ img {
 .header-nav {
   color: #000;
 }
+.header-nav__list {
+  margin: 32px 0;
+}
+.header-nav__list:last-child {
+  padding-left: 30px;
+  position: relative;
+}
+.header-nav__list:last-child ::before {
+  position: absolute;
+  content: "";
+  background: url(../images/top/mail-icon.svg) no-repeat center center/contain;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  color: #000;
+}
 .header-nav__accordion-ttl {
-  padding: 32px 0;
+  position: relative;
+  padding-bottom: 32px;
   border-bottom: 1px solid #B1C6DC;
+  list-style: none;
 }
 .header-nav__accordion-ttl::-webkit-details-marker {
-  /* Safari-デフォルトの三角形を削除*/
   display: none;
+}
+.header-nav__accordion-ttl::after {
+  position: absolute;
+  content: "＋";
+  font-size: 24px;
+  font-weight: 200;
+  top: 0px;
+  right: 0px;
+  color: #4282B8;
+  transition: content 0.3s;
+}
+.header-nav__accordion-ttl.open::after {
+  /*ー*/
+  position: absolute;
+  content: "ー";
+  font-size: 24px;
+  font-weight: 200;
+  top: 0;
+  right: 0;
 }
 .header-nav__accordion-box {
   padding: 32px 0;

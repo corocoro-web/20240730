@@ -14,7 +14,6 @@
     left: 0;
     z-index: 2;
     overflow-y: auto;
-    /*内容をスクロールしても表示固定*/
 
     &-inner {
         padding: 74px 40px 0;
@@ -30,13 +29,55 @@
     &-nav {
         color: $black;
 
+        &__list {
+            margin: 32px 0;
+        }
+
+        &__list:last-child {
+            padding-left: 30px;
+            position: relative;
+
+            ::before {
+                position: absolute;
+                content: "";
+                background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+                width: 24px;
+                height: 24px;
+                top: 0;
+                left: 0;
+                color: $black;
+            }
+        }
+
         &__accordion-ttl {
-            padding: 32px 0;
+            position: relative;
+            padding-bottom: 32px;
             border-bottom: 1px solid $l-blue;
+            list-style: none;
 
             &::-webkit-details-marker {
-                /* Safari-デフォルトの三角形を削除*/
                 display: none;
+            }
+
+            &::after {
+                position: absolute;
+                content: "＋";
+                font-size: 24px;
+                font-weight: 200;
+                top: 0px;
+                right: 0px;
+                color: $blue;
+                transition: content 0.3s;
+            }
+
+            &.open::after {
+                /*ー*/
+                position: absolute;
+                content: "ー";
+                font-size: 24px;
+                font-weight: 200;
+                top: 0;
+                right: 0;
             }
         }
 
@@ -54,9 +95,6 @@
                 margin-bottom: 0;
             }
         }
-
-
-
     }
 
 }
