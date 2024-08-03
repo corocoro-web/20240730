@@ -10,6 +10,7 @@
 
     &__lists {
         border-top: 1px solid $l-blue;
+        margin-right: 40px;
     }
 
     &__list {
@@ -32,23 +33,17 @@
 }
 
 
-
-#modal-1 {
+#modal-1,
+#modal-2,
+#modal-3 {
     display: none;
 }
 
-#modal-1.is-open {
-    display: block;
-}
-
-#modal-2.is-open {
-    display: block;
-}
-
+#modal-1.is-open,
+#modal-2.is-open,
 #modal-3.is-open {
     display: block;
 }
-
 
 
 .modal__btn {
@@ -82,11 +77,12 @@
         width: 16px;
         height: 16px;
         top: 50%;
-        right: 100px;
+        right: 30px;
     }
 }
 
 .modal__overlay {
+    width: 100%;
     pointer-events: auto;
     position: fixed;
     top: 0;
@@ -101,6 +97,7 @@
 }
 
 .modal__container {
+    position: relative;
     background-color: #fff;
     padding: 16px 102px 24px;
     margin-right: 20px;
@@ -108,7 +105,8 @@
     width: 860px;
     border-radius: 4px;
     overflow-y: auto;
-    box-sizing: border-box;
+    max-height: 80vh;
+    /* モーダルの高さの上限を設定 */
 
     & img {
         width: 656px;
@@ -130,24 +128,45 @@
         font-size: 1rem;
         line-height: 1.8;
         font-weight: 400;
-        margin-bottom: 61px;
+        margin-bottom: 30px;
+    }
+
+    & ul {
+        margin-bottom: 30px;
+    }
+
+    & li {
+        list-style-type: disc;
+        font-size: 1rem;
+        line-height: 1.8;
+        font-weight: 400;
+        margin-left: 16px;
+        margin-bottom: 16px;
     }
 }
 
-.modal__close {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    /* 中央寄せ */
-    bottom: 55px;
-    margin-bottom: 24px;
+.modal__container01 p {
+    margin-bottom: 61px;
 }
 
-.wrapper {
-    width: 100vw;
-    height: 1300px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.modal__close-top {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: transparent;
+    /* 背景を透明に */
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    /* カーソルをポインターに */
+    /*color: $white;
+    z-index: 4;*/
+}
+
+.modal__btn {
+    display: inline-block;
+}
+
+.modal__close {
+    text-align: center;
 }

@@ -363,7 +363,7 @@ img {
   height: 20px;
   top: 23px;
   left: 35px;
-  z-index: 3;
+  z-index: 1;
   color: #fff;
 }
 .contact__btn::after {
@@ -392,7 +392,7 @@ img {
   background-color: #fff;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 2;
   overflow-y: auto;
   /*内容をスクロールしても表示固定*/
 }
@@ -759,6 +759,7 @@ img {
 }
 .news__lists {
   border-top: 1px solid #B1C6DC;
+  margin-right: 40px;
 }
 .news__list {
   font-weight: 700;
@@ -776,18 +777,14 @@ img {
   margin-left: 16px;
 }
 
-#modal-1 {
+#modal-1,
+#modal-2,
+#modal-3 {
   display: none;
 }
 
-#modal-1.is-open {
-  display: block;
-}
-
-#modal-2.is-open {
-  display: block;
-}
-
+#modal-1.is-open,
+#modal-2.is-open,
 #modal-3.is-open {
   display: block;
 }
@@ -820,10 +817,11 @@ img {
   width: 16px;
   height: 16px;
   top: 50%;
-  right: 100px;
+  right: 30px;
 }
 
 .modal__overlay {
+  width: 100%;
   pointer-events: auto;
   position: fixed;
   top: 0;
@@ -838,6 +836,7 @@ img {
 }
 
 .modal__container {
+  position: relative;
   background-color: #fff;
   padding: 16px 102px 24px;
   margin-right: 20px;
@@ -845,7 +844,8 @@ img {
   width: 860px;
   border-radius: 4px;
   overflow-y: auto;
-  box-sizing: border-box;
+  max-height: 80vh;
+  /* モーダルの高さの上限を設定 */
 }
 .modal__container img {
   width: 656px;
@@ -864,25 +864,44 @@ img {
   font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
+  margin-bottom: 30px;
+}
+.modal__container ul {
+  margin-bottom: 30px;
+}
+.modal__container li {
+  list-style-type: disc;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+
+.modal__container01 p {
   margin-bottom: 61px;
 }
 
-.modal__close {
+.modal__close-top {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  /* 中央寄せ */
-  bottom: 55px;
-  margin-bottom: 24px;
+  top: 10px;
+  right: 18px;
+  background: transparent;
+  /* 背景を透明に */
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  /* カーソルをポインターに */
+  /*color: $white;
+  z-index: 4;*/
 }
 
-.wrapper {
-  width: 100vw;
-  height: 1300px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.modal__btn {
+  display: inline-block;
+}
+
+.modal__close {
+  text-align: center;
 }
 
 .contact {
