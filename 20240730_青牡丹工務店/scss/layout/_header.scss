@@ -12,11 +12,22 @@
     background-color: $white;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     overflow-y: auto;
+
+    @include mq($md) {
+        width: 100%;
+        height: 102px;
+        /*後で消す*/
+    }
 
     &-inner {
         padding: 74px 40px 0;
+
+        @include mq($md) {
+            padding: 0;
+        }
+
     }
 
     &__logo a {
@@ -24,6 +35,14 @@
         width: 200px;
         height: 121px;
         margin-bottom: 25px;
+    }
+
+    &__logo img {
+        width: 100%;
+
+        @include mq($md) {
+            width: 98px;
+        }
     }
 
     &-nav {
@@ -97,4 +116,88 @@
         }
     }
 
+}
+
+
+/*--------------ナビゲーション-------------------*/
+
+@include mq($md) {
+    .header-nav {
+        pointer-events: none;
+        /*隠れている時は触れないようにしておく*/
+        overflow: hidden;
+        /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+        position: fixed;
+        z-index: -1;
+        opacity: 0;
+        /*はじめは透過0*/
+        /*ナビの位置と形状*/
+        top: 55px;
+        width: 100%;
+        height: 100vh;
+        /*ナビの高さ*/
+        background: #999;
+        /*動き*/
+        transition: all 0.3s;
+        background: $blue;
+
+        /*アクティブクラスがついたら透過なしにして最前面へ*/
+        &.panelactive {
+            pointer-events: auto;
+            /*表示された時に解除する*/
+            position: absolute;
+            top: 96px;
+            opacity: 1;
+            z-index: 999;
+
+            @include mq($md) {
+                top: 64px
+            }
+        }
+
+        /*ナビゲーションの縦スクロール*/
+        &__lists {
+            /*ナビの数が増えた場合縦スクロール*/
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            /*表示する高さ*/
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+        /*ナビゲーション*/
+        &__lists {
+            display: block;
+            /*ナビゲーション天地中央揃え*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+
+            &.panelactive {
+                display: block;
+            }
+        }
+
+        /*リストのレイアウト設定*/
+        &__list {
+            text-align: left;
+            border-bottom: 1px solid $white;
+
+            & a {
+                display: block;
+                color: $white;
+                padding: 24px 16px;
+
+                &:focus-visible {
+                    border: 2px solid $white;
+                    transform: scale(1.025);
+                    /* ボタンを少し大きくして目立たせる */
+                }
+            }
+        }
+    }
 }

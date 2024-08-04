@@ -1,3 +1,16 @@
+//================ハンバーガーメニュー&ナビゲーション(SP)================//
+$(".openbtn").click(function () { //ボタンがクリックされたら
+    $(this).toggleClass('active'); //ボタン自身に activeクラスを付与し
+    $(".header-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+$(".header-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".header__openbtn").removeClass('active');//ボタンの activeクラスを除去し
+    $(".header-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+
+
+
 //======================スライダー================//
 $(function () {
     $('#slider').slick({
@@ -39,31 +52,6 @@ $(window).on('load', function () {
 });
 
 
-//======================モーダル================//
-$(document).ready(function () {
-    // 初回のみアクセスフラグを設定
-    var access = $.cookie('access');
-    if (!access) {
-        $.cookie('access', true);
-    }
-
-    // モーダル表示
-    $(".modal-open").modaal({
-        start_open: false, // 初回も自動で開かない
-        overlay_close: true, // モーダル背景クリック時に閉じるか
-        before_open: function () { // モーダルが開く前に行う動作
-            $('html').css('overflow-y', 'hidden'); /* 縦スクロールバーを出さない */
-        },
-        after_close: function () { // モーダルが閉じた後に行う動作
-            $('html').css('overflow-y', 'scroll'); /* 縦スクロールバーを出す */
-        }
-    });
-
-    // リンククリック時にモーダルを開く
-    $(".modal-open").on('click', function () {
-        $("#info").modaal('open');
-    });
-});
 
 //======================モーダル（Micromodal）================//
 

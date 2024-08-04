@@ -6,6 +6,10 @@
     padding: 49px 158px 100px 0;
     overflow: hidden;
 
+    @include mq($lg) {
+        padding: 49px 30px 100px 0;
+    }
+
     &-inner {
         max-width: 1004px;
     }
@@ -30,14 +34,22 @@
 
     &__item {
         display: flex;
-        /*flex-wrap: wrap;*/
+        justify-content: left;
         gap: 56px;
         margin-bottom: 92px;
 
+        @include mq($lg) {
+            gap: 20px;
+        }
+
         & img {
-            /*効かない*/
             width: 516px;
-            height: 464px;
+            z-index: 2;
+
+            @include mq($lg) {
+                width: 415px;
+
+            }
         }
     }
 
@@ -48,10 +60,6 @@
 
     &__item:last-child {
         margin-bottom: 0;
-    }
-
-    & img {
-        z-index: 2;
     }
 
     &__content {
@@ -67,11 +75,15 @@
             font-weight: 700;
             line-height: 1.0;
             z-index: 1;
+
+            @include mq($lg) {
+                left: -30px;
+            }
         }
 
         &--number02 {
             position: relative;
-            right: -310px;
+            left: 72%;
             font-family: "Kanit", sans-serif;
             color: $l-blue;
             font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);

@@ -8,6 +8,10 @@
     padding: 117px 0 26px;
     margin: 0 auto;
 
+    @include mq($xl) {
+        padding: 117px 20px 26px 0;
+    }
+
 
     @include mq($xl) {
         margin: 0;
@@ -19,9 +23,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 109px;
+
+        @include mq($lg) {
+            gap: 30px;
+        }
     }
 
-    &__info-logo {
+    &__info-logo img {
         display: inline-block;
         width: 222px;
         margin-bottom: 39px;

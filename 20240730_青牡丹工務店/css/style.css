@@ -241,7 +241,7 @@ p {
 .brtb {
   display: none;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1024px) {
   .brtb {
     display: block;
   }
@@ -264,7 +264,7 @@ p {
 .tb {
   display: none;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1024px) {
   .tb {
     display: block;
   }
@@ -355,6 +355,11 @@ img {
   padding: 22px 40px 22px 68px;
   margin-left: 64px;
 }
+@media (max-width: 1024px) {
+  .contact__btn {
+    margin-left: 40px;
+  }
+}
 .contact__btn::before {
   position: absolute;
   content: "";
@@ -392,17 +397,37 @@ img {
   background-color: #fff;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   overflow-y: auto;
+}
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: 102px;
+    /*後で消す*/
+  }
 }
 .header-inner {
   padding: 74px 40px 0;
+}
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0;
+  }
 }
 .header__logo a {
   display: inline-block;
   width: 200px;
   height: 121px;
   margin-bottom: 25px;
+}
+.header__logo img {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header__logo img {
+    width: 98px;
+  }
 }
 .header-nav {
   color: #000;
@@ -465,12 +490,93 @@ img {
   margin-bottom: 0;
 }
 
+/*--------------ナビゲーション-------------------*/
+@media (max-width: 768px) {
+  .header-nav {
+    pointer-events: none;
+    /*隠れている時は触れないようにしておく*/
+    overflow: hidden;
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    /*はじめは透過0*/
+    /*ナビの位置と形状*/
+    top: 55px;
+    width: 100%;
+    height: 100vh;
+    /*ナビの高さ*/
+    background: #999;
+    /*動き*/
+    transition: all 0.3s;
+    background: #4282B8;
+    /*アクティブクラスがついたら透過なしにして最前面へ*/
+    /*ナビゲーションの縦スクロール*/
+    /*ナビゲーション*/
+    /*リストのレイアウト設定*/
+  }
+  .header-nav.panelactive {
+    pointer-events: auto;
+    /*表示された時に解除する*/
+    position: absolute;
+    top: 96px;
+    opacity: 1;
+    z-index: 999;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .header-nav.panelactive {
+    top: 64px;
+  }
+}
+@media (max-width: 768px) {
+  .header-nav__lists {
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    /*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .header-nav__lists {
+    display: block;
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+  .header-nav__lists.panelactive {
+    display: block;
+  }
+  .header-nav__list {
+    text-align: left;
+    border-bottom: 1px solid #fff;
+  }
+  .header-nav__list a {
+    display: block;
+    color: #fff;
+    padding: 24px 16px;
+  }
+  .header-nav__list a:focus-visible {
+    border: 2px solid #fff;
+    transform: scale(1.025);
+    /* ボタンを少し大きくして目立たせる */
+  }
+}
 .footer {
   max-width: 1160px;
   position: relative;
   left: 280px;
   padding: 117px 0 26px;
   margin: 0 auto;
+}
+@media (max-width: 1440px) {
+  .footer {
+    padding: 117px 20px 26px 0;
+  }
 }
 @media (max-width: 1440px) {
   .footer {
@@ -484,7 +590,12 @@ img {
   flex-wrap: wrap;
   gap: 109px;
 }
-.footer__info-logo {
+@media (max-width: 1024px) {
+  .footer-inner {
+    gap: 30px;
+  }
+}
+.footer__info-logo img {
   display: inline-block;
   width: 222px;
   margin-bottom: 39px;
@@ -562,7 +673,7 @@ img {
 }
 @media (max-width: 1440px) {
   .main-inner {
-    width: calc(100% - 280px - 40px);
+    width: calc(100% - 40px);
     max-width: 1120px;
   }
 }
@@ -582,6 +693,11 @@ img {
   border-radius: 10px;
   padding: 14px;
   margin-bottom: 21px;
+}
+@media (max-width: 1024px) {
+  .main__copy-ttl {
+    margin-top: 30px;
+  }
 }
 .main__copy-ttl-sub__txt {
   font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
@@ -608,12 +724,23 @@ img {
   width: 256px;
   height: 252px;
 }
+@media (max-width: 1024px) {
+  .main__image02 {
+    left: 60%;
+  }
+}
 .main__image03 {
   position: absolute;
   z-index: 3;
   top: 343px;
   left: 48px;
   width: 314px;
+}
+@media (max-width: 1024px) {
+  .main__image03 {
+    top: 220px;
+    width: 260px;
+  }
 }
 .main__image04 {
   position: absolute;
@@ -622,12 +749,24 @@ img {
   left: 40%;
   width: 206px;
 }
+@media (max-width: 1024px) {
+  .main__image04 {
+    top: 340px;
+    left: 37%;
+    width: 190px;
+  }
+}
 .main__image05 {
   position: absolute;
   z-index: 3;
   top: 326px;
   left: 83%;
   width: 162px;
+}
+@media (max-width: 1024px) {
+  .main__image05 {
+    left: 72%;
+  }
 }
 
 .images {
@@ -658,21 +797,26 @@ img {
   font-size: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
   font-weight: 600;
   line-height: 1.5;
-  letter-spacing: 0.47em;
+  letter-spacing: 0.46em;
   /*未調整*/
   top: 190px;
   right: 182px;
   width: 172px;
   height: 452px;
-}
-.images__txt h2 {
   padding: 30px 26px 10px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .images__txt {
+    height: 390px;
+    right: 7%;
+  }
 }
 .images__txt span {
   color: #4282B8;
 }
 .images__txt::before {
-  /*効かない*/
   background: url(../images/top/interview_01.png) no-repeat center center/contain;
   content: "";
   position: absolute;
@@ -709,6 +853,11 @@ img {
   padding: 49px 158px 100px 0;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .service {
+    padding: 49px 30px 100px 0;
+  }
+}
 .service-inner {
   max-width: 1004px;
 }
@@ -730,23 +879,29 @@ img {
 }
 .service__item {
   display: flex;
-  /*flex-wrap: wrap;*/
+  justify-content: left;
   gap: 56px;
   margin-bottom: 92px;
 }
+@media (max-width: 1024px) {
+  .service__item {
+    gap: 20px;
+  }
+}
 .service__item img {
-  /*効かない*/
   width: 516px;
-  height: 464px;
+  z-index: 2;
+}
+@media (max-width: 1024px) {
+  .service__item img {
+    width: 415px;
+  }
 }
 .service__item01, .service__item03 {
   flex-direction: row-reverse;
 }
 .service__item:last-child {
   margin-bottom: 0;
-}
-.service img {
-  z-index: 2;
 }
 .service__content {
   width: 43%;
@@ -761,9 +916,14 @@ img {
   line-height: 1;
   z-index: 1;
 }
+@media (max-width: 1024px) {
+  .service__content--number01, .service__content--number03 {
+    left: -30px;
+  }
+}
 .service__content--number02 {
   position: relative;
-  right: -310px;
+  left: 72%;
   font-family: "Kanit", sans-serif;
   color: #B1C6DC;
   font-size: clamp(3rem, 0.359rem + 11.27vw, 10.5rem);
@@ -836,6 +996,11 @@ img {
   font-weight: 700;
   padding-top: 32px;
 }
+@media (max-width: 1024px) {
+  .modal__btn dt {
+    padding-top: 25px;
+  }
+}
 .modal__btn dt {
   margin-bottom: 24px;
 }
@@ -843,8 +1008,13 @@ img {
   font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
   font-weight: 700;
   line-height: 1;
-  padding-bottom: 22px;
+  padding-bottom: 34px;
   border-bottom: 1px solid #B1C6DC;
+}
+@media (max-width: 1024px) {
+  .modal__btn dd {
+    padding-bottom: 25px;
+  }
 }
 .modal__btn::after {
   position: absolute;
@@ -852,8 +1022,8 @@ img {
   background: url(../images/top/arrow-icon.svg) no-repeat center center/contain;
   width: 16px;
   height: 16px;
-  top: 50%;
-  right: 30px;
+  top: 42%;
+  right: 27px;
 }
 
 .modal__overlay {
@@ -864,7 +1034,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 4;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
@@ -945,8 +1115,13 @@ img {
   border-radius: 50px 0px 0px 50px;
   padding: 32px 0 55px 24px;
 }
+@media (max-width: 1024px) {
+  .contact {
+    padding: 32px 20px 55px 24px;
+  }
+}
 .contact__ttl {
-  margin-bottom: 20px;
+  margin-bottom: 38px;
 }
 .contact__ttl__ttl-en {
   margin-bottom: 39px;
@@ -955,6 +1130,11 @@ img {
   display: flex;
 }
 .contact__tel {
+  border-right: 1px solid #000;
+  padding: 0 32px 0 0;
+  line-height: 1;
+}
+.contact__number {
   border-right: 1px solid #000;
   padding: 0 32px;
   line-height: 1;

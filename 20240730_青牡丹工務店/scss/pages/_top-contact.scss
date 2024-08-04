@@ -6,8 +6,13 @@
     border-radius: 50px 0px 0px 50px;
     padding: 32px 0 55px 24px;
 
+    @include mq($lg) {
+        padding: 32px 20px 55px 24px;
+
+    }
+
     &__ttl {
-        margin-bottom: 20px;
+        margin-bottom: 38px;
 
         &__ttl-en {
             margin-bottom: 39px;
@@ -19,6 +24,12 @@
     }
 
     &__tel {
+        border-right: 1px solid $black;
+        padding: 0 32px 0 0;
+        line-height: 1.0;
+    }
+
+    &__number {
         border-right: 1px solid $black;
         padding: 0 32px;
         line-height: 1.0;

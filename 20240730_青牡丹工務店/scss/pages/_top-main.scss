@@ -34,7 +34,7 @@
         z-index: 2;
 
         @include mq($xl) {
-            width: calc(100% - 280px - 40px);
+            width: calc(100% - 40px);
             max-width: 1120px;
         }
     }
@@ -45,7 +45,6 @@
         height: 177px;
         right: 10%;
         bottom: 65px;
-
     }
 
     &__copy-ttl {
@@ -57,6 +56,10 @@
         border-radius: 10px;
         padding: 14px;
         margin-bottom: 21px;
+
+        @include mq($lg) {
+            margin-top: 30px;
+        }
 
         &-sub__txt {
             font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
@@ -86,6 +89,10 @@
         left: 74%;
         width: 256px;
         height: 252px;
+
+        @include mq($lg) {
+            left: 60%;
+        }
     }
 
     &__image03 {
@@ -94,6 +101,11 @@
         top: 343px;
         left: 48px;
         width: 314px;
+
+        @include mq($lg) {
+            top: 220px;
+            width: 260px;
+        }
     }
 
     &__image04 {
@@ -102,6 +114,12 @@
         top: 255px;
         left: 40%;
         width: 206px;
+
+        @include mq($lg) {
+            top: 340px;
+            left: 37%;
+            width: 190px;
+        }
     }
 
     &__image05 {
@@ -110,6 +128,10 @@
         top: 326px;
         left: 83%;
         width: 162px;
+
+        @include mq($lg) {
+            left: 72%;
+        }
     }
 
 }
