@@ -26,6 +26,8 @@
 
         @include mq($md) {
             padding: 0;
+            display: flex;
+            justify-content: space-between;
         }
 
     }
@@ -35,6 +37,13 @@
         width: 200px;
         height: 121px;
         margin-bottom: 25px;
+
+        @include mq($md) {
+            width: auto;
+            height: auto;
+            margin-bottom: 0;
+            padding-top: 10px;
+        }
     }
 
     &__logo img {
@@ -199,5 +208,12 @@
                 }
             }
         }
+    }
+
+    .header__openbtn {
+        width: 56px;
+        height: 48px;
+        /*後で消す*/
+        background-color: $blue;
     }
 }

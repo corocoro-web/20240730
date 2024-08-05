@@ -204,6 +204,12 @@ main {
   left: 280px;
   width: 100%;
 }
+@media (max-width: 768px) {
+  main {
+    left: 0;
+    top: 102px;
+  }
+}
 
 div {
   display: block;
@@ -413,6 +419,8 @@ img {
 @media (max-width: 768px) {
   .header-inner {
     padding: 0;
+    display: flex;
+    justify-content: space-between;
   }
 }
 .header__logo a {
@@ -420,6 +428,14 @@ img {
   width: 200px;
   height: 121px;
   margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .header__logo a {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
 }
 .header__logo img {
   width: 100%;
@@ -565,6 +581,12 @@ img {
     transform: scale(1.025);
     /* ボタンを少し大きくして目立たせる */
   }
+  .header__openbtn {
+    width: 56px;
+    height: 48px;
+    /*後で消す*/
+    background-color: #4282B8;
+  }
 }
 .footer {
   max-width: 1160px;
@@ -576,11 +598,12 @@ img {
 @media (max-width: 1440px) {
   .footer {
     padding: 117px 20px 26px 0;
+    margin: 0;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 768px) {
   .footer {
-    margin: 0;
+    left: 0;
   }
 }
 .footer-inner {
@@ -646,6 +669,16 @@ img {
   z-index: 1;
   height: 989px;
 }
+@media (max-width: 768px) {
+  .main {
+    height: 860px;
+  }
+}
+@media (max-width: 580px) {
+  .main {
+    height: 662px;
+  }
+}
 .main::before {
   background: url(../images/top/mv-bg-blue.png) repeat center center/contain;
   content: "";
@@ -656,6 +689,11 @@ img {
   right: 0;
   width: 70%;
   height: 727px;
+}
+@media (max-width: 768px) {
+  .main::before {
+    display: none;
+  }
 }
 .main-inner {
   position: absolute;
@@ -677,12 +715,32 @@ img {
     max-width: 1120px;
   }
 }
+@media (max-width: 768px) {
+  .main-inner {
+    top: 0;
+    margin-left: 20px;
+    height: 800px;
+  }
+}
+@media (max-width: 580px) {
+  .main-inner {
+    border-radius: 10px 0px 0px 10px;
+    width: 100%;
+    height: 589px;
+    margin-left: 10px;
+  }
+}
 .main__copy {
   position: absolute;
   width: 540px;
   height: 177px;
   right: 10%;
   bottom: 65px;
+}
+@media (max-width: 768px) {
+  .main__copy {
+    left: 10%;
+  }
 }
 .main__copy-ttl {
   max-width: 540px;
@@ -697,6 +755,12 @@ img {
 @media (max-width: 1024px) {
   .main__copy-ttl {
     margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .main__copy-ttl {
+    font-size: 50px;
+    max-width: 440px;
   }
 }
 .main__copy-ttl-sub__txt {
@@ -716,17 +780,41 @@ img {
   left: 31px;
   width: 195px;
 }
+@media (max-width: 768px) {
+  .main__image01 {
+    width: 160px;
+    left: -10px;
+  }
+}
+@media (max-width: 580px) {
+  .main__image01 {
+    width: 103px;
+    top: -53px;
+    left: -24px;
+  }
+}
 .main__image02 {
   position: absolute;
   z-index: 3;
   top: 0;
   left: 74%;
   width: 256px;
-  height: 252px;
 }
 @media (max-width: 1024px) {
   .main__image02 {
-    left: 60%;
+    left: 61%;
+  }
+}
+@media (max-width: 768px) {
+  .main__image02 {
+    width: 190px;
+    left: 56%;
+  }
+}
+@media (max-width: 580px) {
+  .main__image02 {
+    width: 134px;
+    top: -34px;
   }
 }
 .main__image03 {
@@ -740,6 +828,19 @@ img {
   .main__image03 {
     top: 220px;
     width: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .main__image03 {
+    width: 200px;
+    left: -10px;
+  }
+}
+@media (max-width: 580px) {
+  .main__image03 {
+    width: 110px;
+    top: 167px;
+    left: -22px;
   }
 }
 .main__image04 {
@@ -756,6 +857,20 @@ img {
     width: 190px;
   }
 }
+@media (max-width: 768px) {
+  .main__image04 {
+    width: 150px;
+    left: 30%;
+    top: 320px;
+  }
+}
+@media (max-width: 580px) {
+  .main__image04 {
+    width: 82px;
+    top: 171px;
+    left: 34%;
+  }
+}
 .main__image05 {
   position: absolute;
   z-index: 3;
@@ -766,6 +881,20 @@ img {
 @media (max-width: 1024px) {
   .main__image05 {
     left: 72%;
+  }
+}
+@media (max-width: 768px) {
+  .main__image05 {
+    width: 150px;
+    left: 65%;
+    top: 230px;
+  }
+}
+@media (max-width: 580px) {
+  .main__image05 {
+    width: 88px;
+    top: 206px;
+    left: 76%;
   }
 }
 
@@ -787,7 +916,7 @@ img {
 }
 .images__txt {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   writing-mode: vertical-rl;
   /* 縦書きの方向。右から左へ縦書き */
   text-orientation: upright;
@@ -847,6 +976,11 @@ img {
   line-height: 1.8;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  .about__txt {
+    width: 335px;
+  }
+}
 
 .service {
   position: relative;
@@ -886,6 +1020,7 @@ img {
 @media (max-width: 1024px) {
   .service__item {
     gap: 20px;
+    flex-wrap: wrap;
   }
 }
 .service__item img {
@@ -1128,6 +1263,7 @@ img {
 }
 .contact-wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 .contact__tel {
   border-right: 1px solid #000;
