@@ -50,6 +50,11 @@
         width: 100%;
 
         @include mq($md) {
+            width: 130px;
+        }
+
+
+        @include mq($sp) {
             width: 98px;
         }
     }
@@ -128,6 +133,145 @@
 }
 
 
+/*----------------ハンバーガーメニュー-------------*/
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.header__openbtn {
+    display: none;
+
+    @include mq($md) {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        background-color: $blue;
+        width: 100px;
+        height: 80px;
+    }
+
+    @include mq($sp) {
+        width: 56px;
+        height: 48px;
+        /*後で消す*/
+    }
+
+    &:focus-visible {
+        @include mq($md) {
+            border: 2px solid $white;
+            transform: scale(1.05);
+            /* ボタンを少し大きくして目立たせる */
+        }
+    }
+
+    span:nth-of-type(1) {
+        @include mq($md) {
+            top: 20px;
+        }
+
+        @include mq($sp) {
+            top: 13px;
+        }
+    }
+
+    span:nth-of-type(2) {
+        @include mq($md) {
+            top: 33px;
+        }
+
+        @include mq($sp) {
+            top: 22px;
+        }
+    }
+
+    span:nth-of-type(3) {
+        @include mq($md) {
+            top: 45px;
+        }
+
+        @include mq($sp) {
+            top: 31px;
+        }
+    }
+
+    /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更　※今回は文字の変更なし*/
+    &.active span:nth-of-type(1) {
+        @include mq($md) {
+            top: 31px;
+            left: 25px;
+            transform: translateY(6px) rotate(-45deg);
+            width: 50%;
+        }
+
+        @include mq($sp) {
+            top: 19px;
+            left: 15px;
+            transform: translateY(6px) rotate(-45deg);
+            width: 50%;
+        }
+    }
+
+    &.active span:nth-of-type(2) {
+        @include mq($md) {
+            opacity: 0;
+        }
+    }
+
+    &.active span:nth-of-type(3) {
+        @include mq($md) {
+            top: 44px;
+            left: 25px;
+            transform: translateY(-6px) rotate(45deg);
+            width: 50%;
+        }
+
+        @include mq($sp) {
+            top: 31px;
+            left: 16px;
+            transform: translateY(-6px) rotate(45deg);
+            width: 50%;
+        }
+    }
+}
+
+/*ボタン内側*/
+.header__menu-line {
+    display: none;
+
+    @include mq($md) {
+        display: inline-block;
+        transition: all .4s;
+        /*アニメーションの設定*/
+        position: absolute;
+        left: 22px;
+        height: 1px;
+        border-radius: 5px;
+        background: $white;
+        color: $white;
+        width: 50px;
+
+        @include mq($sp) {
+            left: 16px;
+            width: 32px;
+        }
+    }
+
+    /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更　※今回は文字の変更なし*/
+    &.active {
+        @include mq($md) {
+            display: inline-block;
+            transition: all .4s;
+            /*アニメーションの設定*/
+            position: absolute;
+            left: 22px;
+            height: 1px;
+            border-radius: 5px;
+            color: $white;
+            width: 50px;
+        }
+    }
+
+}
+
+
+
 /*--------------ナビゲーション-------------------*/
 
 @include mq($md) {
@@ -138,14 +282,16 @@
         /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
         position: fixed;
         z-index: -1;
+        /*はじめは最背面*/
         opacity: 0;
         /*はじめは透過0*/
+        
         /*ナビの位置と形状*/
         top: 55px;
         width: 100%;
         height: 100vh;
         /*ナビの高さ*/
-        background: #999;
+        background: $blue;
         /*動き*/
         transition: all 0.3s;
         background: $blue;
@@ -210,10 +356,5 @@
         }
     }
 
-    .header__openbtn {
-        width: 56px;
-        height: 48px;
-        /*後で消す*/
-        background-color: $blue;
-    }
+
 }

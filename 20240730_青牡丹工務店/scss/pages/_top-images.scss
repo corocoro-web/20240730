@@ -18,6 +18,11 @@
         width: 360px;
         height: 360px;
         margin-left: 48px;
+
+        @include mq($md) {
+            width: 300px;
+            height: 300px;
+        }
     }
 
     &__txt {
@@ -47,6 +52,10 @@
             right: 7%;
         }
 
+        @include mq($md) {
+            height: 350px;
+        }
+
         & span {
             color: $blue;
         }
@@ -57,9 +66,13 @@
             position: absolute;
             width: 161px;
             height: 213px;
-            z-index: 10;
             top: 186px;
             left: -186px;
+
+            @include mq($md) {
+                width: 110px;
+                top: 100px;
+            }
         }
     }
 }

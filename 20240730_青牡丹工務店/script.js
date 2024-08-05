@@ -1,5 +1,5 @@
 //================ハンバーガーメニュー&ナビゲーション(SP)================//
-$(".openbtn").click(function () { //ボタンがクリックされたら
+$(".header__openbtn").click(function () { //ボタンがクリックされたら
     $(this).toggleClass('active'); //ボタン自身に activeクラスを付与し
     $(".header-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });

@@ -4,6 +4,10 @@
 .news {
     padding: 107px 0 132px;
 
+    @include mq($md) {
+        padding: 107px 20px 132px;
+    }
+
     &__ttl {
         margin-bottom: 48px;
     }
@@ -11,6 +15,11 @@
     &__lists {
         border-top: 1px solid $l-blue;
         margin-right: 40px;
+
+        @include mq($md) {
+            margin-right: 0;
+        }
+
     }
 
     &__list {
