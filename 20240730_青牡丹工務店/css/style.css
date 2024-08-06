@@ -360,10 +360,16 @@ img {
   background-color: #fff;
   padding: 22px 40px 22px 68px;
   margin-left: 64px;
+  width: 284px;
 }
 @media (max-width: 1024px) {
   .contact__btn {
     margin-left: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .contact__btn {
+    margin-left: 0;
   }
 }
 .contact__btn::before {
@@ -509,6 +515,7 @@ img {
 }
 .header-nav__accordion-txt:last-child {
   margin-bottom: 0;
+  padding-bottom: 32px;
 }
 
 /*----------------ハンバーガーメニュー-------------*/
@@ -744,6 +751,11 @@ img {
     left: 0;
   }
 }
+@media (max-width: 580px) {
+  .footer {
+    text-align: center;
+  }
+}
 .footer-inner {
   width: 100%;
   margin: 0 auto;
@@ -754,6 +766,11 @@ img {
 @media (max-width: 1024px) {
   .footer-inner {
     gap: 30px;
+  }
+}
+@media (max-width: 580px) {
+  .footer-inner {
+    display: block;
   }
 }
 .footer__info-logo img {
@@ -768,11 +785,16 @@ img {
   font-weight: 400;
   line-height: 1;
 }
+@media (max-width: 580px) {
+  .footer__info-content {
+    align-items: center;
+  }
+}
 .footer__info-wrapper {
   display: flex;
 }
 .footer__info-wrapper dt {
-  margin-right: 16px;
+  margin-right: 15px;
   margin-bottom: 16px;
 }
 .footer__info-wrapper dd {
@@ -790,6 +812,11 @@ img {
   display: flex;
   gap: 24px;
   margin-bottom: 40px;
+}
+@media (max-width: 580px) {
+  .footer-nav__wrapper {
+    flex-direction: column;
+  }
 }
 .footer__copy {
   font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
@@ -880,6 +907,12 @@ img {
     left: 10%;
   }
 }
+@media (max-width: 580px) {
+  .main__copy {
+    left: 2%;
+    bottom: 34px;
+  }
+}
 .main__copy-ttl {
   max-width: 540px;
   font-size: 64px;
@@ -899,6 +932,12 @@ img {
   .main__copy-ttl {
     font-size: 50px;
     max-width: 440px;
+  }
+}
+@media (max-width: 580px) {
+  .main__copy-ttl {
+    font-size: 24px;
+    max-width: 230px;
   }
 }
 .main__copy-ttl-sub__txt {
@@ -953,6 +992,7 @@ img {
   .main__image02 {
     width: 134px;
     top: -34px;
+    left: 61%;
   }
 }
 .main__image03 {
@@ -1040,12 +1080,22 @@ img {
   background-color: #F8F8F8;
   padding: 63px 0;
 }
+@media (max-width: 580px) {
+  .images {
+    padding: 16px 0 58px;
+  }
+}
 .images-inner {
   position: relative;
 }
 .images__items {
   display: flex;
   padding-left: 48px;
+}
+@media (max-width: 580px) {
+  .images__items {
+    padding-left: 19px;
+  }
 }
 .images__items img {
   width: 360px;
@@ -1056,6 +1106,13 @@ img {
   .images__items img {
     width: 300px;
     height: 300px;
+  }
+}
+@media (max-width: 580px) {
+  .images__items img {
+    width: 200px;
+    height: 200px;
+    margin-left: 16px;
   }
 }
 .images__txt {
@@ -1074,7 +1131,6 @@ img {
   /*未調整*/
   top: 190px;
   right: 182px;
-  width: 172px;
   height: 452px;
   padding: 30px 26px 10px;
   display: flex;
@@ -1089,6 +1145,14 @@ img {
 @media (max-width: 768px) {
   .images__txt {
     height: 350px;
+  }
+}
+@media (max-width: 580px) {
+  .images__txt {
+    padding: 16px 24px;
+    top: 101px;
+    height: 284px;
+    letter-spacing: 0.5em;
   }
 }
 .images__txt span {
@@ -1109,6 +1173,13 @@ img {
     top: 100px;
   }
 }
+@media (max-width: 768px) {
+  .images__txt::before {
+    width: 60px;
+    top: 75px;
+    left: -51%;
+  }
+}
 
 .about {
   padding: 71px 0 85px;
@@ -1122,7 +1193,7 @@ img {
 }
 @media (max-width: 768px) {
   .about {
-    padding: 150px 30px 85px;
+    padding: 126px 20px 52px;
   }
 }
 .about__ttl--en {
@@ -1138,6 +1209,7 @@ img {
 @media (max-width: 768px) {
   .about__txt {
     width: auto;
+    margin-bottom: 27px;
   }
 }
 
@@ -1145,6 +1217,11 @@ img {
   position: relative;
   padding: 49px 158px 100px 0;
   overflow: hidden;
+}
+@media (max-width: 580px) {
+  .service {
+    padding: 26px 20px 91px 20px;
+  }
 }
 .service::before {
   position: absolute;
@@ -1159,6 +1236,11 @@ img {
   z-index: -1;
   /* 擬似要素の上に表示されるようにするため */
 }
+@media (max-width: 580px) {
+  .service::before {
+    left: 101px;
+  }
+}
 .service::after {
   background: url(../images/top/contract_02.png) no-repeat center center/contain;
   content: "";
@@ -1172,6 +1254,12 @@ img {
 @media (max-width: 1024px) {
   .service::after {
     left: 75%;
+  }
+}
+@media (max-width: 580px) {
+  .service::after {
+    width: 69px;
+    top: -86px;
   }
 }
 @media (max-width: 1024px) {
@@ -1224,6 +1312,11 @@ img {
     margin: 0 auto;
   }
 }
+@media (max-width: 768px) {
+  .service__item img {
+    width: 100%;
+  }
+}
 .service__item01, .service__item03 {
   flex-direction: row-reverse;
 }
@@ -1254,6 +1347,11 @@ img {
     padding: 0 20px;
   }
 }
+@media (max-width: 580px) {
+  .service__content-wrapper {
+    padding: 0;
+  }
+}
 .service__content--number01, .service__content--number03 {
   position: absolute;
   top: 0;
@@ -1269,6 +1367,12 @@ img {
   .service__content--number01, .service__content--number03 {
     top: -15px;
     left: 78%;
+  }
+}
+@media (max-width: 580px) {
+  .service__content--number01, .service__content--number03 {
+    top: -3px;
+    left: 83%;
   }
 }
 .service__content--number02 {
@@ -1425,9 +1529,26 @@ img {
   max-height: 80vh;
   /* モーダルの高さの上限を設定 */
 }
+@media (max-width: 768px) {
+  .modal__container {
+    width: 500px;
+    padding: 16px 45px 24px;
+  }
+}
+@media (max-width: 768px) {
+  .modal__container {
+    padding: 16px 25px 24px;
+  }
+}
 .modal__container img {
-  width: 656px;
+  max-width: 656px;
+  width: 100%;
   margin-bottom: 35px;
+}
+@media (max-width: 768px) {
+  .modal__container img {
+    max-width: 450px;
+  }
 }
 .modal__container dt {
   margin-bottom: 16px;
@@ -1438,11 +1559,21 @@ img {
   font-weight: 700;
   margin-bottom: 16px;
 }
+@media (max-width: 768px) {
+  .modal__container dd {
+    font-size: 1rem;
+  }
+}
 .modal__container p {
   font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
   margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .modal__container p {
+    font-size: 0.875rem;
+  }
 }
 .modal__container ul {
   margin-bottom: 30px;
@@ -1455,9 +1586,20 @@ img {
   margin-left: 16px;
   margin-bottom: 16px;
 }
+@media (max-width: 768px) {
+  .modal__container li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
 
 .modal__container01 p {
   margin-bottom: 61px;
+}
+@media (max-width: 768px) {
+  .modal__container01 p {
+    margin-bottom: 25px;
+  }
 }
 
 .modal__close-top {
@@ -1522,13 +1664,14 @@ img {
   .contact::after {
     right: 10%;
     width: 100px;
+    bottom: 240px;
   }
 }
 @media (max-width: 580px) {
   .contact::after {
-    right: 5%;
+    right: 6%;
     width: 59px;
-    bottom: 283px;
+    bottom: 348px;
   }
 }
 .contact__ttl {
@@ -1555,6 +1698,9 @@ img {
   .contact__tel {
     border-right: none;
     border-bottom: 1px solid #000;
+    display: flex;
+    gap: 16px;
+    padding-bottom: 24px;
   }
 }
 .contact__number {
@@ -1565,16 +1711,25 @@ img {
 @media (max-width: 768px) {
   .contact__number {
     border-right: none;
+    padding: 24px 0 36px;
   }
 }
-.contact__content {
+.contact__tel-content, .contact__number-content {
   font-family: "Kanit", sans-serif;
   font-size: 2rem;
   font-weight: 400;
 }
-.contact__content--small {
+.contact__tel-content--small, .contact__number-content--small {
   font-size: 0.75rem;
   font-weight: 700;
+}
+.contact__tel-content--small {
+  padding-top: 0;
+}
+@media (max-width: 768px) {
+  .contact__tel-content--small {
+    padding-top: 20px;
+  }
 }
 
 /*------------------ローディング-------------------*/
@@ -1619,29 +1774,4 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
-}
-/*------------------モーダル-------------------*/
-.news__list-modal {
-  display: none;
-}
-.news__list-modal img {
-  width: 656px;
-}
-
-/*モーダルの横幅を変更したい場合*/
-.modaal-container {
-  max-width: 860px;
-}
-
-/*モーダルのボタンの色を変更したい場合*/
-.modaal-close:after,
-.modaal-close:before {
-  background: #ccc;
-}
-
-.modaal-close:focus:after,
-.modaal-close:focus:before,
-.modaal-close:hover:after,
-.modaal-close:hover:before {
-  background: #666;
 }/*# sourceMappingURL=style.css.map */

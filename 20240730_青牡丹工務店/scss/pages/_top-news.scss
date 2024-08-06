@@ -125,9 +125,23 @@
     max-height: 80vh;
     /* モーダルの高さの上限を設定 */
 
+    @include mq($md) {
+        width: 500px;
+        padding: 16px 45px 24px;
+    }
+
+    @include mq($md) {
+        padding: 16px 25px 24px;
+    }
+
     & img {
-        width: 656px;
+        max-width: 656px;
+        width: 100%;
         margin-bottom: 35px;
+
+        @include mq($md) {
+            max-width: 450px;
+        }
     }
 
     & dt {
@@ -139,6 +153,10 @@
         line-height: 1.8;
         font-weight: 700;
         margin-bottom: 16px;
+
+        @include mq($md) {
+            font-size: 1rem;
+        }
     }
 
     & p {
@@ -146,6 +164,10 @@
         line-height: 1.8;
         font-weight: 400;
         margin-bottom: 30px;
+
+        @include mq($md) {
+            font-size: 0.875rem;
+        }
     }
 
     & ul {
@@ -159,11 +181,20 @@
         font-weight: 400;
         margin-left: 16px;
         margin-bottom: 16px;
+
+        @include mq($md) {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
     }
 }
 
 .modal__container01 p {
     margin-bottom: 61px;
+
+    @include mq($md) {
+        margin-bottom: 25px;
+    }
 }
 
 .modal__close-top {

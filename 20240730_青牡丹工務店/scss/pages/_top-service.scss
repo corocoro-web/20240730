@@ -6,6 +6,10 @@
     padding: 49px 158px 100px 0;
     overflow: hidden;
 
+    @include mq($sp) {
+        padding: 26px 20px 91px 20px;
+    }
+
     &::before {
         position: absolute;
         content: "";
@@ -17,7 +21,11 @@
         height: 100%;
         border-radius: 50px 0 0 50px;
         z-index: -1;
+
         /* 擬似要素の上に表示されるようにするため */
+        @include mq($sp) {
+            left: 101px;
+        }
     }
 
     &::after {
@@ -33,6 +41,13 @@
         @include mq($lg) {
             left: 75%;
         }
+
+        @include mq($sp) {
+            width: 69px;
+            top: -86px;
+        }
+
+
     }
 
     @include mq($lg) {
@@ -80,6 +95,10 @@
                 width: 90%;
                 margin: 0 auto;
             }
+
+            @include mq($md) {
+                width: 100%;
+            }
         }
     }
 
@@ -113,6 +132,10 @@
                 padding: 0 20px;
             }
 
+            @include mq($sp) {
+                padding: 0;
+            }
+
         }
 
         &--number01,
@@ -130,6 +153,11 @@
             @include mq($md) {
                 top: -15px;
                 left: 78%;
+            }
+
+            @include mq($sp) {
+                top: -3px;
+                left: 83%;
             }
         }
 

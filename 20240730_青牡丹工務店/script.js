@@ -23,8 +23,9 @@ $(function () {
         pauseOnFocus: false, //フォーカスが合っても止めない
         pauseOnHover: false, //hoverしても止めない
         centerMode: true, //一枚目を中心に表示させる
-        initialSlide: 3, //最初に表示させる要素の番号を指定
+        initialSlide: 0, //最初に表示させる要素の番号を指定
         variableWidth: true, //スライドの要素の幅をcssで設定できるようにする
+        infinite: true // スライダーを無限ループにする
     });
 
     // 逆方向にスライドさせるためのカスタム処理
@@ -35,21 +36,13 @@ $(function () {
 
 //======================ローディング================//
 $(window).on('load', function () {
-    // クッキーまたはローカルストレージをチェックして、初回アクセスかどうかを判定
-    var isVisited = localStorage.getItem('visited');
-
-    if (!isVisited) {
-        // 初回アクセス時のみローディング画面を表示
-        $("#splash_logo").delay(500).fadeOut('slow');
-        $("#splash").delay(1000).fadeOut('slow', function () {
-            // ローディング画面がフェードアウトした後に初回アクセスを記録
-            localStorage.setItem('visited', 'true');
-        });
-    } else {
-        // 2回目以降のアクセスではローディング画面を表示せずにすぐに非表示にする
-        $("#splash").hide();
-    }
+    // ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+    $("#splash_logo").delay(500).fadeOut('slow');
+    $("#splash").delay(1000).fadeOut('slow'); // 画像のフェードアウト後に全体をフェードアウト
 });
+
+
+
 
 
 

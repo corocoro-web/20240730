@@ -37,12 +37,13 @@
         @include mq($md) {
             right: 10%;
             width: 100px;
+            bottom: 240px;
         }
 
         @include mq($sp) {
-            right: 5%;
+            right: 6%;
             width: 59px;
-            bottom: 283px;
+            bottom: 348px;
         }
     }
 
@@ -71,6 +72,9 @@
         @include mq($md) {
             border-right: none;
             border-bottom: 1px solid $black ;
+            display: flex;
+            gap: 16px;
+            padding-bottom: 24px;
         }
     }
 
@@ -81,10 +85,12 @@
 
         @include mq($md) {
             border-right: none;
+            padding: 24px 0 36px;
         }
     }
 
-    &__content {
+    &__tel-content,
+    &__number-content {
         font-family: "Kanit", sans-serif;
         font-size: 2rem;
         font-weight: 400;
@@ -93,5 +99,14 @@
             font-size: 0.75rem;
             font-weight: 700;
         }
+    }
+
+    &__tel-content--small {
+        padding-top: 0;
+
+        @include mq($md) {
+            padding-top: 20px;
+        }
+
     }
 }

@@ -5,6 +5,10 @@
     background-color: $gray;
     padding: 63px 0;
 
+    @include mq($sp) {
+        padding: 16px 0 58px;
+    }
+
     &-inner {
         position: relative;
     }
@@ -12,6 +16,10 @@
     &__items {
         display: flex;
         padding-left: 48px;
+
+        @include mq($sp) {
+            padding-left: 19px;
+        }
     }
 
     &__items img {
@@ -22,6 +30,12 @@
         @include mq($md) {
             width: 300px;
             height: 300px;
+        }
+
+        @include mq($sp) {
+            width: 200px;
+            height: 200px;
+            margin-left: 16px;
         }
     }
 
@@ -41,7 +55,6 @@
         /*未調整*/
         top: 190px;
         right: 182px;
-        width: 172px;
         height: 452px;
         padding: 30px 26px 10px;
         display: flex;
@@ -54,6 +67,13 @@
 
         @include mq($md) {
             height: 350px;
+        }
+
+        @include mq($sp) {
+            padding: 16px 24px;
+            top: 101px;
+            height: 284px;
+            letter-spacing: 0.5em;
         }
 
         & span {
@@ -72,6 +92,12 @@
             @include mq($md) {
                 width: 110px;
                 top: 100px;
+            }
+
+            @include mq($md) {
+                width: 60px;
+                top: 75px;
+                left: -51%;
             }
         }
     }

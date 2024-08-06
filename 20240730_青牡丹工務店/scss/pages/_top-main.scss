@@ -74,6 +74,11 @@
         @include mq($md) {
             left: 10%;
         }
+
+        @include mq($sp) {
+            left: 2%;
+            bottom: 34px;
+        }
     }
 
     &__copy-ttl {
@@ -93,6 +98,11 @@
         @include mq($md) {
             font-size: 50px;
             max-width: 440px;
+        }
+
+        @include mq($sp) {
+            font-size: 24px;
+            max-width: 230px;
         }
 
         &-sub__txt {
@@ -146,6 +156,7 @@
         @include mq($sp) {
             width: 134px;
             top: -34px;
+            left: 61%;
         }
     }
 

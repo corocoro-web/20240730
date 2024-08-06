@@ -126,6 +126,7 @@
 
             &:last-child {
                 margin-bottom: 0;
+                padding-bottom: 32px;
             }
         }
     }
@@ -285,7 +286,7 @@
         /*はじめは最背面*/
         opacity: 0;
         /*はじめは透過0*/
-        
+
         /*ナビの位置と形状*/
         top: 55px;
         width: 100%;

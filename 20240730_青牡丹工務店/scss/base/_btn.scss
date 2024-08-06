@@ -39,10 +39,15 @@
     background-color: $white;
     padding: 22px 40px 22px 68px;
     margin-left: 64px;
+    width: 284px;
 
     @include mq($lg) {
         margin-left: 40px;
 
+    }
+
+    @include mq($md) {
+        margin-left: 0;
     }
 
     &::before {
