@@ -78,6 +78,29 @@
             line-height: 1.0;
         }
 
+        &__list a:hover {
+            opacity: 1.0;
+            border-bottom: 2px solid $black;
+        }
+
+        &__list__contact {
+            position: relative;
+            margin-left: 28px;
+        }
+
+        &__list__contact::before {
+            position: absolute;
+            content: "";
+            background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: -28px;
+            z-index: 1;
+        }
+
+
+
         &__wrapper {
             display: flex;
             gap: 24px;
@@ -100,5 +123,4 @@
             text-align: right;
         }
     }
-
 }

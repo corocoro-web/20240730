@@ -808,6 +808,24 @@ img {
   font-weight: 700;
   line-height: 1;
 }
+.footer-nav__list a:hover {
+  opacity: 1;
+  border-bottom: 2px solid #000;
+}
+.footer-nav__list__contact {
+  position: relative;
+  margin-left: 28px;
+}
+.footer-nav__list__contact::before {
+  position: absolute;
+  content: "";
+  background: url(../images/top/mail-icon.svg) no-repeat center center/contain;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: -28px;
+  z-index: 1;
+}
 .footer-nav__wrapper {
   display: flex;
   gap: 24px;
@@ -1735,43 +1753,48 @@ img {
 /*------------------ローディング-------------------*/
 /* Loading背景画面設定　*/
 .loading {
-  /*fixedで全面に固定*/
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #FFF;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background: #fff;
-  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Loading画像中央配置　*/
-.loading__logo {
+.loading.is-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-animation {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* Loading アイコンの大きさ設定　*/
-.loading__logo img {
+.loading-animation img {
   width: 260px;
 }
 
-/* fadeUpをするアイコンの動き */
-.fadeUp {
-  animation-name: fadeUpAnime;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
+.loading-animation.is-active {
+  opacity: 1;
+  visibility: visible;
 }
 
-@keyframes fadeUpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.konnichiwa {
+  color: red;
 }/*# sourceMappingURL=style.css.map */

@@ -4,47 +4,91 @@
 
 /*------------------ローディング-------------------*/
 /* Loading背景画面設定　*/
+// .loading {
+//     /*fixedで全面に固定*/
+//     position: fixed;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 999;
+//     background: $white;
+//     text-align: center;
+// }
+
+// /* Loading画像中央配置　*/
+// .loading__logo {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+// /* Loading アイコンの大きさ設定　*/
+// .loading__logo img {
+//     width: 260px;
+// }
+
+// /* fadeUpをするアイコンの動き */
+// .fadeUp {
+//     animation-name: fadeUpAnime;
+//     animation-duration: 0.5s;
+//     animation-fill-mode: forwards;
+//     opacity: 0;
+// }
+
+// @keyframes fadeUpAnime {
+//     from {
+//         opacity: 0;
+//         transform: translateY(100px);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+
+
 .loading {
-    /*fixedで全面に固定*/
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #FFF;
     position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background: $white;
-    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+
 }
 
-/* Loading画像中央配置　*/
-.loading__logo {
+.loading.is-active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-animation {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
 
-/* Loading アイコンの大きさ設定　*/
-.loading__logo img {
-    width: 260px;
-}
-
-/* fadeUpをするアイコンの動き */
-.fadeUp {
-    animation-name: fadeUpAnime;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes fadeUpAnime {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    & img {
+        width: 260px;
     }
 }
 
-
+.loading-animation.is-active {
+    opacity: 1;
+    visibility: visible;
+}
