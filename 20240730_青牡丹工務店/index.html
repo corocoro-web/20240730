@@ -105,7 +105,7 @@
                 </div>
             </section>
             <section class="images">
-                <div class="images-inner inner">
+                <div class="images-inner">
                     <div id="slider" class="images__items" dir="rtl">
                         <div class="images__item"><img src="images/top/slide01.jpg" alt="施工作業をしている男性"></div>
                         <div class="images__item"><img src="images/top/slide02.jpg" alt="事務作業をしている男性"></div>
@@ -122,10 +122,11 @@
                         <span class="about__ttl--ja ttl--ja">私達について</span>
                         <span class="about__ttl--en ttl--en">ABOUT</span>
                     </h2>
+
+                    <p class="about__txt">
+                        「丁寧な家造りで、理想を現実に」。これは私たちの約束です。青牡丹工務店が手がける家は、ただの建物ではありません。それは、お客様の暮らしや夢を支える、信頼と品質に満ちた温かな空間です。</p>
+                    <a class="about__btn--more btn--more" href="about.html">Read More</a>
                 </div>
-                <p class="about__txt">
-                    「丁寧な家造りで、理想を現実に」。これは私たちの約束です。青牡丹工務店が手がける家は、ただの建物ではありません。それは、お客様の暮らしや夢を支える、信頼と品質に満ちた温かな空間です。</p>
-                <a class="about__btn--more btn--more" href="about.html">Read More</a>
             </section>
             <section class="service">
                 <div class="service-inner inner">
@@ -195,10 +196,13 @@
                             </button>
 
                             <div id="modal-1" aria-hidden="true">
+                                <button class="modal__close-top" aria-label="Close modal"
+                                    data-micromodal-close>&#x2715;</button>
                                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
 
                                     <div class="modal__container modal__container01" role="dialog" aria-modal="true"
                                         aria-labelledby="modal-1-title">
+
                                         <dl>
                                             <dt><span class="news__list--event">イベント情報</span>
                                                 <time datetime="2024-06-03" class="news__list--date">2024.06.03</time>
@@ -210,9 +214,7 @@
                                             みなさま、こんにちは！弊社では、住宅設計相談会を開催することになりました！将来の家造りを真剣に考える皆様、ぜひご参加ください。
                                             <br>〜〜〜〜〜〜
                                         </p>
-                                        <div class="modal-btn">
-                                            <button class="modal__close-top" aria-label="Close modal"
-                                                data-micromodal-close>&#x2715;</button>
+                                        <div class="modal__close-bottom">
                                             <button class="modal__close btn--more" aria-label="Close modal"
                                                 data-micromodal-close>閉じる</button>
                                         </div>
@@ -231,8 +233,9 @@
                             </button>
 
                             <div id="modal-2" aria-hidden="true">
+                                <button class="modal__close-top" aria-label="Close modal"
+                                    data-micromodal-close>&#x2715;</button>
                                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-
                                     <div class="modal__container modal__container02" role="dialog" aria-modal="true"
                                         aria-labelledby="modal-2-title">
                                         <dl>
@@ -256,10 +259,10 @@
                                         </ul>
                                         <p>また、実際の事例やケーススタディを通じて、事故や災害が発生した際の適切な対応方法についても学びました。参加者全員が積極的に議論し、知識を深めることができました。<br><br>安全管理研修を通じて、従業員一人ひとりが安全に対する意識を高め、安全な職場環境の実現に向けて一層の努力をすることを確認しました。今後も定期的に研修を実施し、安全管理の徹底を図ってまいります。
                                         </p>
-                                        <button class="modal__close-top" aria-label="Close modal"
-                                            data-micromodal-close>&#x2715;</button>
-                                        <button class="modal__close btn--more" aria-label="Close modal"
-                                            data-micromodal-close>閉じる</button>
+                                        <div class="modal__close-bottom">
+                                            <button class="modal__close btn--more" aria-label="Close modal"
+                                                data-micromodal-close>閉じる</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -274,9 +277,11 @@
                             </button>
 
                             <div id="modal-3" aria-hidden="true">
-                                <div class="modal__overlay" tabindex="-1" data-micromodal-close>
 
-                                    <div class="modal__container modal__container03 role=" dialog" aria-modal="true"
+                                <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                                    <button class="modal__close-top" aria-label="Close modal"
+                                        data-micromodal-close>&#x2715;</button>
+                                    <div class="modal__container modal__container03" role="dialog" aria-modal="true"
                                         aria-labelledby="modal-3-title">
                                         <dl>
                                             <dt><span class="news__list--event">イベント情報</span>
@@ -302,10 +307,10 @@
                                             <br><br>
                                             ぜひ、新しいホームページをご覧いただき、お客様のご意見やご要望をお聞かせください。今後もお客様により良いサービスを提供できるよう努めてまいります。
                                         </p>
-                                        <button class="modal__close-top" aria-label="Close modal"
-                                            data-micromodal-close>&#x2715;</button>
-                                        <button class="modal__close btn--more" aria-label="Close modal"
-                                            data-micromodal-close>閉じる</button>
+                                        <div class="modal__close-bottom">
+                                            <button class="modal__close btn--more" aria-label="Close modal"
+                                                data-micromodal-close>閉じる</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

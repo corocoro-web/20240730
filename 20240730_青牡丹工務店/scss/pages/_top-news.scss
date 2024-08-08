@@ -2,10 +2,15 @@
 @use "../abstracts/mixin" as *;
 
 .news {
-    padding: 107px 0 132px;
+    position: relative;
 
-    @include mq($md) {
-        padding: 107px 20px 132px;
+    &-inner {
+        padding: 107px 0 132px;
+
+        @include mq($md) {
+            padding: 107px 20px 132px;
+        }
+
     }
 
     &__ttl {
@@ -85,6 +90,10 @@
         @include mq($lg) {
             padding-bottom: 25px;
         }
+    }
+
+    &:hover {
+        color: $blue;
     }
 
     &::after {
@@ -199,20 +208,18 @@
 
 .modal__close-top {
     position: absolute;
-    top: 10px;
-    right: 18px;
-    background: transparent;
-    /* 背景を透明に */
+    top: 300px;
+    right: 27%;
     border: none;
-    font-size: 32px;
+    font-size: 42px;
     cursor: pointer;
     /* カーソルをポインターに */
-    /*color: $white;
-    z-index: 4;*/
+    color: $white;
+    z-index: 5;
 }
 
-.modal__btn {
-    display: inline-block;
+.modal__close-bottom {
+    text-align: center;
 }
 
 .modal__close {

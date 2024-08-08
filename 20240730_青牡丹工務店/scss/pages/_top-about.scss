@@ -2,16 +2,18 @@
 @use "../abstracts/mixin" as *;
 
 .about {
-    padding: 71px 0 85px;
     max-width: 1160px;
-    margin: 0 auto;
 
     @include mq($xl) {
         margin: 0;
     }
 
-    @include mq($md) {
-        padding: 126px 20px 52px;
+    &-inner {
+        padding: 71px 0 85px 1px;
+
+        @include mq($md) {
+            padding: 126px 20px 52px;
+        }
     }
 
     &__ttl--en {

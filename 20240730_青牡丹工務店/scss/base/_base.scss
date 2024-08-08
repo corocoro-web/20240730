@@ -18,13 +18,13 @@ body {
 
 main {
     text-align: left;
-    position: relative;
-    left: 280px;
+    margin-left: 280px;
     width: 100%;
+    position: relative;
 
     @include mq($md) {
-        left: 0;
         top: 102px;
+        margin-left: 0;
     }
 }
 

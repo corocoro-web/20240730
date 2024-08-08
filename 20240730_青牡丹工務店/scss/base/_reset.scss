@@ -182,5 +182,11 @@ select {
 
 a[href^="tel:"] {
     pointer-events: none;
-    /*PCからの電話発信を不可にする設定*/
+
+    /*PCからの電話発信を不可にする*/
+    @media (max-width: (425px)) {
+        pointer-events: all;
+        /*スマホでは電話発信可能にする*/
+    }
+
 }

@@ -2,20 +2,17 @@
 @use "../abstracts/mixin" as *;
 
 .footer {
-    max-width: calc(1440px - 280px);
-    position: relative;
-    left: 280px;
-    padding: 117px 0 26px;
-    margin: 0 auto;
+    padding: 117px 0 26px 0;
+    margin-left: 280px;
+    width: 100%;
 
     @include mq($xl) {
         padding: 117px 20px 26px 0;
-        margin: 0;
     }
 
     @include mq($md) {
         padding: 117px 20px 26px;
-        left: 0;
+        margin-left: 0;
     }
 
     @include mq($sp) {
@@ -24,7 +21,6 @@
 
     &-inner {
         width: 100%;
-        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         gap: 109px;

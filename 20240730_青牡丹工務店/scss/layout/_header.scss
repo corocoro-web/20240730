@@ -64,6 +64,10 @@
 
         &__list {
             margin: 32px 0;
+
+            & a:hover {
+                color: $blue;
+            }
         }
 
         &__list:last-child {
@@ -92,26 +96,26 @@
                 display: none;
             }
 
-            &::after {
-                position: absolute;
-                content: "＋";
-                font-size: 24px;
-                font-weight: 200;
-                top: 0px;
-                right: 0px;
-                color: $blue;
-                transition: content 0.3s;
-            }
+            // &::after {
+            //     position: absolute;
+            //     content: "＋";
+            //     font-size: 24px;
+            //     font-weight: 200;
+            //     top: 0px;
+            //     right: 0px;
+            //     color: $blue;
+            //     transition: content 0.3s;
+            // }
 
-            &.open::after {
-                /*ー*/
-                position: absolute;
-                content: "ー";
-                font-size: 24px;
-                font-weight: 200;
-                top: 0;
-                right: 0;
-            }
+            // &.open::after {
+            //     /*ー*/
+            //     position: absolute;
+            //     content: "ー";
+            //     font-size: 24px;
+            //     font-weight: 200;
+            //     top: 0;
+            //     right: 0;
+            // }
         }
 
         &__accordion-box {
@@ -126,13 +130,31 @@
 
             &:last-child {
                 margin-bottom: 0;
-                padding-bottom: 32px;
             }
         }
     }
 
 }
 
+details[open] summary::before {
+    position: absolute;
+    content: "ー";
+    font-size: 24px;
+    font-weight: 200;
+    top: 0px;
+    right: 0px;
+    color: $blue;
+}
+
+details summary::before {
+    position: absolute;
+    content: "＋";
+    font-size: 24px;
+    font-weight: 200;
+    top: 0px;
+    right: 0px;
+    color: $blue;
+}
 
 /*----------------ハンバーガーメニュー-------------*/
 /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/

@@ -1,12 +1,10 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixin" as *;
 
-.inner {
-    max-width: calc(1440px - 280px);
+/*.inner {
     width: 100%;
-    margin: 0 auto;
 
     @include mq($xl) {
         margin: 0;
     }
-}
+}*/

@@ -32,11 +32,6 @@ $(function () {
 });
 
 //======================ローディング================//
-// $(window).on('load', function () {
-//     // ローディング画面を1.5秒（1500ms）待機してからフェードアウト
-//     $("#splash_logo").delay(500).fadeOut('slow');
-//     $("#splash").delay(1000).fadeOut('slow'); // 画像のフェードアウト後に全体をフェードアウト
-// });
 
 $(function () {
     var webStorage = function () {
@@ -74,53 +69,83 @@ MicroModal.init({
 
 //======================アコーディオン================//
 
-$(document).ready(function () {
-    $('.header-nav__accordion-ttl').each(function () {
-        const $summary = $(this);
-        const $details = $summary.parent();
-        const $content = $summary.next('.header-nav__accordion-box');
+// $(document).ready(function () {
+//     $('.header-nav__accordion-ttl').each(function () {
+//         const $summary = $(this);
+//         const $details = $summary.parent();
+//         const $content = $summary.next('.header-nav__accordion-box');
 
-        // 初期状態を閉じた状態にする
-        $details.removeAttr('open');
-        $summary.removeClass('open');
+//         // 初期状態を閉じた状態にする
+//         $details.removeAttr('open');
+//         $summary.removeClass('open');
 
-        function openAccordion() {
-            $details.attr('open', 'open');
-            $content.css('maxHeight', '0').animate({ maxHeight: $content.prop('scrollHeight') + 'px', opacity: '1' }, 300);
-            $summary.addClass('open');
+//         function openAccordion() {
+//             $details.attr('open', 'open');
+//             $content.css('maxHeight', '0').animate({ maxHeight: $content.prop('scrollHeight') + 'px', opacity: '1' }, 300);
+//             $summary.addClass('open');
+//         }
+
+//         function closeAccordion() {
+//             $content.animate({ maxHeight: '0', opacity: '0' }, 300, function () {
+//                 $details.removeAttr('open');
+//                 $summary.removeClass('open');
+//                 $content.css('maxHeight', '');
+//             });
+//         }
+
+//         $summary.hover(
+//             function () {
+//                 openAccordion();
+//             },
+//             function () {
+//                 // ホバー解除で何もしない
+//             }
+//         );
+
+//         $details.on('mouseleave', function () {
+//             closeAccordion();
+//         });
+
+//         $summary.on('click', function (e) {
+//             e.preventDefault();
+//             if ($details.attr('open')) {
+//                 closeAccordion();
+//             } else {
+//                 openAccordion();
+//             }
+//         });
+//     });
+// });
+
+$(function () {
+    // ホバーイベントを設定
+    $('.header-nav__accordion-ttl').hover(
+        function () {
+            // ホバーされたときの処理
+            const $details = $(this).closest('details');
+            const $content = $details.find('.header-nav__accordion-box');
+
+            $details.attr('open', 'open'); // details要素を開く
+            $content.stop(true, true).slideDown(300); // コンテンツをスライドダウンして表示
+        },
+        function () {
+            // ホバーが外れたときの処理
+            const $details = $(this).closest('details');
+            const $content = $details.find('.header-nav__accordion-box');
+
+            setTimeout(function () {
+                // 他のホバー対象がない場合に閉じる
+                if (!$details.is(':hover') && !$content.is(':hover')) {
+                    $content.stop(true, true).slideUp(300, function () {
+                        $details.removeAttr('open'); // details要素を閉じる
+                    });
+                }
+            }, 100); // 少し遅延を加えることでホバー切り替えをスムーズに
         }
-
-        function closeAccordion() {
-            $content.animate({ maxHeight: '0', opacity: '0' }, 300, function () {
-                $details.removeAttr('open');
-                $summary.removeClass('open');
-                $content.css('maxHeight', '');
-            });
-        }
-
-        $summary.hover(
-            function () {
-                openAccordion();
-            },
-            function () {
-                // ホバー解除で何もしない
-            }
-        );
-
-        $details.on('mouseleave', function () {
-            closeAccordion();
-        });
-
-        $summary.on('click', function (e) {
-            e.preventDefault();
-            if ($details.attr('open')) {
-                closeAccordion();
-            } else {
-                openAccordion();
-            }
-        });
-    });
+    );
 });
+
+
 
 //======================スムーススクロール================//
 

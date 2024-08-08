@@ -32,7 +32,8 @@
 
 .contact__btn {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
     font-weight: 700;
     border-radius: 10px;
@@ -53,7 +54,8 @@
     &::before {
         position: absolute;
         content: "";
-        background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+        mask: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+        background-color: $black;
         width: 20px;
         height: 20px;
         top: 23px;
@@ -68,7 +70,7 @@
         width: 10px;
         height: 10px;
         font-size: 0.625rem;
-        top: 26px;
+        top: 29px;
         right: 20px;
     }
 
@@ -76,5 +78,9 @@
         color: $white;
         background-color: $black;
         opacity: 1.0;
+
+        &::before {
+            background-color: $white;
+        }
     }
 }
