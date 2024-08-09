@@ -281,7 +281,7 @@ details summary::before {
         pointer-events: none;
         /*隠れている時は触れないようにしておく*/
         /*ナビの位置と形状*/
-        top: 55px;
+        top: 56px;
         width: 100%;
         height: 100vh;
         /*ナビの高さ*/
@@ -299,7 +299,7 @@ details summary::before {
             z-index: 999;
 
             @include mq($md) {
-                top: 64px
+                top: 64px;
             }
         }
 

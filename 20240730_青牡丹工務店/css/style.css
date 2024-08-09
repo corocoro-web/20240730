@@ -678,7 +678,7 @@ details summary::before {
     pointer-events: none;
     /*隠れている時は触れないようにしておく*/
     /*ナビの位置と形状*/
-    top: 55px;
+    top: 56px;
     width: 100%;
     height: 100vh;
     /*ナビの高さ*/
@@ -1682,8 +1682,8 @@ details summary::before {
 
 .modal__close-top {
   position: absolute;
-  top: 300px;
-  right: 27%;
+  top: 0;
+  right: 0;
   border: none;
   font-size: 42px;
   cursor: pointer;
