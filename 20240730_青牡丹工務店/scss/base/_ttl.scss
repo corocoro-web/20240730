@@ -11,6 +11,10 @@
     font-weight: 700;
     line-height: 1.0;
     margin-bottom: 20px;
+
+    @include mq($md) {
+        margin-bottom: 16px;
+    }
 }
 
 .ttl--en {

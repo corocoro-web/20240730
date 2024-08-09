@@ -11,6 +11,7 @@
     border-radius: 10px;
     border: 1px solid $black;
     text-align: center;
+    letter-spacing: 0.1em;
 
     &::after {
         content: "●";
@@ -58,8 +59,8 @@
         background-color: $black;
         width: 20px;
         height: 20px;
-        top: 23px;
-        left: 35px;
+        top: 22px;
+        left: 40px;
         z-index: 1;
         color: $white;
     }

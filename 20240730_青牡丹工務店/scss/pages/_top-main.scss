@@ -55,7 +55,7 @@
 
         @include mq($sp) {
             border-radius: 10px 0px 0px 10px;
-            width: 100%;
+            width: calc(100% - 10px);
             height: 589px;
             margin-left: 10px;
         }

@@ -95,27 +95,6 @@
             &::-webkit-details-marker {
                 display: none;
             }
-
-            // &::after {
-            //     position: absolute;
-            //     content: "＋";
-            //     font-size: 24px;
-            //     font-weight: 200;
-            //     top: 0px;
-            //     right: 0px;
-            //     color: $blue;
-            //     transition: content 0.3s;
-            // }
-
-            // &.open::after {
-            //     /*ー*/
-            //     position: absolute;
-            //     content: "ー";
-            //     font-size: 24px;
-            //     font-weight: 200;
-            //     top: 0;
-            //     right: 0;
-            // }
         }
 
         &__accordion-box {
@@ -301,14 +280,6 @@ details summary::before {
     .header-nav {
         pointer-events: none;
         /*隠れている時は触れないようにしておく*/
-        overflow: hidden;
-        /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
-        position: fixed;
-        z-index: -1;
-        /*はじめは最背面*/
-        opacity: 0;
-        /*はじめは透過0*/
-
         /*ナビの位置と形状*/
         top: 55px;
         width: 100%;
@@ -317,14 +288,13 @@ details summary::before {
         background: $blue;
         /*動き*/
         transition: all 0.3s;
-        background: $blue;
 
         /*アクティブクラスがついたら透過なしにして最前面へ*/
         &.panelactive {
             pointer-events: auto;
             /*表示された時に解除する*/
             position: absolute;
-            top: 96px;
+            top: 102px;
             opacity: 1;
             z-index: 999;
 
@@ -336,7 +306,6 @@ details summary::before {
         /*ナビゲーションの縦スクロール*/
         &__lists {
             /*ナビの数が増えた場合縦スクロール*/
-            position: fixed;
             width: 100%;
             height: 100vh;
             /*表示する高さ*/

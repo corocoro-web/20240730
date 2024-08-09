@@ -11,7 +11,7 @@
     }
 
     @include mq($md) {
-        padding: 117px 20px 26px;
+        padding: 126px 20px 26px;
         margin-left: 0;
     }
 
@@ -38,6 +38,11 @@
         display: inline-block;
         width: 222px;
         margin-bottom: 39px;
+
+        @include mq($md) {
+            margin-bottom: 36px;
+            ;
+        }
     }
 
     &__info-content {
@@ -58,6 +63,10 @@
         & dt {
             margin-right: 15px;
             margin-bottom: 16px;
+
+            @include mq($md) {
+                margin-bottom: 20px;
+            }
         }
 
         & dd {
@@ -65,8 +74,21 @@
         }
     }
 
+    &__address {
+        display: flex;
+
+        @include mq($sp) {
+            display: block;
+        }
+    }
+
     &-nav {
         padding-top: 28px;
+
+        @include mq($sp) {
+            padding-top: 50px;
+            padding-bottom: 22px;
+        }
 
         &__lists {
             font-size: 1rem;
@@ -82,6 +104,10 @@
         &__list__contact {
             position: relative;
             margin-left: 28px;
+
+            @include mq($sp) {
+                margin-left: 0;
+            }
         }
 
         &__list__contact::before {
@@ -93,6 +119,12 @@
             top: 0;
             left: -28px;
             z-index: 1;
+
+            @include mq($sp) {
+                top: -3px;
+                left: 28%;
+            }
+
         }
 
 
@@ -104,6 +136,8 @@
 
             @include mq($sp) {
                 flex-direction: column;
+                gap: 32px;
+                margin-bottom: 32px;
             }
         }
     }
@@ -115,8 +149,11 @@
         text-align: right;
         margin-right: 56px;
 
-        &-wrapper {
-            text-align: right;
+        @include mq($sp) {
+            text-align: center;
+            margin-right: 0;
         }
+
+
     }
 }

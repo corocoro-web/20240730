@@ -313,6 +313,11 @@ img {
   line-height: 1;
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .ttl--ja {
+    margin-bottom: 16px;
+  }
+}
 
 .ttl--en {
   font-family: "Kanit", sans-serif;
@@ -337,6 +342,7 @@ img {
   border-radius: 10px;
   border: 1px solid #000;
   text-align: center;
+  letter-spacing: 0.1em;
 }
 .btn--more::after {
   content: "●";
@@ -383,8 +389,8 @@ img {
   background-color: #000;
   width: 20px;
   height: 20px;
-  top: 23px;
-  left: 35px;
+  top: 22px;
+  left: 40px;
   z-index: 1;
   color: #fff;
 }
@@ -671,13 +677,6 @@ details summary::before {
   .header-nav {
     pointer-events: none;
     /*隠れている時は触れないようにしておく*/
-    overflow: hidden;
-    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
-    position: fixed;
-    z-index: -1;
-    /*はじめは最背面*/
-    opacity: 0;
-    /*はじめは透過0*/
     /*ナビの位置と形状*/
     top: 55px;
     width: 100%;
@@ -686,7 +685,6 @@ details summary::before {
     background: #4282B8;
     /*動き*/
     transition: all 0.3s;
-    background: #4282B8;
     /*アクティブクラスがついたら透過なしにして最前面へ*/
     /*ナビゲーションの縦スクロール*/
     /*ナビゲーション*/
@@ -696,7 +694,7 @@ details summary::before {
     pointer-events: auto;
     /*表示された時に解除する*/
     position: absolute;
-    top: 96px;
+    top: 102px;
     opacity: 1;
     z-index: 999;
   }
@@ -709,7 +707,6 @@ details summary::before {
 @media (max-width: 768px) {
   .header-nav__lists {
     /*ナビの数が増えた場合縦スクロール*/
-    position: fixed;
     width: 100%;
     height: 100vh;
     /*表示する高さ*/
@@ -755,7 +752,7 @@ details summary::before {
 }
 @media (max-width: 768px) {
   .footer {
-    padding: 117px 20px 26px;
+    padding: 126px 20px 26px;
     margin-left: 0;
   }
 }
@@ -785,6 +782,11 @@ details summary::before {
   width: 222px;
   margin-bottom: 39px;
 }
+@media (max-width: 768px) {
+  .footer__info-logo img {
+    margin-bottom: 36px;
+  }
+}
 .footer__info-content {
   display: flex;
   flex-direction: column;
@@ -804,11 +806,30 @@ details summary::before {
   margin-right: 15px;
   margin-bottom: 16px;
 }
+@media (max-width: 768px) {
+  .footer__info-wrapper dt {
+    margin-bottom: 20px;
+  }
+}
 .footer__info-wrapper dd {
   margin-bottom: 16px;
 }
+.footer__address {
+  display: flex;
+}
+@media (max-width: 580px) {
+  .footer__address {
+    display: block;
+  }
+}
 .footer-nav {
   padding-top: 28px;
+}
+@media (max-width: 580px) {
+  .footer-nav {
+    padding-top: 50px;
+    padding-bottom: 22px;
+  }
 }
 .footer-nav__lists {
   font-size: 1rem;
@@ -823,6 +844,11 @@ details summary::before {
   position: relative;
   margin-left: 28px;
 }
+@media (max-width: 580px) {
+  .footer-nav__list__contact {
+    margin-left: 0;
+  }
+}
 .footer-nav__list__contact::before {
   position: absolute;
   content: "";
@@ -833,6 +859,12 @@ details summary::before {
   left: -28px;
   z-index: 1;
 }
+@media (max-width: 580px) {
+  .footer-nav__list__contact::before {
+    top: -3px;
+    left: 28%;
+  }
+}
 .footer-nav__wrapper {
   display: flex;
   gap: 24px;
@@ -841,6 +873,8 @@ details summary::before {
 @media (max-width: 580px) {
   .footer-nav__wrapper {
     flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
   }
 }
 .footer__copy {
@@ -850,8 +884,11 @@ details summary::before {
   text-align: right;
   margin-right: 56px;
 }
-.footer__copy-wrapper {
-  text-align: right;
+@media (max-width: 580px) {
+  .footer__copy {
+    text-align: center;
+    margin-right: 0;
+  }
 }
 
 .main {
@@ -912,7 +949,7 @@ details summary::before {
 @media (max-width: 580px) {
   .main-inner {
     border-radius: 10px 0px 0px 10px;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 589px;
     margin-left: 10px;
   }
@@ -1231,7 +1268,7 @@ details summary::before {
 @media (max-width: 768px) {
   .about__txt {
     width: auto;
-    margin-bottom: 27px;
+    margin-bottom: 32px;
   }
 }
 
@@ -1299,6 +1336,11 @@ details summary::before {
 .service__ttl {
   margin-bottom: 64px;
 }
+@media (max-width: 768px) {
+  .service__ttl {
+    margin-bottom: 24px;
+  }
+}
 .service__item {
   display: flex;
   justify-content: left;
@@ -1314,8 +1356,8 @@ details summary::before {
   .service__item {
     flex-wrap: wrap;
     flex-direction: column-reverse;
-    gap: 35px;
-    margin-bottom: 55px;
+    gap: 20px;
+    margin-bottom: 50px;
   }
 }
 .service__item img {
@@ -1443,7 +1485,7 @@ details summary::before {
 }
 @media (max-width: 768px) {
   .news-inner {
-    padding: 107px 20px 132px;
+    padding: 85px 20px 64px;
   }
 }
 .news__ttl {
@@ -1460,6 +1502,7 @@ details summary::before {
 }
 .news__list {
   font-weight: 700;
+  line-height: 1.8;
 }
 .news__list--event {
   border: 1px solid #B1C6DC;
@@ -1491,31 +1534,33 @@ details summary::before {
   width: 100%;
   text-align: left;
   position: relative;
-}
-.modal__btn dt {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: 700;
   padding-top: 32px;
-}
-@media (max-width: 1024px) {
-  .modal__btn dt {
-    padding-top: 25px;
-  }
-}
-.modal__btn dt {
-  margin-bottom: 24px;
-}
-.modal__btn dd {
-  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
-  font-weight: 700;
-  line-height: 1;
   padding-bottom: 34px;
   border-bottom: 1px solid #B1C6DC;
 }
 @media (max-width: 1024px) {
-  .modal__btn dd {
+  .modal__btn {
+    padding-top: 25px;
     padding-bottom: 25px;
   }
+}
+@media (max-width: 768px) {
+  .modal__btn {
+    padding-top: 18px;
+    padding-bottom: 16px;
+    padding-right: 37px;
+  }
+}
+.modal__btn dt {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+}
+.modal__btn dt {
+  margin-bottom: 16px;
+}
+.modal__btn dd {
+  font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  font-weight: 700;
 }
 .modal__btn:hover {
   color: #4282B8;
@@ -1528,6 +1573,11 @@ details summary::before {
   height: 16px;
   top: 42%;
   right: 27px;
+}
+@media (max-width: 768px) {
+  .modal__btn::after {
+    right: 0;
+  }
 }
 
 .modal__overlay {
@@ -1638,7 +1688,7 @@ details summary::before {
   font-size: 42px;
   cursor: pointer;
   /* カーソルをポインターに */
-  color: #fff;
+  color: red;
   z-index: 5;
 }
 
@@ -1701,9 +1751,9 @@ details summary::before {
     padding: 32px 20px 55px 24px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .contact-inner {
-    padding: 32px 20px 55px;
+    padding: 26px 20px 41px;
   }
 }
 .contact__ttl {
@@ -1732,7 +1782,7 @@ details summary::before {
     border-bottom: 1px solid #000;
     display: flex;
     gap: 16px;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
   }
 }
 .contact__number {
@@ -1743,7 +1793,7 @@ details summary::before {
 @media (max-width: 768px) {
   .contact__number {
     border-right: none;
-    padding: 24px 0 36px;
+    padding: 13px 0 30px;
   }
 }
 .contact__tel-content, .contact__number-content {
