@@ -19,10 +19,11 @@ body {
 main {
     text-align: left;
     margin-left: 280px;
-    width: 100%;
+    width: calc(100% - 280px);
     position: relative;
 
-    @include mq($md) {
+    @include mq($lg) {
+        width: 100%;
         top: 102px;
         margin-left: 0;
     }
@@ -60,6 +61,15 @@ p {
     line-height: 1.5;
 }
 
+
+.pc {
+    display: block;
+
+    @include mq($lg) {
+        display: none;
+    }
+
+}
 
 
 .brtb {

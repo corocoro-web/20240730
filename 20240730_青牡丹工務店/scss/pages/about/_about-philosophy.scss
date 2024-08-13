@@ -1,0 +1,16 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.philosophy {
+    &-inner {
+        padding: 40px 0 25px;
+    }
+
+    &__ttl {
+        margin-bottom: 64px;
+    }
+
+    & img {
+        max-width: 923px;
+    }
+}

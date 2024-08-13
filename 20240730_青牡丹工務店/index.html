@@ -47,11 +47,12 @@
                         <img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
                     </a>
                 </div>
-                <nav class="header-nav" aria-label="メインナビゲーション">
+                <nav class="header-nav pc" aria-label="メインナビゲーション">
                     <ul class="header-nav__lists">
                         <li class="header-nav__list">
                             <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="">私たちについて</a></summary>
+                                <summary class="header-nav__accordion-ttl open"><a href="about.html">私達について</a>
+                                </summary>
                                 <div class="header-nav__accordion-box">
                                     <a class="header-nav__accordion-txt" href="">経営理念</a>
                                     <a class="header-nav__accordion-txt" href="">会社概要</a>
@@ -61,7 +62,8 @@
                         </li>
                         <li class="header-nav__list">
                             <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="">事業内容</a></summary>
+                                <summary class="header-nav__accordion-ttl open"><a href="service.html">事業内容</a>
+                                </summary>
                                 <div class="header-nav__accordion-box">
                                     <a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a>
                                     <a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a>
@@ -70,11 +72,11 @@
                             </details>
                         </li>
                         <li class="header-nav__list"><a href="">お知らせ</a></li>
-                        <li class="header-nav__list"><a href="">お問い合わせ</a></li>
+                        <li class="header-nav__list"><a href="contact.html">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="header__btn">
-                    <div class="sp">
+                    <div class="tb">
                         <!--==============ハンバーガーメニュー===============-->
                         <button class="header__openbtn" aria-label="メニューを開く"><span
                                 class="header__menu-line"></span><span class="header__menu-line"></span><span
@@ -82,6 +84,24 @@
                     </div>
                 </div>
             </div>
+            <nav class="header-nav-sp tb" aria-label="スマホナビゲーション">
+                <ul class="header-nav-sp__lists">
+                    <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
+                    <li class="header-nav-sp__list"><a href="about.html"><span>私達について</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>安全への取り組み</span></a></li>
+                    <li class="header-nav-sp__list"><a href="service.html"><span>事業内容</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>住宅建築・リフォーム</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>法人新築・リフォーム</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>公共工事</span></a></li>
+                    <li class="header-nav-sp__list"><a href=""><span>お知らせ</span></a></li>
+                    <li class="header-nav-sp__list"><a href="contact.html"><span>お問い合わせ</span></a></li>
+                </ul>
+                <div class="header__copy-wrapper">
+                    <small class="footer__copy">&copy;AOBOTAN INC.</small>
+                </div>
+            </nav>
         </header>
         <main id="top">
             <section class="main">
@@ -199,27 +219,31 @@
                                 <!-- <button class="modal__close-top" aria-label="Close modal" -->
                                 <!-- data-micromodal-close>&#x2715;</button> -->
                                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-
-                                    <div class="modal__container modal__container01" role="dialog" aria-modal="true"
-                                        aria-labelledby="modal-1-title">
+                                    <div class="modal__wrapper">
                                         <button class="modal__close-top" aria-label="Close modal"
                                             data-micromodal-close>&#x2715;</button>
-                                        <dl>
-                                            <dt><span class="news__list--event">イベント情報</span>
-                                                <time datetime="2024-06-03" class="news__list--date">2024.06.03</time>
-                                            </dt>
-                                            <dd>住宅設計相談会を実施します。弊社建築士と将来の家造りを真剣に考えませんか？</dd>
-                                        </dl>
-                                        <img src="images/top/news01.jpg" alt="リビングダイニングの写真">
-                                        <p class="news__list-txt">
-                                            みなさま、こんにちは！弊社では、住宅設計相談会を開催することになりました！将来の家造りを真剣に考える皆様、ぜひご参加ください。
-                                            <br>〜〜〜〜〜〜
-                                        </p>
-                                        <div class="modal__close-bottom">
-                                            <button class="modal__close btn--more" aria-label="Close modal"
-                                                data-micromodal-close>閉じる</button>
+                                        <div class="modal__container modal__container01" role="dialog" aria-modal="true"
+                                            aria-labelledby="modal-1-title">
+
+                                            <dl>
+                                                <dt><span class="news__list--event">イベント情報</span>
+                                                    <time datetime="2024-06-03"
+                                                        class="news__list--date">2024.06.03</time>
+                                                </dt>
+                                                <dd>住宅設計相談会を実施します。弊社建築士と将来の家造りを真剣に考えませんか？</dd>
+                                            </dl>
+                                            <img src="images/top/news01.jpg" alt="リビングダイニングの写真">
+                                            <p class="news__list-txt">
+                                                みなさま、こんにちは！弊社では、住宅設計相談会を開催することになりました！将来の家造りを真剣に考える皆様、ぜひご参加ください。
+                                                <br>〜〜〜〜〜〜
+                                            </p>
+                                            <div class="modal__close-bottom">
+                                                <button class="modal__close btn--more" aria-label="Close modal"
+                                                    data-micromodal-close>閉じる</button>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -232,39 +256,41 @@
                                 </dt>
                                 <dd>安全管理研修を行いました。</dd>
                             </button>
-
                             <div id="modal-2" aria-hidden="true">
                                 <!-- <button class="modal__close-top" aria-label="Close modal" -->
                                 <!-- data-micromodal-close>&#x2715;</button> -->
                                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                    <div class="modal__container modal__container02" role="dialog" aria-modal="true"
-                                        aria-labelledby="modal-2-title">
+                                    <div class="modal__wrapper">
                                         <button class="modal__close-top" aria-label="Close modal"
                                             data-micromodal-close>&#x2715;</button>
-                                        <dl>
-                                            <dt><span class="news__list--event">イベント情報</span>
-                                                <time datetime="2024-05-23" class="news__list--date">2024.05.23</time>
-                                            </dt>
-                                            <dd>安全管理研修を行いました。</dd>
-                                        </dl>
-                                        <img src="images/top/news02.jpg" alt="リビングダイニングの写真">
-                                        <p class="news__list-txt">
-                                            弊社では、従業員の安全意識向上と安全管理の強化を目的として、安全管理研修を実施しました。この研修では、従業員全員が安全な作業環境を確保するための重要性や具体的な対策について学び、より安全な職場づくりに向けた取り組みを行いました。
-                                            研修では、以下の内容を中心に学びました：
-                                        </p>
-                                        <ul>
-                                            <li>作業中の事故や災害を防ぐための基本的な安全ルールや手順
-                                            </li>
-                                            <li>安全装置や保護具の正しい使用方法と管理について
-                                            </li>
-                                            <li>作業現場での危険予知や事故対応のためのトレーニング
-                                            </li>
-                                        </ul>
-                                        <p>また、実際の事例やケーススタディを通じて、事故や災害が発生した際の適切な対応方法についても学びました。参加者全員が積極的に議論し、知識を深めることができました。<br><br>安全管理研修を通じて、従業員一人ひとりが安全に対する意識を高め、安全な職場環境の実現に向けて一層の努力をすることを確認しました。今後も定期的に研修を実施し、安全管理の徹底を図ってまいります。
-                                        </p>
-                                        <div class="modal__close-bottom">
-                                            <button class="modal__close btn--more" aria-label="Close modal"
-                                                data-micromodal-close>閉じる</button>
+                                        <div class="modal__container modal__container02" role="dialog" aria-modal="true"
+                                            aria-labelledby="modal-2-title">
+                                            <dl>
+                                                <dt><span class="news__list--event">イベント情報</span>
+                                                    <time datetime="2024-05-23"
+                                                        class="news__list--date">2024.05.23</time>
+                                                </dt>
+                                                <dd>安全管理研修を行いました。</dd>
+                                            </dl>
+                                            <img src="images/top/news02.jpg" alt="リビングダイニングの写真">
+                                            <p class="news__list-txt">
+                                                弊社では、従業員の安全意識向上と安全管理の強化を目的として、安全管理研修を実施しました。この研修では、従業員全員が安全な作業環境を確保するための重要性や具体的な対策について学び、より安全な職場づくりに向けた取り組みを行いました。
+                                                研修では、以下の内容を中心に学びました：
+                                            </p>
+                                            <ul>
+                                                <li>作業中の事故や災害を防ぐための基本的な安全ルールや手順
+                                                </li>
+                                                <li>安全装置や保護具の正しい使用方法と管理について
+                                                </li>
+                                                <li>作業現場での危険予知や事故対応のためのトレーニング
+                                                </li>
+                                            </ul>
+                                            <p>また、実際の事例やケーススタディを通じて、事故や災害が発生した際の適切な対応方法についても学びました。参加者全員が積極的に議論し、知識を深めることができました。<br><br>安全管理研修を通じて、従業員一人ひとりが安全に対する意識を高め、安全な職場環境の実現に向けて一層の努力をすることを確認しました。今後も定期的に研修を実施し、安全管理の徹底を図ってまいります。
+                                            </p>
+                                            <div class="modal__close-bottom">
+                                                <button class="modal__close btn--more" aria-label="Close modal"
+                                                    data-micromodal-close>閉じる</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -283,37 +309,40 @@
                                 <!-- <button class="modal__close-top" aria-label="Close modal" --> -->
                                 <!-- data-micromodal-close>&#x2715;</button> -->
                                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                    <div class="modal__container modal__container03" role="dialog" aria-modal="true"
-                                        aria-labelledby="modal-3-title">
+                                    <div class="modal__wrapper">
                                         <button class="modal__close-top" aria-label="Close modal"
                                             data-micromodal-close>&#x2715;</button>
-                                        <dl>
-                                            <dt><span class="news__list--event">イベント情報</span>
-                                                <time datetime="2024-05-01" class="news__list--date">2024.05.01</time>
-                                            </dt>
-                                            <dd>ホームページをリニューアルしました！！</dd>
-                                        </dl>
-                                        <img src="images/top/news03.jpg" alt="リビングダイニングの写真">
-                                        <p class="news__list-txt">
-                                            弊社は、お客様により良いサービスを提供するため、ホームページをリニューアルいたしました。新しいデザインと使いやすさを追求し、お客様が情報をより簡単に見つけられるように工夫しました。
-                                            新しいホームページでは、以下のような改善点がございます：
-                                        </p>
-                                        <ul>
-                                            <li>モダンでスタイリッシュなデザインにより、情報の見やすさと視覚的な魅力を向上
-                                            </li>
-                                            <li>より直感的で分かりやすいナビゲーションメニューにより、目的の情報へのアクセスがスムーズになりました
-                                            </li>
-                                            <li>より多くの情報やサービスを掲載し、お客様のニーズに合った情報を提供するようになりました
-                                            </li>
-                                            <li>モバイルフレンドリーなデザインで、スマートフォンやタブレットからも快適に閲覧できます</li>
-                                        </ul>
-                                        <p>弊社のホームページは、お客様とのコミュニケーションや情報提供の重要なツールです。より使いやすく、わかりやすいホームページを提供することで、お客様との良好な関係を築いていくことが目標です。
-                                            <br><br>
-                                            ぜひ、新しいホームページをご覧いただき、お客様のご意見やご要望をお聞かせください。今後もお客様により良いサービスを提供できるよう努めてまいります。
-                                        </p>
-                                        <div class="modal__close-bottom">
-                                            <button class="modal__close btn--more" aria-label="Close modal"
-                                                data-micromodal-close>閉じる</button>
+                                        <div class="modal__container modal__container03" role="dialog" aria-modal="true"
+                                            aria-labelledby="modal-3-title">
+                                            <dl>
+                                                <dt><span class="news__list--event">イベント情報</span>
+                                                    <time datetime="2024-05-01"
+                                                        class="news__list--date">2024.05.01</time>
+                                                </dt>
+                                                <dd>ホームページをリニューアルしました！！</dd>
+                                            </dl>
+                                            <img src="images/top/news03.jpg" alt="リビングダイニングの写真">
+                                            <p class="news__list-txt">
+                                                弊社は、お客様により良いサービスを提供するため、ホームページをリニューアルいたしました。新しいデザインと使いやすさを追求し、お客様が情報をより簡単に見つけられるように工夫しました。
+                                                新しいホームページでは、以下のような改善点がございます：
+                                            </p>
+                                            <ul>
+                                                <li>モダンでスタイリッシュなデザインにより、情報の見やすさと視覚的な魅力を向上
+                                                </li>
+                                                <li>より直感的で分かりやすいナビゲーションメニューにより、目的の情報へのアクセスがスムーズになりました
+                                                </li>
+                                                <li>より多くの情報やサービスを掲載し、お客様のニーズに合った情報を提供するようになりました
+                                                </li>
+                                                <li>モバイルフレンドリーなデザインで、スマートフォンやタブレットからも快適に閲覧できます</li>
+                                            </ul>
+                                            <p>弊社のホームページは、お客様とのコミュニケーションや情報提供の重要なツールです。より使いやすく、わかりやすいホームページを提供することで、お客様との良好な関係を築いていくことが目標です。
+                                                <br><br>
+                                                ぜひ、新しいホームページをご覧いただき、お客様のご意見やご要望をお聞かせください。今後もお客様により良いサービスを提供できるよう努めてまいります。
+                                            </p>
+                                            <div class="modal__close-bottom">
+                                                <button class="modal__close btn--more" aria-label="Close modal"
+                                                    data-micromodal-close>閉じる</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -344,69 +373,74 @@
         </main>
         <footer class="footer">
             <div class="footer-inner inner">
-                <div class="footer__info">
-                    <a class="footer__info-logo" href="#top"><img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ"></a>
-                    <dl class="footer__info-content">
-                        <div class="footer__info-wrapper footer__address">
-                            <dt>〒000-0000</dt>
-                            <dd>大阪府大阪市中央区北区南町5-6-7</dd>
-                        </div>
-                        <div class="footer__info-wrapper">
-                            <dt>営業時間</dt>
-                            <dd>10:00~20:00</dd>
-                        </div>
-                        <div class="footer__info-wrapper">
-                            <dt>定休日</dt>
-                            <dd>日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
-                        </div>
-                    </dl>
+                <div class="footer-wrapper">
+                    <div class="footer__info">
+                        <a class="footer__info-logo" href="#top"><img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ"></a>
+                        <dl class="footer__info-content">
+                            <div class="footer__info-wrapper footer__address">
+                                <dt>〒000-0000</dt>
+                                <dd>大阪府大阪市中央区北区南町5-6-7</dd>
+                            </div>
+                            <div class="footer__info-wrapper">
+                                <dt>営業時間</dt>
+                                <dd>10:00~20:00</dd>
+                            </div>
+                            <div class="footer__info-wrapper">
+                                <dt>定休日</dt>
+                                <dd>日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <nav class="footer-nav">
+                        <ul class="footer-nav__lists">
+                            <div class="footer-nav__wrapper">
+                                <li class="footer-nav__list">
+                                    <a href="">トップページ</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">私たちについて</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">経営理念</a>
+                                </li>
+                            </div>
+                            <div class="footer-nav__wrapper">
+                                <li class="footer__nav__list">
+                                    <a href="">会社概要</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">安全への取り組み</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">事業内容</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">住宅建築・リフォーム</a>
+                                </li>
+                            </div>
+                            <div class="footer-nav__wrapper">
+                                <li class="footer__nav__list">
+                                    <a href="">法人新築・リフォーム</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">公共工事</a>
+                                </li>
+                                <li class="footer-nav__list">
+                                    <a href="">お知らせ</a>
+                                </li>
+                                <li class="footer-nav__list footer-nav__list__contact">
+                                    <a href="">お問い合わせ</a>
+                                </li>
+                            </div>
+                        </ul>
+                    </nav>
                 </div>
-                <nav class="footer-nav">
-                    <ul class="footer-nav__lists">
-                        <div class="footer-nav__wrapper">
-                            <li class="footer-nav__list">
-                                <a href="">トップページ</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">私たちについて</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">経営理念</a>
-                            </li>
-                        </div>
-                        <div class="footer-nav__wrapper">
-                            <li class="footer__nav__list">
-                                <a href="">会社概要</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">安全への取り組み</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">事業内容</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">住宅建築・リフォーム</a>
-                            </li>
-                        </div>
-                        <div class="footer-nav__wrapper">
-                            <li class="footer__nav__list">
-                                <a href="">法人新築・リフォーム</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">公共工事</a>
-                            </li>
-                            <li class="footer-nav__list">
-                                <a href="">お知らせ</a>
-                            </li>
-                            <li class="footer-nav__list footer-nav__list__contact">
-                                <a href="">お問い合わせ</a>
-                            </li>
-                        </div>
-                    </ul>
+                <div class="footer__copy-wrapper">
+                    <small class="footer__copy">&copy;AOBOTAN INC.</small>
+                </div>
             </div>
-            <div class="footer__copy-wrapper">
-                <small class="footer__copy">&copy;AOBOTAN INC.</small>
-            </div>
+
+
         </footer>
     </div>
     <!--==============jQueryのjs=============-->

@@ -2,17 +2,12 @@
 @use "../abstracts/mixin" as *;
 
 .footer {
-    padding: 117px 0 26px 0;
     margin-left: 280px;
-    width: 100%;
+    width: calc(100% - 280px);
 
     @include mq($xl) {
-        padding: 117px 20px 26px 0;
-    }
-
-    @include mq($md) {
-        padding: 126px 20px 26px;
         margin-left: 0;
+        width: 100%;
     }
 
     @include mq($sp) {
@@ -21,6 +16,19 @@
 
     &-inner {
         width: 100%;
+
+        padding: 117px 0 26px;
+
+        @include mq($xl) {
+            padding: 117px 20px 26px 280px;
+        }
+
+        @include mq($lg) {
+            padding: 126px 20px 26px;
+        }
+    }
+
+    &-wrapper {
         display: flex;
         flex-wrap: wrap;
         gap: 109px;
@@ -142,18 +150,23 @@
         }
     }
 
-    &__copy {
-        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
-        font-weight: 400;
-        line-height: 1.0;
+    &__copy-wrapper {
         text-align: right;
-        margin-right: 56px;
 
         @include mq($sp) {
             text-align: center;
             margin-right: 0;
         }
+    }
 
+    &__copy {
+        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+        font-weight: 400;
+        line-height: 1.0;
+        margin-right: 56px;
 
+        @include mq($sp) {
+            margin-right: 0;
+        }
     }
 }

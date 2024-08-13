@@ -1,0 +1,40 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.safety {
+    &-inner {
+        padding: 28px 20px 163px 0;
+    }
+
+    &__ttl {
+        margin-bottom: 86px;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+    }
+
+    &__item-ttl {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.8;
+        margin-bottom: 31px;
+    }
+
+    &__item-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 44px;
+
+        & img {
+            width: 267px;
+        }
+    }
+
+    &__item-txt {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        max-width: 642px;
+    }
+}

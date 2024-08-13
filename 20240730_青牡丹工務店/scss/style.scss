@@ -11,14 +11,22 @@
 @use "layout/header";
 @use "layout/footer";
 
-
-@use "pages/top-main";
-@use "pages/top-images";
-@use "pages/top-about";
-@use "pages/top-service";
-@use "pages/top-news";
-@use "pages/top-contact";
+//top
+@use "pages/top/top-main";
+@use "pages/top/top-images";
+@use "pages/top/top-about";
+@use "pages/top/top-service";
+@use "pages/top/top-news";
+@use "pages/top/top-contact";
 
 @use "base/animation";
 
-@use "pages/about-main"
+//about
+@use "pages/about/about-main";
+@use "pages/about/about-intro";
+@use "pages/about/about-philosophy";
+@use "pages/about/about-overview";
+@use "pages/about/about-safety";
+
+//serice
+@use "pages/service/service-works"

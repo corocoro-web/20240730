@@ -1,0 +1,73 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.works {
+
+    &-inner {
+        max-width: 980px;
+        padding: 35px 20px 37px 0;
+
+        &:last-child {
+            padding: 35px 20px 72px 0;
+        }
+
+        & img {
+            width: 100%;
+            margin-bottom: 56px;
+        }
+    }
+
+    &__wrapper {
+        padding: 0 50px;
+    }
+
+    &__ttl {
+        padding-bottom: 39px;
+        border-bottom: 1px solid $l-blue;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 88px;
+    }
+
+    &__txt--left {
+        max-width: 374px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.8;
+    }
+
+    &__txt--right {
+        max-width: 446px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 62px;
+
+        & img {
+            width: 352px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__image-ttl {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.0;
+        margin-bottom: 20px;
+    }
+
+    &__image-detail {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.0;
+    }
+}

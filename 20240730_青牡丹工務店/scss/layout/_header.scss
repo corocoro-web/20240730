@@ -15,7 +15,7 @@
     z-index: 3;
     overflow-y: auto;
 
-    @include mq($md) {
+    @include mq($lg) {
         width: 100%;
         height: 102px;
         /*後で消す*/
@@ -24,12 +24,16 @@
     &-inner {
         padding: 74px 40px 0;
 
-        @include mq($md) {
+        @include mq($lg) {
             padding: 0;
             display: flex;
             justify-content: space-between;
         }
 
+    }
+
+    &__logo {
+        z-index: 5;
     }
 
     &__logo a {
@@ -38,7 +42,7 @@
         height: 121px;
         margin-bottom: 25px;
 
-        @include mq($md) {
+        @include mq($lg) {
             width: auto;
             height: auto;
             margin-bottom: 0;
@@ -49,10 +53,9 @@
     &__logo img {
         width: 100%;
 
-        @include mq($md) {
+        @include mq($lg) {
             width: 130px;
         }
-
 
         @include mq($sp) {
             width: 98px;
@@ -106,6 +109,10 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 24px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1.0;
+            padding-left: 17px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -140,23 +147,23 @@ details summary::before {
 .header__openbtn {
     display: none;
 
-    @include mq($md) {
+    @include mq($lg) {
         display: block;
         position: relative;
         cursor: pointer;
         background-color: $blue;
         width: 100px;
         height: 80px;
+        z-index: 5;
     }
 
     @include mq($sp) {
         width: 56px;
         height: 48px;
-        /*後で消す*/
     }
 
     &:focus-visible {
-        @include mq($md) {
+        @include mq($lg) {
             border: 2px solid $white;
             transform: scale(1.05);
             /* ボタンを少し大きくして目立たせる */
@@ -164,8 +171,8 @@ details summary::before {
     }
 
     span:nth-of-type(1) {
-        @include mq($md) {
-            top: 20px;
+        @include mq($lg) {
+            top: 25px;
         }
 
         @include mq($sp) {
@@ -174,8 +181,8 @@ details summary::before {
     }
 
     span:nth-of-type(2) {
-        @include mq($md) {
-            top: 33px;
+        @include mq($lg) {
+            top: 38px;
         }
 
         @include mq($sp) {
@@ -184,8 +191,8 @@ details summary::before {
     }
 
     span:nth-of-type(3) {
-        @include mq($md) {
-            top: 45px;
+        @include mq($lg) {
+            top: 51px;
         }
 
         @include mq($sp) {
@@ -195,7 +202,7 @@ details summary::before {
 
     /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更　※今回は文字の変更なし*/
     &.active span:nth-of-type(1) {
-        @include mq($md) {
+        @include mq($lg) {
             top: 31px;
             left: 25px;
             transform: translateY(6px) rotate(-45deg);
@@ -203,21 +210,21 @@ details summary::before {
         }
 
         @include mq($sp) {
-            top: 19px;
-            left: 15px;
+            top: 16px;
+            left: 13px;
             transform: translateY(6px) rotate(-45deg);
             width: 50%;
         }
     }
 
     &.active span:nth-of-type(2) {
-        @include mq($md) {
+        @include mq($lg) {
             opacity: 0;
         }
     }
 
     &.active span:nth-of-type(3) {
-        @include mq($md) {
+        @include mq($lg) {
             top: 44px;
             left: 25px;
             transform: translateY(-6px) rotate(45deg);
@@ -225,8 +232,8 @@ details summary::before {
         }
 
         @include mq($sp) {
-            top: 31px;
-            left: 16px;
+            top: 28px;
+            left: 13px;
             transform: translateY(-6px) rotate(45deg);
             width: 50%;
         }
@@ -237,12 +244,12 @@ details summary::before {
 .header__menu-line {
     display: none;
 
-    @include mq($md) {
+    @include mq($lg) {
         display: inline-block;
         transition: all .4s;
         /*アニメーションの設定*/
         position: absolute;
-        left: 22px;
+        left: 25px;
         height: 1px;
         border-radius: 5px;
         background: $white;
@@ -250,14 +257,14 @@ details summary::before {
         width: 50px;
 
         @include mq($sp) {
-            left: 16px;
+            left: 12px;
             width: 32px;
         }
     }
 
     /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更　※今回は文字の変更なし*/
     &.active {
-        @include mq($md) {
+        @include mq($lg) {
             display: inline-block;
             transition: all .4s;
             /*アニメーションの設定*/
@@ -276,31 +283,29 @@ details summary::before {
 
 /*--------------ナビゲーション-------------------*/
 
-@include mq($md) {
-    .header-nav {
+@include mq($lg) {
+    .header-nav-sp {
         pointer-events: none;
         /*隠れている時は触れないようにしておく*/
+        opacity: 0;
+        /*はじめは透過0*/
         /*ナビの位置と形状*/
-        top: 56px;
-        width: 100%;
-        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100%;
         /*ナビの高さ*/
-        background: $blue;
+        background: $gray;
         /*動き*/
-        transition: all 0.3s;
+        transition: all 0.3s ease;
 
         /*アクティブクラスがついたら透過なしにして最前面へ*/
         &.panelactive {
             pointer-events: auto;
             /*表示された時に解除する*/
-            position: absolute;
-            top: 102px;
+            top: 0;
             opacity: 1;
-            z-index: 999;
-
-            @include mq($md) {
-                top: 64px;
-            }
+            z-index: 3;
         }
 
         /*ナビゲーションの縦スクロール*/
@@ -313,40 +318,113 @@ details summary::before {
             -webkit-overflow-scrolling: touch;
         }
 
-
         /*ナビゲーション*/
         &__lists {
             display: block;
-            /*ナビゲーション天地中央揃え*/
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 0;
+            padding-top: 140px;
+            text-align: center;
+
+            @include mq($md) {
+                padding-top: 93px;
+            }
 
             &.panelactive {
                 display: block;
             }
         }
 
-        /*リストのレイアウト設定*/
         &__list {
-            text-align: left;
-            border-bottom: 1px solid $white;
+            margin-bottom: 0;
+
+            &:last-child {
+                position: relative;
+
+                ::before {
+                    position: absolute;
+                    content: "";
+                    background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+                    width: 20px;
+                    height: 20px;
+                    top: 50%;
+                    left: 30%;
+                    transform: translateY(-50%);
+                    color: $black;
+                }
+            }
+
+
 
             & a {
-                display: block;
-                color: $white;
-                padding: 24px 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0 15px;
+                font-size: 1.25rem;
+
+                @include mq($sp) {
+                    font-size: 1rem;
+                    padding: 16px 0 11px;
+                }
 
                 &:focus-visible {
                     border: 2px solid $white;
                     transform: scale(1.025);
                     /* ボタンを少し大きくして目立たせる */
                 }
+
+                & span {
+                    position: relative;
+                    padding-bottom: 5px;
+
+                    &::after {
+                        background: $blue;
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        margin: auto;
+                        transform-origin: right top;
+                        transform: scale(0, 1);
+                        transition: transform .3s;
+                    }
+                }
+
+
+                &:hover span::after {
+                    transform-origin: left top;
+                    transform: scale(1, 1);
+                }
+
+                &:hover {
+                    color: $blue;
+                }
             }
+
         }
     }
-
-
 }
+
+
+// @include mq($md) {
+//     
+//        
+//      
+//        
+//             & a {
+//                 display: block;
+//                 color: $white;
+//                 padding: 24px 16px;
+
+//                 &:focus-visible {
+//                     border: 2px solid $white;
+//                     transform: scale(1.025);
+//                     /* ボタンを少し大きくして目立たせる */
+//                 }
+//             }
+//         }
+//     }
+
+
+// }

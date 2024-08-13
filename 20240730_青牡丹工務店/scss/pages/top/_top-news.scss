@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixin" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
 
 .news {
     position: relative;
@@ -7,7 +7,7 @@
     &-inner {
         padding: 107px 0 132px;
 
-        @include mq($md) {
+        @include mq($lg) {
             padding: 85px 20px 64px;
         }
 
@@ -127,6 +127,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 60px;
+
+    @include mq($md) {
+        padding: 0 20px;
+    }
+}
+
+.modal__wrapper {
+    position: relative;
+}
+
+.modal__close-top {
+    position: absolute;
+    top: -8px;
+    right: -26px;
+    border: none;
+    font-size: 42px;
+    cursor: pointer;
+    /* カーソルをポインターに */
+    color: $white;
+    z-index: 5;
+    font-weight: 700;
+
+    @include mq($md) {
+        font-size: 32px;
+    }
+
+    @include mq($md) {
+        top: -35px;
+        right: 22px;
+        font-size: 25px;
+    }
 }
 
 .modal__container {
@@ -135,14 +167,14 @@
     padding: 16px 102px 24px;
     margin-right: 20px;
     margin-left: 20px;
-    width: 860px;
+    max-width: 860px;
     border-radius: 4px;
     overflow-y: auto;
     max-height: 80vh;
     /* モーダルの高さの上限を設定 */
 
     @include mq($md) {
-        width: 500px;
+        max-width: 540px;
         padding: 16px 45px 24px;
     }
 
@@ -213,17 +245,7 @@
     }
 }
 
-.modal__close-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    font-size: 42px;
-    cursor: pointer;
-    /* カーソルをポインターに */
-    color: red;
-    z-index: 5;
-}
+
 
 .modal__close-bottom {
     text-align: center;

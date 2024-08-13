@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixin" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
 
 .service {
     position: relative;
@@ -9,15 +9,15 @@
         content: "";
         background-color: $gray;
         top: 0;
-        left: 192px;
-        width: 100%;
+        right: 0;
+        width: 87%;
         height: 100%;
         border-radius: 50px 0 0 50px;
         z-index: -1;
-
         /* 擬似要素の上に表示されるようにするため */
+
         @include mq($sp) {
-            left: 101px;
+            width: 73%;
         }
     }
 
@@ -43,14 +43,10 @@
 
     &-inner {
         max-width: 1004px;
-        padding: 49px 158px 100px 0;
+        padding: 49px 20px 100px 0;
         width: 100%;
 
         @include mq($lg) {
-            padding: 49px 30px 100px 0;
-        }
-
-        @include mq($md) {
             padding: 49px 20px 100px;
         }
 
@@ -86,9 +82,11 @@
         }
 
         & img {
-            width: 516px;
+            max-width: 516px;
             height: auto;
             z-index: 2;
+            aspect-ratio: 16/9; // 画像のアスペクト比を指定
+            object-fit: contain; // 画像を枠に合わせて表示し、縦横比を維持
 
             @include mq($lg) {
                 width: 415px;
@@ -100,6 +98,7 @@
             }
 
             @include mq($md) {
+                aspect-ratio: 335 / 301;
                 width: 100%;
             }
         }

@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixin" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
 
 
 .main {
@@ -7,7 +7,7 @@
     z-index: 1;
     height: 989px;
 
-    @include mq($md) {
+    @include mq($lg) {
         height: 860px;
     }
 
@@ -22,10 +22,10 @@
         z-index: -1;
         top: 0;
         right: 0;
-        width: 70%;
+        width: 63%;
         height: 727px;
 
-        @include mq($md) {
+        @include mq($lg) {
             display: none;
         }
     }
@@ -47,7 +47,7 @@
             width: calc(100% - 40px);
         }
 
-        @include mq($md) {
+        @include mq($lg) {
             top: 0;
             margin-left: 20px;
             height: 800px;
@@ -63,18 +63,20 @@
 
     &__copy {
         position: absolute;
-        width: 540px;
+        min-width: 540px;
         height: 177px;
         right: 10%;
         bottom: 65px;
 
         @include mq($md) {
+            min-width: 500px;
             left: 10%;
         }
 
         @include mq($sp) {
             left: 2%;
             bottom: 34px;
+            min-width: 360px;
         }
     }
 
@@ -141,6 +143,10 @@
         left: 74%;
         width: 256px;
 
+        @include mq(1300px) {
+            left: 61%;
+        }
+
         @include mq($lg) {
             left: 61%;
         }
@@ -164,9 +170,14 @@
         left: 48px;
         width: 314px;
 
-        @include mq($lg) {
+        @include mq(1300px) {
             top: 220px;
             width: 260px;
+        }
+
+        @include mq($lg) {
+            top: 220px;
+            width: 230px;
         }
 
         @include mq($md) {
@@ -188,8 +199,14 @@
         left: 40%;
         width: 206px;
 
-        @include mq($lg) {
+        @include mq(1300px) {
             top: 340px;
+            left: 37%;
+            width: 190px;
+        }
+
+        @include mq($lg) {
+            top: 280px;
             left: 37%;
             width: 190px;
         }
@@ -213,6 +230,10 @@
         top: 326px;
         left: 83%;
         width: 162px;
+
+        @include mq(1300px) {
+            left: 72%;
+        }
 
         @include mq($lg) {
             left: 72%;

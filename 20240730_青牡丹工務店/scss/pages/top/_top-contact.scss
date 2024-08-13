@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixin" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
 
 .contact {
     background-color: $gray;
@@ -26,6 +26,8 @@
 
         @include mq($lg) {
             width: 140px;
+            right: 3%;
+            bottom: 67px;
         }
 
         @include mq($md) {
@@ -37,7 +39,7 @@
         @include mq($sp) {
             right: 6%;
             width: 59px;
-            bottom: 348px;
+            bottom: 305px;
         }
     }
 

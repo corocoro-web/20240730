@@ -1,0 +1,48 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.sub-intro {
+    display: block;
+
+    &-inner {
+        padding: 64px 1px 40px;
+    }
+
+    &__txt {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 64px;
+        max-width: 422px;
+    }
+
+    &__link-lists {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__link-btn {
+        position: relative;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 400;
+        width: 208px;
+        border: 1px solid $blue;
+        border-radius: 10px;
+        padding: 11px 0 34px;
+        text-align: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 48%;
+            top: 70%;
+            transform: translateY(-50%) rotate(45deg);
+            /* 45度回転させて右向き矢印を作成 */
+            width: 5px;
+            height: 5px;
+            border-bottom: 2px solid $blue;
+            border-right: 2px solid $blue;
+        }
+    }
+}

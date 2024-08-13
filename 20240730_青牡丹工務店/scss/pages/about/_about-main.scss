@@ -1,0 +1,66 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.sub-main {
+    position: relative;
+    z-index: 1;
+    height: 701px;
+
+    @include mq($md) {
+        height: 860px;
+    }
+
+    @include mq($sp) {
+        height: 662px;
+    }
+
+    &::before {
+        background: url(../images/top/mv-bg-blue.png) repeat center center / contain;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 563px;
+
+        @include mq($md) {
+            display: none;
+        }
+    }
+
+    &-inner {
+        position: absolute;
+        /* 内部要素も相対位置で配置されるようにするため */
+        top: 40px;
+        left: 0;
+        width: 80%;
+        z-index: 2;
+        width: calc(100% - 200px);
+
+        @include mq($xl) {
+            width: calc(100% - 40px);
+        }
+
+        @include mq($md) {
+            top: 0;
+            margin-left: 20px;
+            height: 800px;
+        }
+
+        @include mq($sp) {
+            /*border-radius: 10px 0px 0px 10px;*/
+            width: calc(100% - 10px);
+            height: 589px;
+            margin-left: 10px;
+        }
+
+        & img {
+            width: 100%;
+            height: 661px;
+            border-radius: 50px;
+            aspect-ratio: 1120/661;
+            object-fit: cover;
+        }
+    }
+}
