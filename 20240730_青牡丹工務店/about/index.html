@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <!--==============独自のcss===============-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!--===============Google Fonts(Kanit)(Zenkaku Gothic New)===============-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,44 +28,39 @@
 </head>
 
 <body>
-    <!--/splash-->
-    <div id="splash" class="loading">
-        <div id="splash_logo" class="loading__logo"><img src="images/top/logo-pc.svg" alt="" class="fadeUp"></div>
-    </div>
     <div id="container">
         <header class="header">
             <div class="header-inner">
                 <div class="header__logo">
-                    <a href="index.html">
-                        <img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
+                    <a href="/">
+                        <img src="../images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
                     </a>
                 </div>
+                <!--ドロップダウン-->
                 <nav class="header-nav pc" aria-label="メインナビゲーション">
                     <ul class="header-nav__lists">
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="about.html">私達について</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">経営理念</a>
-                                    <a class="header-nav__accordion-txt" href="">会社概要</a>
-                                    <a class="header-nav__accordion-txt" href="">安全への取り組み</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl open"><a href="/about">私達について</a>
+
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">経営理念</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">会社概要</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">安全への取り組み</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="service.html">事業内容</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">公共工事</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl open"><a href="/service">事業内容</a>
+
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">公共工事</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="header-nav__list"><a href="">お知らせ</a></li>
-                        <li class="header-nav__list"><a href="contact.html">お問い合わせ</a></li>
+                        <li class="header-nav__list"><a href="#">お知らせ</a></li>
+                        <li class="header-nav__list"><a href="/contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="header__btn">
@@ -99,7 +94,7 @@
         <main id="sub-top">
             <section class="sub-main">
                 <div class="sub-main-inner">
-                    <img src="images/about/about-us.jpg" alt="室内の写真">
+                    <img src="../images/about/about-us.jpg" alt="室内の写真">
                 </div>
             </section>
             <section class="sub-intro">
@@ -108,7 +103,7 @@
                         <h2 class="sub-intro__ttl">私達について</h2>
                         <p class="sub-intro__txt">
                             「丁寧な家造りで、理想を現実に」<br>
-                            これを実現するために、わたしたちが行っていることを<br>
+                            これを実現するために、わたしたちが行っていることを<br class="brsp-none">
                             一部ご紹介します。
                         </p>
                     </div>
@@ -130,7 +125,7 @@
             <section class="philosophy">
                 <div class="philosophy-inner">
                     <h2 class="philosophy__ttl ttl-sub">経営理念</h2>
-                    <img src="images/about/vision.png" alt="経営理念を構成する6要素">
+                    <img src="../images/about/vision.png" alt="経営理念を構成する6要素">
                 </div>
             </section>
             <section class="overview">
@@ -145,29 +140,29 @@
                             今後も、お客様の声に耳を傾けながら、さらなる成長と発展を目指し、青牡丹工務店は邁進してまいります。
                         </p>
                         <div class="overview__img">
-                            <img src="images/about/ceo.jpg" alt="青牡丹工務店の代表取締役・谷垣周平">
+                            <img src="../images/about/ceo.jpg" alt="青牡丹工務店の代表取締役・谷垣周平の写真">
                             <p class="overview__img--ceo">代表取締役</p>
                             <p class="overview__img--ceo-name">谷垣周平</p>
                         </div>
                     </div>
-                </div>
-                <div class="overview__list">
-                    <dl>
-                        <dt>商号</dt>
-                        <dd>株式会社　青牡丹工務店</dd>
-                        <dt>創業</dt>
-                        <dd>昭和40年5月3日</dd>
-                        <dt>資本金</dt>
-                        <dd>2000万円</dd>
-                        <dt>従業員数</dt>
-                        <dd>24人</dd>
-                        <dt>営業種目</dt>
-                        <dd>総合建設設計施工・不動産業・倉庫業・リフォーム工事</dd>
-                        <dt>本社所在地</dt>
-                        <dd>〒000-0000　大阪府大阪市中央区北区南町5-6-7</dd>
-                        <dt>代表取締役</dt>
-                        <dd>谷垣周平</dd>
-                    </dl>
+                    <div class="overview__list">
+                        <dl>
+                            <dt>商号</dt>
+                            <dd>株式会社　青牡丹工務店</dd>
+                            <dt>創業</dt>
+                            <dd>昭和40年5月3日</dd>
+                            <dt>資本金</dt>
+                            <dd>2000万円</dd>
+                            <dt>従業員数</dt>
+                            <dd>24人</dd>
+                            <dt>営業種目</dt>
+                            <dd>総合建設設計施工・不動産業・倉庫業・リフォーム工事</dd>
+                            <dt>本社所在地</dt>
+                            <dd>〒000-0000　大阪府大阪市中央区北区南町5-6-7</dd>
+                            <dt>代表取締役</dt>
+                            <dd>谷垣周平</dd>
+                        </dl>
+                    </div>
                 </div>
             </section>
             <section class="safety">
@@ -181,7 +176,7 @@
                                     経営層による安全衛生巡視は、当社の安全管理体制の中核を担う活動の一つです。この巡視では、経営者や上級管理職が定期的に現場を訪問し、安全な作業環境の確保や安全基準の遵守を徹底することが主な目的です。<br>
                                     具体的には、巡視の際には安全規則や法令の遵守状況を点検し、作業現場における危険な箇所や潜在的なリスクを特定します。また、機械や設備の安全装置が正しく機能しているかどうかも確認します。さらに、作業員に対して安全教育や指導を行い、安全意識の向上を図ります。
                                 </p>
-                                <img src="images/about/safety01.jpg" alt="安全衛生巡視の様子">
+                                <img src="../images/about/safety01.jpg" alt="安全衛生巡視の様子">
                             </div>
                         </div>
                         <div class="safety__item">
@@ -191,7 +186,7 @@
                                     労働災害の防止に向けた従業員への教育・訓練も欠かせません。新入社員や新規作業員には、安全教育プログラムを実施し、作業時の安全ルールや手順、危険な状況の認識方法などを徹底的に指導しています。さらに、定期的な安全講習会や研修を通じて、従業員の安全意識を高める取り組みを行っています。<br>
                                     労働災害が発生した場合には、速やかに原因究明を行い、再発防止策を迅速に実施します。また、従業員からの安全に関する意見や提案を積極的に受け付け、改善に向けた取り組みを推進しています。
                                 </p>
-                                <img src="images/about/safety02.jpg" alt="安全教育プログラム実施中の様子">
+                                <img src="../images/about/safety02.jpg" alt="安全教育プログラム実施中の様子">
                             </div>
                         </div>
                     </div>
@@ -221,7 +216,8 @@
             <div class="footer-inner inner">
                 <div class="footer-wrapper">
                     <div class="footer__info">
-                        <a class="footer__info-logo" href="#top"><img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ"></a>
+                        <a class="footer__info-logo" href="#top"><img src="../images/top/logo-pc.svg"
+                                alt="青牡丹工務店のロゴ"></a>
                         <dl class="footer__info-content">
                             <div class="footer__info-wrapper footer__address">
                                 <dt>〒000-0000</dt>
@@ -298,7 +294,7 @@
     <!--==============slickのjs===============-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--==============独自のjs=============-->
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

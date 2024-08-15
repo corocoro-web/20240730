@@ -3,11 +3,19 @@
 
 .safety {
     &-inner {
-        padding: 28px 20px 163px 0;
+        padding: 22px 20px 163px 0;
+
+        @include mq($lg) {
+            padding: 22px 20px 30px;
+        }
     }
 
     &__ttl {
         margin-bottom: 86px;
+
+        @include mq($md) {
+            margin-bottom: 40px;
+        }
     }
 
     &__item {
@@ -15,7 +23,7 @@
     }
 
     &__item-ttl {
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 1.162rem + 0.38vw, 1.5rem);
         font-weight: 700;
         line-height: 1.8;
         margin-bottom: 31px;
@@ -28,6 +36,13 @@
 
         & img {
             width: 267px;
+            aspect-ratio: 267/208;
+            object-fit: contain;
+
+            @include mq($md) {
+                width: 80%;
+            }
+
         }
     }
 
@@ -35,6 +50,10 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.8;
-        max-width: 642px;
+        width: 57%;
+
+        @include mq($md) {
+            width: 100%;
+        }
     }
 }

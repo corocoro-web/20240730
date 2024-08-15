@@ -2,10 +2,40 @@
 @use "../../abstracts/mixin" as *;
 
 .sub-intro {
-    display: block;
+    position: relative;
+
+    &::after {
+        background: url(../images/about/offline-hearing.png) no-repeat center center / contain;
+        content: "";
+        position: absolute;
+        width: 165px;
+        height: 198px;
+        top: 64px;
+        left: 46.5%;
+
+        @include mq(1300px) {
+            left: 71%;
+        }
+
+        @include mq($md) {
+            top: 280px;
+            left: 68%;
+        }
+
+        @include mq($sp) {
+            top: 326px;
+
+            width: 100px;
+        }
+
+    }
 
     &-inner {
-        padding: 64px 1px 40px;
+        padding: 64px 0 40px 1px;
+
+        @include mq($lg) {
+            padding: 64px 20px 40px;
+        }
     }
 
     &__txt {
@@ -14,11 +44,21 @@
         line-height: 1.8;
         margin-bottom: 64px;
         max-width: 422px;
+
+        @include mq($md) {
+            margin-bottom: 40px;
+            max-width: none;
+        }
     }
 
     &__link-lists {
         display: flex;
         gap: 24px;
+
+        @include mq($md) {
+            flex-direction: column;
+        }
+
     }
 
     &__link-btn {

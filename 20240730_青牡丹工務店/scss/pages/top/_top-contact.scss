@@ -25,6 +25,7 @@
         }
 
         @include mq($lg) {
+            /*効かない*/
             width: 140px;
             right: 3%;
             bottom: 67px;

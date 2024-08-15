@@ -67,6 +67,12 @@
 
         &__list {
             margin: 32px 0;
+            border-bottom: 1px solid $l-blue;
+
+            & a {
+                display: block;
+                padding-bottom: 32px;
+            }
 
             & a:hover {
                 color: $blue;
@@ -91,55 +97,58 @@
 
         &__accordion-ttl {
             position: relative;
-            padding-bottom: 32px;
-            border-bottom: 1px solid $l-blue;
             list-style: none;
 
-            &::-webkit-details-marker {
-                display: none;
+            &:before,
+            &:after {
+                background-color: $blue;
+                position: absolute;
+                content: "";
+                display: block;
+                width: 20px;
+                height: 2px;
+                top: 10px;
+                right: 0;
+                transition: transform .3s, opacity .3s;
+            }
+
+            &:before {
+                transform: translateY(-50%) rotate(90deg);
+                top: 11px;
+            }
+
+            &.active:before {
+                transform: rotate(180deg);
+            }
+
+            &.active:after {
+                opacity: 0;
             }
         }
 
         &__accordion-box {
-            padding: 32px 0;
-            border-bottom: 1px solid $l-blue;
+            display: none;
+            padding: 32px 0 8px;
+            border-top: 1px solid $l-blue;
+
+            & a {
+                display: block;
+                padding-bottom: 24px;
+            }
         }
 
         &__accordion-txt {
             display: flex;
             flex-direction: column;
-            margin-bottom: 24px;
             font-size: 0.875rem;
             font-weight: 700;
             line-height: 1.0;
+            padding-bottom: 24px;
             padding-left: 17px;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
     }
 
-}
-
-details[open] summary::before {
-    position: absolute;
-    content: "ー";
-    font-size: 24px;
-    font-weight: 200;
-    top: 0px;
-    right: 0px;
-    color: $blue;
-}
-
-details summary::before {
-    position: absolute;
-    content: "＋";
-    font-size: 24px;
-    font-weight: 200;
-    top: 0px;
-    right: 0px;
-    color: $blue;
 }
 
 /*----------------ハンバーガーメニュー-------------*/
@@ -295,7 +304,7 @@ details summary::before {
         width: 100vw;
         height: 100%;
         /*ナビの高さ*/
-        background: $gray;
+        background: $white;
         /*動き*/
         transition: all 0.3s ease;
 
@@ -335,24 +344,7 @@ details summary::before {
 
         &__list {
             margin-bottom: 0;
-
-            &:last-child {
-                position: relative;
-
-                ::before {
-                    position: absolute;
-                    content: "";
-                    background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
-                    width: 20px;
-                    height: 20px;
-                    top: 50%;
-                    left: 30%;
-                    transform: translateY(-50%);
-                    color: $black;
-                }
-            }
-
-
+            position: relative;
 
             & a {
                 display: flex;
@@ -375,22 +367,21 @@ details summary::before {
                 & span {
                     position: relative;
                     padding-bottom: 5px;
-
-                    &::after {
-                        background: $blue;
-                        content: '';
-                        width: 100%;
-                        height: 2px;
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        margin: auto;
-                        transform-origin: right top;
-                        transform: scale(0, 1);
-                        transition: transform .3s;
-                    }
                 }
 
+                &::after {
+                    background: $blue;
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto;
+                    transform-origin: right top;
+                    transform: scale(0, 1);
+                    transition: transform .3s;
+                }
 
                 &:hover span::after {
                     transform-origin: left top;
@@ -402,29 +393,24 @@ details summary::before {
                 }
             }
 
+            &-mail::before {
+                position: absolute;
+                content: "";
+                background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+                width: 20px;
+                height: 20px;
+                top: 38%;
+                left: -28%;
+                transform: translateY(-50%);
+                color: $black;
+            }
+
+        }
+
+        &__copy {
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 1.0;
         }
     }
 }
-
-
-// @include mq($md) {
-//     
-//        
-//      
-//        
-//             & a {
-//                 display: block;
-//                 color: $white;
-//                 padding: 24px 16px;
-
-//                 &:focus-visible {
-//                     border: 2px solid $white;
-//                     transform: scale(1.025);
-//                     /* ボタンを少し大きくして目立たせる */
-//                 }
-//             }
-//         }
-//     }
-
-
-// }

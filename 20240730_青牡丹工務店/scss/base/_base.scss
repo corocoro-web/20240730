@@ -108,6 +108,14 @@ p {
     }
 }
 
+.brsp-none {
+    display: block;
+
+    @include mq($md) {
+        display: none;
+    }
+}
+
 img {
     overflow: hidden;
 }

@@ -47,32 +47,30 @@
                         <img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
                     </a>
                 </div>
+                <!--ドロップダウン-->
                 <nav class="header-nav pc" aria-label="メインナビゲーション">
                     <ul class="header-nav__lists">
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="about.html">私達について</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">経営理念</a>
-                                    <a class="header-nav__accordion-txt" href="">会社概要</a>
-                                    <a class="header-nav__accordion-txt" href="">安全への取り組み</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl open"><a href="/about">私達について</a>
+
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">経営理念</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">会社概要</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">安全への取り組み</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="service.html">事業内容</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">公共工事</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl open"><a href="/service">事業内容</a>
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">公共工事</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="header-nav__list"><a href="">お知らせ</a></li>
-                        <li class="header-nav__list"><a href="contact.html">お問い合わせ</a></li>
+                        <li class="header-nav__list"><a href="#">お知らせ</a></li>
+                        <li class="header-nav__list"><a href="/contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="header__btn">
@@ -87,7 +85,7 @@
             <nav class="header-nav-sp tb" aria-label="スマホナビゲーション">
                 <ul class="header-nav-sp__lists">
                     <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="about.html"><span>私達について</span></a></li>
+                    <li class="header-nav-sp__list"><a href="../20240730_青牡丹工務店/about/"><span>私達について</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>安全への取り組み</span></a></li>
@@ -96,10 +94,11 @@
                     <li class="header-nav-sp__list"><a href=""><span>法人新築・リフォーム</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>公共工事</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>お知らせ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="contact.html"><span>お問い合わせ</span></a></li>
+                    <li class="header-nav-sp__list"><a href="contact.html"><span
+                                class="header-nav-sp__list-mail">お問い合わせ</span></a></li>
                 </ul>
-                <div class="header__copy-wrapper">
-                    <small class="footer__copy">&copy;AOBOTAN INC.</small>
+                <div class="header-nav-sp__copy-wrapper">
+                    <small class="header-nav-sp__copy">&copy;AOBOTAN INC.</small>
                 </div>
             </nav>
         </header>
@@ -405,7 +404,7 @@
                                 </li>
                             </div>
                             <div class="footer-nav__wrapper">
-                                <li class="footer__nav__list">
+                                <li class="footer-nav__list">
                                     <a href="">会社概要</a>
                                 </li>
                                 <li class="footer-nav__list">
@@ -419,7 +418,7 @@
                                 </li>
                             </div>
                             <div class="footer-nav__wrapper">
-                                <li class="footer__nav__list">
+                                <li class="footer-nav__list">
                                     <a href="">法人新築・リフォーム</a>
                                 </li>
                                 <li class="footer-nav__list">
@@ -429,7 +428,7 @@
                                     <a href="">お知らせ</a>
                                 </li>
                                 <li class="footer-nav__list footer-nav__list__contact">
-                                    <a href="">お問い合わせ</a>
+                                    <a href=""><span>お問い合わせ</span></a>
                                 </li>
                             </div>
                         </ul>

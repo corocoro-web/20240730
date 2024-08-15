@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <!--==============独自のcss===============-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!--===============Google Fonts(Kanit)(Zenkaku Gothic New)===============-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,44 +28,38 @@
 </head>
 
 <body>
-    <!--/splash-->
-    <div id="splash" class="loading">
-        <div id="splash_logo" class="loading__logo"><img src="images/top/logo-pc.svg" alt="" class="fadeUp"></div>
-    </div>
     <div id="container">
         <header class="header">
             <div class="header-inner">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
+                        <img src="../images/top/logo-pc.svg" alt="青牡丹工務店のロゴ">
                     </a>
                 </div>
+                <!--ドロップダウン-->
                 <nav class="header-nav pc" aria-label="メインナビゲーション">
                     <ul class="header-nav__lists">
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="about.html">私達について</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">経営理念</a>
-                                    <a class="header-nav__accordion-txt" href="">会社概要</a>
-                                    <a class="header-nav__accordion-txt" href="">安全への取り組み</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl"><a href="/about">私達について</a>
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">経営理念</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">会社概要</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">安全への取り組み</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="header-nav__list">
-                            <details class="header-nav__list-inner">
-                                <summary class="header-nav__accordion-ttl open"><a href="service.html">事業内容</a>
-                                </summary>
-                                <div class="header-nav__accordion-box">
-                                    <a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a>
-                                    <a class="header-nav__accordion-txt" href="">公共工事</a>
-                                </div>
-                            </details>
+                            <div class="header-nav__accordion-ttl"><a href="/service">事業内容</a>
+
+                                <ul class="header-nav__accordion-box">
+                                    <li><a class="header-nav__accordion-txt" href="">住宅建築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">法人新築・リフォーム</a></li>
+                                    <li><a class="header-nav__accordion-txt" href="">公共工事</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="header-nav__list"><a href="">お知らせ</a></li>
-                        <li class="header-nav__list"><a href="contact.html">お問い合わせ</a></li>
+                        <li class="header-nav__list"><a href="#">お知らせ</a></li>
+                        <li class="header-nav__list"><a href="/contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="header__btn">
@@ -79,7 +73,7 @@
             </div>
             <nav class="header-nav-sp tb" aria-label="スマホナビゲーション">
                 <ul class="header-nav-sp__lists">
-                    <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
+                    <li class="header-nav-sp__list"><a href="/"><span>トップページ</span></a></li>
                     <li class="header-nav-sp__list"><a href="about.html"><span>私達について</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
@@ -99,7 +93,7 @@
         <main id="sub-top">
             <section class="sub-main">
                 <div class="sub-main-inner">
-                    <img src="images/service/woodhouse.jpg" alt="木造の家のmpけい">
+                    <img src="../images/service/woodhouse.jpg" alt="木造の家のmpけい">
                 </div>
             </section>
             <section class="sub-intro">
@@ -127,14 +121,14 @@
             </section>
             <section class="works01 works">
                 <div class="works-inner">
-                    <img src="images/service/works01.jpg" alt="施工例のイメージ図">
+                    <img src="../images/service/works01.jpg" alt="施工例のイメージ図">
                     <div class="works__wrapper">
                         <h2 class="works__ttl ttl--ja">住宅建築・リフォーム</h2>
                         <div class="works__container works01__container">
-                            <h3 class="works__txt--left">
+                            <h3 class="works__txt-left">
                                 当社の住宅建築・リフォーム事業では、お客様の夢や理想を具現化するためのサービスを提供しています。
                             </h3>
-                            <p class="works__txt--right">
+                            <p class="works__txt-right">
                                 新しい家を建てる際には、お客様のニーズや希望を理解し、オーダーメイドの住宅を設計・施工します。<br>
                                 また、古くなったり、機能性が低下したりした建物を、新しい価値ある空間へと再生するリフォームサービスを提供しています。お客様のライフスタイルやニーズに合わせて、効率的かつリーズナブルなリフォームプランをご提案し、品質に妥協することなく施工いたします。
                             </p>
@@ -142,12 +136,12 @@
                         <div class="works__images">
                             <div class="works__image">
                                 <p class="works__image-ttl">芦屋（兵庫県）のコテージ付き住宅</p>
-                                <img src="images/service/jirei01.jpg" alt="芦屋（兵庫県）のコテージ付き住宅の施工例">
+                                <img src="../images/service/jirei01.jpg" alt="芦屋（兵庫県）のコテージ付き住宅の施工例">
                                 <p class="works__image-detail">施工年月：R2年2月 構造：S造</p>
                             </div>
                             <div class="works__image">
                                 <p class="works__image-ttl">鷹峯（京都府京都市）のモダン和風住宅</p>
-                                <img src="images/service/jirei02.jpg" alt="鷹峯（京都府京都市）のモダン和風住宅の施工例">
+                                <img src="../images/service/jirei02.jpg" alt="鷹峯（京都府京都市）のモダン和風住宅の施工例">
                                 <p class="works__image-detail">施工年月：R4年4月 構造：木造</p>
                             </div>
                         </div>
@@ -156,26 +150,26 @@
             </section>
             <section class="works02 works">
                 <div class="works-inner">
-                    <img src="images/service/works02.jpg" alt="施工例のイメージ図">
+                    <img src="../images/service/works02.jpg" alt="施工例のイメージ図">
                     <div class="works__wrapper">
                         <h2 class="works__ttl ttl--ja">法人新築・リフォーム</h2>
                         <div class="works__container works02__container">
-                            <h3 class="works__txt--left">
+                            <h3 class="works__txt-left">
                                 当社の法人新築・リフォームサービスでは、商業施設やオフィスビル、工場など、法人向けの建物の新築や改修を手がけています。
                             </h3>
-                            <p class="works__txt--right">
+                            <p class="works__txt-right">
                                 既存の商業施設やオフィス、工場などの建物を改修し、最新のビジネスニーズに適した空間へと生まれ変わらせます。設備の更新やレイアウトの見直し、外装や内装のリニューアルなど、お客様の要望に応じたリフォームプランを提案し、スムーズな工事を実施します。
                             </p>
                         </div>
                         <div class="works__images">
                             <div class="works__image">
                                 <p class="works__image-ttl">株式会社kaminari station</p>
-                                <img src="images/service/jirei03.jpg" alt="株式会社kaminari stationの施工例">
+                                <img src="../images/service/jirei03.jpg" alt="株式会社kaminari stationの施工例">
                                 <p class="works__image-detail">施工年月：H25年4月 構造：S造</p>
                             </div>
                             <div class="works__image">
                                 <p class="works__image-ttl">鯉登陸運(株)</p>
-                                <img src="images/service/jirei04.jpg" alt="鯉登陸運(株)の施工例">
+                                <img src="../images/service/jirei04.jpg" alt="鯉登陸運(株)の施工例">
                                 <p class="works__image-detail">施工年月：R4年3月 構造：S造</p>
                             </div>
                         </div>
@@ -184,26 +178,26 @@
             </section>
             <section class="works03 works">
                 <div class="works-inner">
-                    <img src="images/service/works03.jpg" alt="施工例のイメージ図">
+                    <img src="../images/service/works03.jpg" alt="施工例のイメージ図">
                     <div class="works__wrapper">
                         <h2 class="works__ttl ttl--ja">公共工事</h2>
                         <div class="works__container works03__container">
-                            <h3 class="works__txt--left">
+                            <h3 class="works__txt-left">
                                 公共工事事業は、道路や橋梁、公共施設などの建設・改修を行う事業です。
                             </h3>
-                            <p class="works__txt--right">
+                            <p class="works__txt-right">
                                 公共工事事業は、地域社会の発展や住民の生活に密接に関わる重要な事業です。政府や自治体からの発注が多く、厳しい品質基準や工期管理が求められます。当社では、経験豊富な専門家がチームを組み、最新の技術とノウハウを駆使して、安全で信頼性の高い公共施設の建設に貢献しています。
                             </p>
                         </div>
                         <div class="works__images">
                             <div class="works__image">
                                 <p class="works__image-ttl">神戸市立真島小学校　内装工事</p>
-                                <img src="images/service/jirei05.jpg" alt="神戸市立真島小学校　内装工事の施工例">
+                                <img src="../images/service/jirei05.jpg" alt="神戸市立真島小学校　内装工事の施工例">
                                 <p class="works__image-detail">施工年月：R1年3月 構造：S造</p>
                             </div>
                             <div class="works__image">
                                 <p class="works__image-ttl">枚方市立暮方郵便局</p>
-                                <img src="images/service/jirei06.jpg" alt="枚方市立暮方郵便局の施工例">
+                                <img src="../images/service/jirei06.jpg" alt="枚方市立暮方郵便局の施工例">
                                 <p class="works__image-detail">施工年月：R4年4月 構造：木造</p>
                             </div>
                         </div>
@@ -234,7 +228,8 @@
             <div class="footer-inner inner">
                 <div class="footer-wrapper">
                     <div class="footer__info">
-                        <a class="footer__info-logo" href="#top"><img src="images/top/logo-pc.svg" alt="青牡丹工務店のロゴ"></a>
+                        <a class="footer__info-logo" href="#top"><img src="../images/top/logo-pc.svg"
+                                alt="青牡丹工務店のロゴ"></a>
                         <dl class="footer__info-content">
                             <div class="footer__info-wrapper footer__address">
                                 <dt>〒000-0000</dt>
@@ -311,7 +306,7 @@
     <!--==============slickのjs===============-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--==============独自のjs=============-->
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

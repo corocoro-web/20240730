@@ -4,13 +4,26 @@
 .philosophy {
     &-inner {
         padding: 40px 0 25px;
+
+        @include mq($lg) {
+            padding: 40px 20px 25px;
+        }
     }
 
     &__ttl {
         margin-bottom: 64px;
+
+        @include mq($lg) {
+            margin-bottom: 40px;
+        }
     }
 
     & img {
         max-width: 923px;
+        width: 100%;
+
+        @include mq($lg) {
+            margin: 0 auto;
+        }
     }
 }

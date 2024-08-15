@@ -36,10 +36,14 @@
     font-weight: 700;
     line-height: 1.0;
     margin-bottom: 64px;
+
+    @include mq($md) {
+        margin-bottom: 40px;
+    }
 }
 
 .ttl-sub {
-    font-size: clamp(1.25rem, 0.986rem + 1.13vw, 2rem);
+    font-size: clamp(1.5rem, 0.986rem + 1.13vw, 2rem);
     font-weight: 700;
     line-height: 1.0;
 }

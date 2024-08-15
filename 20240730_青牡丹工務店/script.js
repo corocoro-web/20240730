@@ -69,30 +69,66 @@ MicroModal.init({
 
 //======================アコーディオン================//
 
-$(function () {
-    // ホバーイベントを設定
-    $('.header-nav__accordion-ttl').hover(
-        function () {
-            // ホバーされたときの処理
-            const $details = $(this).closest('details');
-            const $content = $details.find('.header-nav__accordion-box');
+// $(function () {
+//     // ホバーイベントを設定
+//     $('.header-nav__accordion-ttl').hover(
+//         function () {
+//             // ホバーされたときの処理
+//             const $details = $(this).closest('details');
+//             const $content = $details.find('.header-nav__accordion-box');
 
-            $details.attr('open', 'open'); // details要素を開く
-            $content.stop(true, true).slideDown(300); // コンテンツをスライドダウンして表示
+//             $details.attr('open', 'open'); // details要素を開く
+//             $content.stop(true, true).slideDown(300); // コンテンツをスライドダウンして表示
+//         },
+//         function () {
+//             // ホバーが外れたときの処理
+//             const $details = $(this).closest('details');
+//             const $content = $details.find('.header-nav__accordion-box');
+
+//             setTimeout(function () {
+//                 // 他のホバー対象がない場合に閉じる
+//                 if (!$details.is(':hover') && !$content.is(':hover')) {
+//                     $content.stop(true, true).slideUp(300, function () {
+//                         $details.removeAttr('open'); // details要素を閉じる
+//                     });
+//                 }
+//             }, 100); // 少し遅延を加えることでホバー切り替えをスムーズに
+//         }
+//     );
+// });
+
+// $(function () {
+//     // マウスオーバーした時の動作
+//     $(".header-nav__accordion-ttl").hover(
+//         function () {
+//             // 下にスライドして表示
+//             $(".header-nav__accordion-box:not(:animated)", this).slideDown();
+//             // アイコンを '-' に変更
+//             $(this).find(".header-nav__accordion-icon").text("-");
+//         },
+//         function () {
+//             // 上にスライドして非表示になる
+//             $(".header-nav__accordion-box", this).slideUp();
+//             // アイコンを '+' に戻す
+//             $(this).find(".header-nav__accordion-icon").text("+");
+//         }
+//     );
+// });
+
+$(function () {
+    // マウスオーバーした時の動作
+    $(".header-nav__accordion-ttl").hover(
+        function () {
+            // クラスを切り替える
+            $(this).addClass('active');
+            // 下にスライドして表示
+            $(".header-nav__accordion-box:not(:animated)", this).slideDown();
         },
         function () {
-            // ホバーが外れたときの処理
-            const $details = $(this).closest('details');
-            const $content = $details.find('.header-nav__accordion-box');
-
-            setTimeout(function () {
-                // 他のホバー対象がない場合に閉じる
-                if (!$details.is(':hover') && !$content.is(':hover')) {
-                    $content.stop(true, true).slideUp(300, function () {
-                        $details.removeAttr('open'); // details要素を閉じる
-                    });
-                }
-            }, 100); // 少し遅延を加えることでホバー切り替えをスムーズに
+            // クラスを切り替える
+            $(this).removeClass('active');
+            // 上にスライドして非表示になる
+            $(".header-nav__accordion-box", this).slideUp();
         }
     );
 });

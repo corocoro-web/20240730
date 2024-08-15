@@ -106,7 +106,8 @@
 
         &__list a:hover {
             opacity: 1.0;
-            border-bottom: 2px solid $black;
+            color: $blue;
+            border-bottom: 2px solid $blue;
         }
 
         &__list__contact {
@@ -116,26 +117,23 @@
             @include mq($sp) {
                 margin-left: 0;
             }
-        }
 
-        &__list__contact::before {
-            position: absolute;
-            content: "";
-            background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
-            width: 20px;
-            height: 20px;
-            top: 0;
-            left: -28px;
-            z-index: 1;
+            & span::before {
+                position: absolute;
+                content: "";
+                background: url(../images/top/mail-icon.svg) no-repeat center center / contain;
+                width: 20px;
+                height: 20px;
+                top: 0;
+                left: -28px;
+                z-index: 1;
 
-            @include mq($sp) {
-                top: -3px;
-                left: 28%;
+                @include mq($sp) {
+                    top: -3px;
+                    left: 28%;
+                }
             }
-
         }
-
-
 
         &__wrapper {
             display: flex;
