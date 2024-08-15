@@ -43,6 +43,10 @@
     margin-left: 64px;
     width: 284px;
 
+    @include mq(1300px) {
+        margin-left: 24px;
+    }
+
     @include mq($lg) {
         margin-left: 40px;
 

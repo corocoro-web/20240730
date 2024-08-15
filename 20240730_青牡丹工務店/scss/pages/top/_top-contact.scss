@@ -9,47 +9,8 @@
         border-radius: 0;
     }
 
-
-    &::after {
-        background: url(../images/top/financing.png) no-repeat center center / contain;
-        content: "";
-        position: absolute;
-        width: 175px;
-        height: 256px;
-        z-index: 2;
-        right: 22%;
-        bottom: 74px;
-
-        @include mq(1250px) {
-            bottom: 170px;
-        }
-
-        @include mq($lg) {
-            /*効かない*/
-            width: 140px;
-            right: 3%;
-            bottom: 67px;
-        }
-
-        @include mq($md) {
-            right: 10%;
-            width: 100px;
-            bottom: 240px;
-        }
-
-        @include mq($sp) {
-            right: 6%;
-            width: 59px;
-            bottom: 305px;
-        }
-    }
-
     &-inner {
-        padding: 32px 0 55px 24px;
-
-        @include mq($lg) {
-            padding: 32px 20px 55px 24px;
-        }
+        padding: 32px 20px 55px 24px;
 
         @include mq($md) {
             padding: 26px 20px 41px;
@@ -62,6 +23,40 @@
 
         &__ttl-en {
             margin-bottom: 39px;
+        }
+
+        &::after {
+            background: url(../images/top/financing.png) no-repeat center center / contain;
+            content: "";
+            position: absolute;
+            width: 175px;
+            height: 256px;
+            z-index: 2;
+            right: 40px;
+            bottom: 67px;
+
+            @include mq(1300px) {
+                width: 130px;
+                bottom: 110px;
+            }
+
+            @include mq($lg) {
+                width: 100px;
+                right: 3%;
+                bottom: 100px;
+            }
+
+            @include mq($md) {
+                right: 10%;
+                width: 100px;
+                bottom: 240px;
+            }
+
+            @include mq($sp) {
+                right: 6%;
+                width: 59px;
+                bottom: 305px;
+            }
         }
     }
 
@@ -79,6 +74,14 @@
         padding: 0 32px 0 0;
         line-height: 1.0;
 
+        @include mq(1300px) {
+            padding: 0 24px 0 0;
+        }
+
+        @include mq($lg) {
+            padding: 0 32px 0 0;
+        }
+
         @include mq($md) {
             border-right: none;
             border-bottom: 1px solid $black ;
@@ -92,6 +95,14 @@
         border-right: 1px solid $black;
         padding: 0 32px;
         line-height: 1.0;
+
+        @include mq(1300px) {
+            padding: 0 24px;
+        }
+
+        @include mq($lg) {
+            padding: 0 32px;
+        }
 
         @include mq($md) {
             border-right: none;
