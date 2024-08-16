@@ -4,26 +4,41 @@
 .works {
 
     &-inner {
-        max-width: 980px;
         padding: 35px 20px 37px 0;
 
-        &:last-child {
-            padding: 35px 20px 72px 0;
+        @include mq($lg) {
+            padding: 35px 20px 37px;
         }
+
+        // &:last-child {
+        //     padding: 35px 20px 72px 0;
+        // }
 
         & img {
             width: 100%;
             margin-bottom: 56px;
+
+            @include mq($md) {
+                margin-bottom: 32px;
+            }
         }
     }
 
     &__wrapper {
         padding: 0 50px;
+
+        @include mq($md) {
+            padding: 0;
+        }
     }
 
     &__ttl {
         padding-bottom: 39px;
         border-bottom: 1px solid $l-blue;
+
+        @include mq($md) {
+            padding-bottom: 24px;
+        }
     }
 
     &__container {
@@ -31,11 +46,16 @@
         flex-wrap: wrap;
         gap: 40px;
         margin-bottom: 88px;
+
+        @include mq($md) {
+            gap: 24px;
+            margin-bottom: 40px;
+        }
     }
 
     &__txt-left {
         max-width: 374px;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
         font-weight: 700;
         line-height: 1.8;
     }
@@ -52,9 +72,17 @@
         flex-wrap: wrap;
         gap: 62px;
 
+        @include mq($md) {
+            gap: 40px;
+        }
+
         & img {
             width: 352px;
             margin-bottom: 20px;
+
+            @include mq($lg) {
+                width: 100%;
+            }
         }
     }
 

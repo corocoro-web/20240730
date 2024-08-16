@@ -64,8 +64,13 @@
         display: flex;
         flex-wrap: wrap;
 
+        @include mq($lg) {
+            gap: 24px;
+        }
+
         @include mq($md) {
             flex-direction: column;
+            gap: 0;
         }
     }
 
@@ -101,7 +106,7 @@
         }
 
         @include mq($lg) {
-            padding: 0 32px;
+            padding: 0 32px 0 8px;
         }
 
         @include mq($md) {

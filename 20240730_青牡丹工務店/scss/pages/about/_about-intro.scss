@@ -18,13 +18,11 @@
         }
 
         @include mq($md) {
-            top: 280px;
+            top: 220px;
             left: 68%;
         }
 
         @include mq($sp) {
-            top: 326px;
-
             width: 100px;
         }
 
@@ -35,6 +33,10 @@
 
         @include mq($lg) {
             padding: 64px 20px 40px;
+        }
+
+        @include mq($md) {
+            padding: 32px 20px 20px;
         }
     }
 
@@ -54,6 +56,10 @@
     &__link-lists {
         display: flex;
         gap: 24px;
+
+        @include mq($lg) {
+            gap: 12px;
+        }
 
         @include mq($md) {
             flex-direction: column;

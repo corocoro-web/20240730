@@ -75,7 +75,7 @@
             <nav class="header-nav-sp tb" aria-label="スマホナビゲーション">
                 <ul class="header-nav-sp__lists">
                     <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="about.html"><span>私達について</span></a></li>
+                    <li class="header-nav-sp__list"><a href="../20240730_青牡丹工務店/about/"><span>私達について</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>安全への取り組み</span></a></li>
@@ -84,10 +84,11 @@
                     <li class="header-nav-sp__list"><a href=""><span>法人新築・リフォーム</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>公共工事</span></a></li>
                     <li class="header-nav-sp__list"><a href=""><span>お知らせ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="contact.html"><span>お問い合わせ</span></a></li>
+                    <li class="header-nav-sp__list"><a href="contact.html"><span
+                                class="header-nav-sp__list-mail">お問い合わせ</span></a></li>
                 </ul>
-                <div class="header__copy-wrapper">
-                    <small class="footer__copy">&copy;AOBOTAN INC.</small>
+                <div class="header-nav-sp__copy-wrapper">
+                    <small class="header-nav-sp__copy">&copy;AOBOTAN INC.</small>
                 </div>
             </nav>
         </header>
@@ -98,7 +99,7 @@
                 </div>
             </section>
             <section class="sub-intro">
-                <div class="sub-intro-inner">
+                <div class="sub-intro-inner sub-inner">
                     <div class="sub-intro__ttl-box">
                         <h2 class="sub-intro__ttl">私達について</h2>
                         <p class="sub-intro__txt">
@@ -122,14 +123,14 @@
                     </div>
                 </div>
             </section>
-            <section class="philosophy">
-                <div class="philosophy-inner">
+            <section data-id="#sub-philosophy" class="philosophy">
+                <div class="philosophy-inner sub-inner">
                     <h2 class="philosophy__ttl ttl-sub">経営理念</h2>
                     <img src="../images/about/vision.png" alt="経営理念を構成する6要素">
                 </div>
             </section>
             <section class="overview">
-                <div class="overview-inner">
+                <div class="overview-inner sub-inner">
                     <h2 class="overview__ttl ttl-sub">会社概要</h2>
                     <div class="overview__container">
                         <p class="overview__txt">
@@ -141,8 +142,10 @@
                         </p>
                         <div class="overview__img">
                             <img src="../images/about/ceo.jpg" alt="青牡丹工務店の代表取締役・谷垣周平の写真">
-                            <p class="overview__img--ceo">代表取締役</p>
-                            <p class="overview__img--ceo-name">谷垣周平</p>
+                            <div class="overview__img-wrapper">
+                                <p class="overview__img--ceo">代表取締役</p>
+                                <p class="overview__img--ceo-name">谷垣周平</p>
+                            </div>
                         </div>
                     </div>
                     <div class="overview__list">
@@ -166,7 +169,7 @@
                 </div>
             </section>
             <section class="safety">
-                <div class="safety-inner">
+                <div class="safety-inner sub-inner">
                     <h2 class="safety__ttl ttl-sub">安全への取り組み</h2>
                     <div class="safety__items">
                         <div class="safety__item">
@@ -193,7 +196,7 @@
                 </div>
             </section>
             <section class="contact">
-                <div class="contact-inner inner">
+                <div class="contact-inner sub-inner">
                     <h2 class="contact__ttl ttl">
                         <span class="contact__ttl--ja ttl--ja">お問い合わせ</span>
                         <span class="contact__ttl--en ttl--en">CONTACT</span>
@@ -213,7 +216,7 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="footer-inner inner">
+            <div class="footer-inner sub-inner">
                 <div class="footer-wrapper">
                     <div class="footer__info">
                         <a class="footer__info-logo" href="#top"><img src="../images/top/logo-pc.svg"
@@ -271,7 +274,7 @@
                                     <a href="">お知らせ</a>
                                 </li>
                                 <li class="footer-nav__list footer-nav__list__contact">
-                                    <a href="">お問い合わせ</a>
+                                    <a href=""><span class="footer-nav__list-mail">お問い合わせ</span></a>
                                 </li>
                             </div>
                         </ul>
