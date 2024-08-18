@@ -1,0 +1,127 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.form {
+    &-inner {
+        padding: 17px 0 72px;
+
+        @include mq($lg) {
+            padding: 17px 20px 72px;
+        }
+
+        @include mq($md) {
+            padding: 17px 20px 40px;
+        }
+    }
+
+    &-wrapper {
+        max-width: 470px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        margin-bottom: 27px;
+
+        @include mq($sp) {
+            margin-bottom: 15px;
+        }
+
+        &-name {
+            display: flex;
+            justify-content: space-between;
+
+            @include mq($sp) {
+                gap: 10px;
+            }
+        }
+    }
+
+    &__required {
+        position: relative;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.0;
+        padding-left: 20px;
+
+        &::before {
+            position: absolute;
+            content: "★";
+            color: #FE0000;
+            left: 8px;
+            top: 2px;
+        }
+    }
+
+    &__flex-box {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 14px;
+
+        &-last {
+            margin-bottom: 26px;
+        }
+
+        & p {
+            line-height: 1.0;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 20px 0 19px 16px;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.0;
+        color: #C2C2C2;
+        background-color: #F8F8F8;
+        border: 1px solid $l-blue;
+        margin-bottom: 26px;
+
+        &-name {
+            max-width: 215px;
+        }
+
+        &-last {
+            margin-bottom: 51px;
+
+            @include mq($md) {
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    &__checkbox {
+        margin-bottom: 70px;
+        text-align: center;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+
+        @include mq($md) {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__btn {
+        display: block;
+        /* display: inline-block; ではなく、blockに変更 */
+        text-align: center;
+        /* ボタンを中央寄せに */
+        margin: 0 auto;
+        /* 左右の余白を均等に */
+    }
+
+
+}
+
+.form__end-message {
+    display: none;
+}
+
+.form__false-message {
+    display: none;
+}

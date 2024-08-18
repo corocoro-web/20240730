@@ -89,3 +89,70 @@
         }
     }
 }
+
+.submit__btn {
+    position: relative;
+    display: inline-block;
+    padding: 22px 0;
+    width: 284px;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    font-weight: 700;
+    border-radius: 10px;
+    color: $white;
+    background-color: $blue;
+    border: 3px solid $blue;
+    text-align: center;
+
+    &::after {
+        content: "●";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        font-size: 1.25rem;
+        top: 21px;
+        right: 20px;
+
+    }
+
+    &:hover {
+        color: $blue;
+        background-color: $white;
+        opacity: 1.0;
+    }
+}
+
+.contact-sub__btn {
+    position: relative;
+    display: inline-block;
+    padding: 22px 0;
+    width: 284px;
+    font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    font-weight: 700;
+    border-radius: 10px;
+    color: $white;
+    background-color: $blue;
+    border: 3px solid $blue;
+    text-align: center;
+    margin: 46px 0 130px;
+
+    @include mq($md) {
+        margin: 20px 0 40px;
+    }
+
+    &::after {
+        content: "●";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        font-size: 0.625rem;
+        top: 25px;
+        right: 20px;
+
+    }
+
+    &:hover {
+        color: $blue;
+        background-color: $white;
+        opacity: 1.0;
+    }
+}

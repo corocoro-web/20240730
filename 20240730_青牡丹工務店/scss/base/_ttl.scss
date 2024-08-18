@@ -43,7 +43,19 @@
 }
 
 .ttl-sub {
-    font-size: clamp(1.5rem, 0.986rem + 1.13vw, 2rem);
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.0;
+
+    @include mq($md) {
+        font-size: 2rem;
+    }
+}
+
+.contact-sub__ttl {
+    margin-bottom: 64px;
+
+    @include mq($md) {
+        margin-bottom: 40px;
+    }
 }

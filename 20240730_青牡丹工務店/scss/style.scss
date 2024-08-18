@@ -1,15 +1,18 @@
+//abstracts
 @use "base/reset";
 @use "abstracts/variables" as *;
 @use "abstracts/mixin" as *;
 
+//base
 @use "base/base.scss";
 @use "base/inner";
 @use "base/ttl";
 @use "base/_btn";
 
-
+//layout
 @use "layout/header";
 @use "layout/footer";
+@use "layout/sub-main";
 
 //top
 @use "pages/top/top-main";
@@ -19,14 +22,18 @@
 @use "pages/top/top-news";
 @use "pages/top/top-contact";
 
+//base-animation
 @use "base/animation";
 
 //about
-@use "pages/about/about-main";
 @use "pages/about/about-intro";
 @use "pages/about/about-philosophy";
 @use "pages/about/about-overview";
 @use "pages/about/about-safety";
 
 //serice
-@use "pages/service/service-works"
+@use "pages/service/service-works";
+
+//contact-sub
+@use "pages/contact-sub/contact-sub__contact-sub";
+@use "pages/contact-sub/contact-sub-form"

@@ -1,0 +1,140 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixin" as *;
+
+.contact-sub {
+    position: relative;
+
+    &::after {
+        background: url(../images/contact/contact_01.png) no-repeat center center / contain;
+        content: "";
+        position: absolute;
+        width: 165px;
+        height: 198px;
+        top: 50px;
+        left: 46%;
+
+        @include mq(1300px) {
+            left: 71%;
+        }
+
+        @include mq($md) {
+            width: 130px;
+            top: -35px;
+            left: 72%;
+        }
+
+        @include mq($sp) {
+            width: 90px;
+            top: -45px;
+        }
+
+    }
+
+    &-inner {
+        padding: 64px 0 0 1px;
+
+        @include mq($lg) {
+            padding: 64px 20px 0;
+        }
+
+        @include mq($md) {
+            padding: 32px 20px 0;
+        }
+    }
+
+    &__txt {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 64px;
+        max-width: 422px;
+
+        @include mq($md) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 150px;
+
+        @include mq(1300px) {
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__tab {
+        &-lists {
+            display: flex;
+            flex-direction: row;
+            gap: 52px;
+            line-height: 1.0;
+
+            @include mq($md) {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+        }
+
+        &-list {
+            width: 209px;
+            border: 3px solid $blue;
+            padding: 4px 0 8px;
+            text-align: center;
+            font-weight: 700;
+
+            &--blue {
+                color: $white;
+                background-color: $blue;
+
+            }
+
+            &--white {
+                color: $blue;
+                background-color: #fff;
+            }
+        }
+
+        &-number {
+            font-size: 0.75rem;
+            line-height: 1.0;
+            margin-bottom: 10px;
+        }
+
+        &-txt {
+            font-size: 1rem;
+            line-height: 1.0;
+        }
+    }
+
+    &__tel {
+        width: 50%;
+
+        @include mq($md) {
+            width: 100%;
+        }
+
+        &-txt {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.0;
+            margin-bottom: 29px;
+        }
+
+        &-number {
+            font-family: "Kanit", sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.0;
+            margin-bottom: 14px;
+        }
+
+        &-open {
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 1.0;
+        }
+    }
+}
