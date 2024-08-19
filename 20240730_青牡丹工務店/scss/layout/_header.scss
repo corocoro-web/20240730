@@ -410,10 +410,16 @@
 
         }
 
+        &__copy-wrapper {
+            text-align: center;
+            padding: 6px 0;
+        }
+
         &__copy {
             font-size: 0.75rem;
             font-weight: 400;
             line-height: 1.0;
+            color: $black;
         }
     }
 }

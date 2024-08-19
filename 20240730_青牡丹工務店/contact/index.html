@@ -73,22 +73,24 @@
                 </div>
             </div>
             <nav class="header-nav-sp tb" aria-label="スマホナビゲーション">
-                <ul class="header-nav-sp__lists">
-                    <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="../20240730_青牡丹工務店/about/"><span>私達について</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>安全への取り組み</span></a></li>
-                    <li class="header-nav-sp__list"><a href="service.html"><span>事業内容</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>住宅建築・リフォーム</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>法人新築・リフォーム</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>公共工事</span></a></li>
-                    <li class="header-nav-sp__list"><a href=""><span>お知らせ</span></a></li>
-                    <li class="header-nav-sp__list"><a href="contact.html"><span
-                                class="header-nav-sp__list-mail">お問い合わせ</span></a></li>
-                </ul>
-                <div class="header-nav-sp__copy-wrapper">
-                    <small class="header-nav-sp__copy">&copy;AOBOTAN INC.</small>
+                <div class="header-nav-sp__container">
+                    <ul class="header-nav-sp__lists">
+                        <li class="header-nav-sp__list"><a href="#top"><span>トップページ</span></a></li>
+                        <li class="header-nav-sp__list"><a href="../20240730_青牡丹工務店/about/"><span>私達について</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>経営理念</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>会社概要</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>安全への取り組み</span></a></li>
+                        <li class="header-nav-sp__list"><a href="service.html"><span>事業内容</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>住宅建築・リフォーム</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>法人新築・リフォーム</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>公共工事</span></a></li>
+                        <li class="header-nav-sp__list"><a href=""><span>お知らせ</span></a></li>
+                        <li class="header-nav-sp__list"><a href="contact.html"><span
+                                    class="header-nav-sp__list-mail">お問い合わせ</span></a></li>
+                        <li class="header-nav-sp__copy-wrapper">
+                            <small class="header-nav-sp__copy">&copy;AOBOTAN INC.</small>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -153,7 +155,7 @@
                                 </div>
                             </div>
                             <div class="form__box">
-                                <label class="form__label" for="name">お名前<span class="form__required">必須</span></label>
+                                <label class="form__label">お名前<span class="form__required">必須</span></label>
                                 <div class="form__label-name">
                                     <input class="form__input-name form__input" type="text" name="entry.492734927"
                                         id="last-name" placeholder="青牡丹" autocomplete="family-name" required>
@@ -162,8 +164,7 @@
                                 </div>
                             </div>
                             <div class="form__box">
-                                <label class="form__label" for="mail">メールアドレス<span
-                                        class="form__required">必須</span></label>
+                                <label class="form__label">メールアドレス<span class="form__required">必須</span></label>
                                 <input class="form__input" type="email" name="entry.1475349901"
                                     placeholder="aobotan@gmail.com" autocomplete="email" required>
                             </div>
@@ -178,12 +179,12 @@
                                     placeholder="大阪府大阪市中央区北区南町5-6-7" autocomplete="street-address" required>
                             </div>
                             <div class="form__checkbox">
-                                <input type="checkbox" id="confirmation" name="entry.650689569" required>
+                                <input type="checkbox" id="confirmation" name="entry.1010145299" value="確認済み" required>
                                 <label for="confirmation">入力内容に間違いないことを確認しました</label>
                             </div>
                             <div class="form__btn">
                                 <button id="js-submit01" class="submit__btn" type="submit">送信する</button>
-                                <p class="form__end-message">お問い合わせありがとうございました</p>
+                                <!-- <p class="form__end-message">お問い合わせありがとうございました</p> -->
                                 <p class="form__false-message">送信失敗です</p>
                             </div>
                         </form>

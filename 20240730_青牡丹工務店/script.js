@@ -135,7 +135,7 @@ $(function () {
 
 
 
-//======================スムーススクロール================//
+//======================スムーズスクロール================//
 
 
 $('a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
@@ -174,13 +174,15 @@ $(function () {
             //loadの中に書かないと画像が読み込まれる前にoffset().topしてしまうため、正しい位置にならない
             var position = target.offset().top;
             //headerの高さ
-            //var headerHeight = $('#header').innerHeight();
+            var headerHeight = $('#header').innerHeight();
 
 
-            //position = position - headerHeight;
+            position = position - headerHeight;
 
             // スムーススクロール
             $('body,html').animate({ scrollTop: position }, 300, 'swing');
+            console.log("Scroll animation completed.");
+
 
         });
     }
@@ -192,27 +194,103 @@ $(function () {
 // $(document).ready(function () {
 
 //     $('#form').submit(function (event) {
-//       var formData = $('#form').serialize();
-//       $.ajax({
+//         var formData = $('#form').serialize();
+//         $.ajax({
+//             url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
+//             data: formData,
+//             type: "POST",
+//             dataType: "xml",
+//             statusCode: {
+//                 0: function () {
+//                     $(".end-message").slideDown();
+//                     $(".submit-btn").fadeOut();
+//                     //window.location.href = "thanks.html";
+//                 },
+//                 200: function () {
+//                     $(".false-message").slideDown();
+//                 }
+//             }
+//         });
+//         event.preventDefault();
+//     });
+
+// });
+// $("#js-submit01").click(function (event) {
+//     event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
+
+//     // Googleフォームにデータを送信
+//     $.ajax({
 //         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
-//         data: formData,
+//         data: $("#form").serialize(), // フォームデータをシリアライズ
 //         type: "POST",
 //         dataType: "xml",
 //         statusCode: {
-//           0: function () {
-//             $(".end-message").slideDown();
-//             $(".submit-btn").fadeOut();
-//             //window.location.href = "thanks.html";
-//           },
-//           200: function () {
-//             $(".false-message").slideDown();
-//           }
+//             0: function () {
+//                 // 送信成功時のリダイレクト
+//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//             },
+//             200: function () {
+//                 // 送信成功時のリダイレクト
+//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//             }
+//         },
+//         success: function () {
+//             // 送信完了後にフォームをリセット
+//             $('#form')[0].reset();
 //         }
-//       });
-//       event.preventDefault();
 //     });
+// });
 
-//   });
+// $("#js-submit01").click(function (event) {
+//     // Googleフォームにデータを送信
+//     $('#form').submit();  // フォームを通常の方法で送信
+// });
+
+
+
+
+
+
+
+//==============input type="radio"のタブキーで各ラジオへのフォーカス================//
+
+$(document).ready(function () {
+    // 全てのラジオボタンを取得
+    const radioGroups = $('input[type="radio"]');
+
+    radioGroups.each(function (index) {
+        $(this).on('keydown', function (event) {
+            if (event.key === "Tab" && !event.shiftKey) {
+                // デフォルトのタブ操作を無効化
+                event.preventDefault();
+
+                // 次のラジオボタンにフォーカスを移動
+                if (index < radioGroups.length - 1) {
+                    radioGroups.eq(index + 1).focus();
+                } else {
+                    // 最後のラジオボタンの場合は次のフォーカス可能な要素に移動
+                    $(this).closest('form').find('input, textarea, select').eq(index + 1).focus();
+                }
+            }
+
+            if (event.key === "Tab" && event.shiftKey) {
+                // デフォルトのシフト+タブ操作を無効化
+                event.preventDefault();
+
+                // 前のラジオボタンにフォーカスを移動
+                if (index > 0) {
+                    radioGroups.eq(index - 1).focus();
+                } else {
+                    // 最初のラジオボタンの場合は前のフォーカス可能な要素に移動
+                    $(this).closest('form').find('input, textarea, select').eq(index - 1).focus();
+                }
+            }
+        });
+    });
+});
+
+
+
 
 
 //==============フォーム　サンクスページへの遷移================//
