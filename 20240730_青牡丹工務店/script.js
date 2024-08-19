@@ -189,7 +189,7 @@ $(function () {
 });
 
 
-//==============フォーム　お問い合せ完了メッセージ================//
+//==============フォーム　thanksページに遷移================//
 
 // $(document).ready(function () {
 
@@ -247,6 +247,89 @@ $(function () {
 // });
 
 
+// $("#js-submit01").click(function (event) {
+//     event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
+
+//     // チェックボックスが選択されているか確認
+//     if (!$("#confirmation").is(":checked")) {
+//         alert("チェックボックスを確認してください。");
+//         return;
+//     }
+
+//     // Googleフォームにデータを送信
+//     $.ajax({
+//         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
+//         data: $("#form").serialize(), // フォームデータをシリアライズ
+//         type: "POST",
+//         dataType: "xml",
+//         statusCode: {
+//             0: function () {
+//                 // 送信成功時のリダイレクト
+//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//             },
+//             200: function () {
+//                 // 送信成功時のリダイレクト
+//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//             }
+//         }
+//     });
+// });
+
+
+// $("#js-submit01").click(function (event) {
+//     event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
+
+//     // チェックボックスが選択されているか確認
+//     if (!$("#confirmation").is(":checked")) {
+//         alert("チェックボックスを確認してください。");
+//         return;
+//     }
+
+//     // Googleフォームにデータを送信
+//     $.ajax({
+//         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
+//         data: $("#form").serialize(), // フォームデータをシリアライズ
+//         type: "POST",
+//         success: function (response) {
+//             // 送信成功時のリダイレクト
+//             window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//         },
+//         error: function (xhr, status, error) {
+//             // 送信エラー時の処理
+//             console.log("Error:", error);
+//             alert("送信に失敗しました。後でもう一度お試しください。");
+//         }
+//     });
+// });
+
+// $(document).ready(function () {
+//     $('#form').submit(function (event) {
+//         event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
+
+//         var formData = $('#form').serialize(); // フォームデータをシリアライズ
+
+//         $.ajax({
+//             url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse", // 正しいURLを確認
+//             data: formData,
+//             type: "POST",
+//             dataType: "text", // Googleフォームの応答形式に合わせて変更
+//             contentType: "application/x-www-form-urlencoded", // コンテンツタイプの指定
+//             success: function () {
+//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+//             },
+//             error: function (xhr, status, error) {
+//                 // エラー発生時の処理
+//                 console.error("エラー発生:", status, error);
+//                 console.error("レスポンス:", xhr.responseText);
+//             }
+//         }).always(function () {
+//             $(".end-message").slideDown();
+//             $(".submit-btn").fadeOut();
+//         });
+//     });
+// });
+
+
 
 
 
@@ -290,8 +373,4 @@ $(document).ready(function () {
 });
 
 
-
-
-
-//==============フォーム　サンクスページへの遷移================//
 
