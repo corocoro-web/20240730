@@ -135,59 +135,56 @@ $(function () {
 
 
 
-//======================スムーズスクロール================//
+//====================== スムーズスクロール機能 ======================//
 
+$('a[href*="#"]').click(function (event) {
+    event.preventDefault(); // リンクのデフォルト動作を無効にする
 
-$('a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
-    var elmHash = $(this).attr('href'); // クリックされたリンク先のhref属性からIDを取得
-    var pos;
+    // クリックされたリンクのhref属性からハッシュ部分のみを取得
+    var href = $(this).attr('href');
+    var hash = href.split('#')[1]; // `#`以降の部分を取得
+    var elmHash = '#' + hash; // `#`を追加してセレクタとして使える形にする
 
-    // レスポンシブ対応のため、ウィンドウの幅に応じてスクロール位置を調整
-    if ($(window).width() <= 768) {
-        // 768px以下の場合、idの上部の距離からHeaderの高さ（64px）を引いた位置にスクロール
-        pos = $(elmHash).offset().top - 64;
+    // 現在のページのパスとリンクのパスが一致するかを確認
+    if (href.startsWith(location.pathname) || href.startsWith("#")) {
+        var pos;
+
+        // 対象の要素が存在する場合にのみ処理を行う
+        if ($(elmHash).length) {
+            // レスポンシブ対応のため、ウィンドウの幅に応じてスクロール位置を調整
+            if ($(window).width() <= 768) {
+                pos = $(elmHash).offset().top - 102;
+            } else {
+                pos = $(elmHash).offset().top - 102;
+            }
+
+            // アニメーションでスクロールを実行
+            $('body,html').animate({ scrollTop: pos }, 700);
+        }
     } else {
-        // 768pxより大きい場合、idの上部の距離からHeaderの高さ（96px）を引いた位置にスクロール
-        pos = $(elmHash).offset().top - 96;
+        // 別のページへのリンクの場合、通常のリンク動作を実行
+        window.location.href = href;
     }
-
-    // アニメーションでスクロールを実行
-    $('body,html').animate({ scrollTop: pos }, 700);//取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
-
-    return false; // リンクのデフォルト動作を無効化してページ遷移を防止
 });
 
-
-
-//==============別ページから飛んできたときに該当箇所にスムーズスクロール================//
+//============== 別ページから飛んできた時のスムーズスクロール処理 ==============//
 
 $(function () {
-    var hash = location.hash;
+    var hash = location.hash; // URLのハッシュ（#以降の部分）を取得
     if (hash) {
-        var target = $('[data-id="' + hash + '"]');//offset()を使うためjQueryオブジェクト化
-        if (!target.length) return;/* targetがなかったときはそれ以降の処理をしない */
-        // 移動先を数値で取得
-        $(window).on('load', function () {
-            history.replaceState('', '', './');/* 再読み込みしたときにスムーススクロールしないようにhashを取り除く */
+        var target = $(hash); // ハッシュを使用して対象要素を取得
+        if (target.length) {
+            $(window).on('load', function () {
+                history.replaceState('', '', './'); // ハッシュを取り除いて再読み込み時にスムーズスクロールを防ぐ
 
-            //loadの中に書くことで、画像を読み込んだ後に実行されるようになる
-            //loadの中に書かないと画像が読み込まれる前にoffset().topしてしまうため、正しい位置にならない
-            var position = target.offset().top;
-            //headerの高さ
-            var headerHeight = $('#header').innerHeight();
+                var position = target.offset().top - $('#header').innerHeight();
 
-
-            position = position - headerHeight;
-
-            // スムーススクロール
-            $('body,html').animate({ scrollTop: position }, 300, 'swing');
-            console.log("Scroll animation completed.");
-
-
-        });
+                // アニメーションでスクロールを実行（600msで目的の位置に移動）
+                $('body,html').animate({ scrollTop: position }, 300, 'swing');
+            });
+        }
     }
 });
-
 
 //==============フォーム　thanksページに遷移================//
 
@@ -247,33 +244,33 @@ $(function () {
 // });
 
 
-// $("#js-submit01").click(function (event) {
-//     event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
+$("#js-submit01").click(function (event) {
+    event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
 
-//     // チェックボックスが選択されているか確認
-//     if (!$("#confirmation").is(":checked")) {
-//         alert("チェックボックスを確認してください。");
-//         return;
-//     }
+    // チェックボックスが選択されているか確認
+    if (!$("#confirmation").is(":checked")) {
+        alert("チェックボックスを確認してください。");
+        return;
+    }
 
-//     // Googleフォームにデータを送信
-//     $.ajax({
-//         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
-//         data: $("#form").serialize(), // フォームデータをシリアライズ
-//         type: "POST",
-//         dataType: "xml",
-//         statusCode: {
-//             0: function () {
-//                 // 送信成功時のリダイレクト
-//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
-//             },
-//             200: function () {
-//                 // 送信成功時のリダイレクト
-//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
-//             }
-//         }
-//     });
-// });
+    // Googleフォームにデータを送信
+    $.ajax({
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
+        data: $("#form").serialize(), // フォームデータをシリアライズ
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+            0: function () {
+                // 送信成功時のリダイレクト
+                window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+            },
+            200: function () {
+                // 送信成功時のリダイレクト
+                window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+            }
+        }
+    });
+});
 
 
 // $("#js-submit01").click(function (event) {
