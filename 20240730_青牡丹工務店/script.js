@@ -369,5 +369,64 @@ $(document).ready(function () {
     });
 });
 
+// ===================== fadeUpアニメーション =====================
+// ふわっ
+function fadeUpAnime() {
+    $('.fadeUpTrigger').each(function () {
+        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+        var scroll = $(window).scrollTop(); // 現在のスクロール位置
+        var windowHeight = $(window).height(); // ウィンドウの高さ
 
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('fadeUp'); // fadeUpクラスを追加
+        } else {
+            $(this).removeClass('fadeUp'); // fadeUpクラスを削除
+        }
+    });
+}
 
+// ===================== flipLeftアニメーション =====================
+// パタッ
+function flipLeftAnime() {
+    $('.flipLeftTrigger').each(function () {
+        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+        var scroll = $(window).scrollTop(); // 現在のスクロール位置
+        var windowHeight = $(window).height(); // ウィンドウの高さ
+
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('flipLeft'); // flipLeftクラスを追加
+        } else {
+            $(this).removeClass('flipLeft'); // flipLeftクラスを削除
+        }
+    });
+}
+
+// ===================== blurTriggerアニメーション =====================
+// じわっ
+function blurAnime() {
+    $('.blurTrigger').each(function () {
+        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+        var scroll = $(window).scrollTop(); // 現在のスクロール位置
+        var windowHeight = $(window).height(); // ウィンドウの高さ
+
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('blur'); // blurクラスを追加
+        } else {
+            $(this).removeClass('blur'); // blurクラスを削除
+        }
+    });
+}
+
+// ===================== スクロール時にアニメーションを呼ぶ =====================
+$(window).on('scroll', function () {
+    fadeUpAnime(); // fadeUpアニメーションを呼び出し
+    flipLeftAnime(); // flipLeftアニメーションを呼び出し
+    blurAnime(); // blurアニメーションを呼び出し
+});
+
+// ===================== ページ読み込み時にアニメーションを呼ぶ =====================
+$(window).on('load', function () {
+    fadeUpAnime(); // fadeUpアニメーションを呼び出し
+    flipLeftAnime(); // flipLeftアニメーションを呼び出し
+    blurAnime(); // blurアニメーションを呼び出し
+});
