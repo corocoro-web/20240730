@@ -1520,7 +1520,7 @@ img {
 }
 @media (max-width: 580px) {
   .images__txt {
-    padding: 16px 24px;
+    padding: 22px 24px 0;
     top: 101px;
     height: 284px;
     letter-spacing: 0.5em;
@@ -1535,12 +1535,17 @@ img {
   position: absolute;
   width: 161px;
   height: 213px;
-  top: 186px;
-  left: -186px;
+  top: 200px;
+  left: -181px;
+}
+@media (max-width: 1300px) {
+  .images__txt::before {
+    width: 110px;
+    top: 160px;
+  }
 }
 @media (max-width: 768px) {
   .images__txt::before {
-    width: 110px;
     top: 100px;
   }
 }
@@ -1605,7 +1610,7 @@ img {
   height: 172px;
   z-index: 2;
   top: 92px;
-  left: 59.5%;
+  left: 74%;
 }
 @media (max-width: 1024px) {
   .service::after {
@@ -1838,9 +1843,9 @@ img {
   width: 100%;
   text-align: left;
   position: relative;
-  padding: 32px 0 34px 20px;
+  padding: 32px 0 34px;
   border-bottom: 1px solid #B1C6DC;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 @media (max-width: 1024px) {
   .modal__btn {
@@ -1868,7 +1873,6 @@ img {
 }
 .modal__btn:hover {
   color: #4282B8;
-  transform: scale(1.025);
 }
 .modal__btn::after {
   position: absolute;
@@ -1878,11 +1882,15 @@ img {
   height: 16px;
   top: 42%;
   right: 27px;
+  transition: transform 0.3s ease;
 }
 @media (max-width: 768px) {
   .modal__btn::after {
     right: 0;
   }
+}
+.modal__btn:hover::after {
+  transform: scale(1.5);
 }
 
 .modal__overlay {

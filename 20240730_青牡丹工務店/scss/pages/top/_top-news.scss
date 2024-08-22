@@ -66,9 +66,9 @@
     width: 100%;
     text-align: left;
     position: relative;
-    padding: 32px 0 34px 20px;
+    padding: 32px 0 34px;
     border-bottom: 1px solid $l-blue;
-    transition: 0.3s;
+    transition: color 0.3s ease; // 色のトランジション
 
     @include mq($lg) {
         padding-top: 25px;
@@ -97,7 +97,6 @@
 
     &:hover {
         color: $blue;
-        transform: scale(1.025);
     }
 
     &::after {
@@ -108,10 +107,15 @@
         height: 16px;
         top: 42%;
         right: 27px;
+        transition: transform 0.3s ease; // スケールのトランジション
 
         @include mq($md) {
             right: 0;
         }
+    }
+
+    &:hover::after {
+        transform: scale(1.5); // ホバー時に拡大
     }
 }
 
