@@ -828,11 +828,13 @@ img {
     opacity: 1;
     z-index: 3;
   }
-  .header-nav-sp__lists {
+  .header-nav-sp__container {
     /*ナビの数が増えた場合縦スクロール*/
     width: 100%;
     height: 100vh;
     /*表示する高さ*/
+  }
+  .header-nav-sp__lists {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -2930,7 +2932,7 @@ img {
   flex-direction: column;
 }
 .form__label {
-  margin-bottom: 27px;
+  margin-bottom: 20px;
 }
 @media (max-width: 580px) {
   .form__label {
@@ -2963,10 +2965,10 @@ img {
 .form__flex-box {
   display: flex;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
 .form__flex-box-last {
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 .form__flex-box p {
   line-height: 1;
@@ -2977,10 +2979,16 @@ img {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1;
-  color: #C2C2C2;
+  color: #000;
   background-color: #F8F8F8;
   border: 1px solid #B1C6DC;
   margin-bottom: 26px;
+}
+.form__input::-moz-placeholder {
+  color: #C2C2C2;
+}
+.form__input::placeholder {
+  color: #C2C2C2;
 }
 .form__input-name {
   max-width: 215px;
@@ -3020,4 +3028,87 @@ img {
 
 .form__false-message {
   display: none;
+}
+
+/* 共通 */
+.visibility-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.checkbox-text,
+.radio-text {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 0 5px 30px;
+  position: relative;
+}
+
+input[type=checkbox]:checked + label .checkbox-text::after,
+input[type=radio]:checked + label .radio-text::after {
+  opacity: 1;
+}
+
+/* ラジオボタン */
+.radio-text::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #4282B8;
+  border-radius: 50%;
+}
+
+.radio-text::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4282B8;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* チェックボックス */
+.checkbox-text::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  border: 1px solid #4282B8;
+}
+
+.checkbox-text::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 10px;
+  position: absolute;
+  top: 47%;
+  left: 6px;
+  transform: rotate(45deg) skewY(0deg) translateY(-50%);
+  transform-origin: center right;
+  border-right: 2px solid #4282B8;
+  border-bottom: 2px solid #4282B8;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }/*# sourceMappingURL=style.css.map */

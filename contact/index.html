@@ -145,21 +145,30 @@
                             target="_self" method="POST">
                             <div class="form__box">
                                 <label class="form__label">お問い合わせの種類<span class="form__required">必須</span></label>
-                                <div class="form__flex-box"><input type="radio" name="entry.223576826" value="注文住宅の相談">
-                                    <p>注文住宅の相談</p>
+                                <div class="form__flex-box">
+                                    <input class="visibility-hidden" type="radio" id="radio1" name="entry.223576826"
+                                        value="注文住宅の相談">
+                                    <label for="radio1" class="label"><span class="radio-text">注文住宅の相談</span></label>
                                 </div>
-                                <div class="form__flex-box"><input type="radio" name="entry.223576826" value="法人建築の相談">
-                                    <p>法人建築の相談</p>
+                                <div class="form__flex-box">
+                                    <input class="visibility-hidden" type="radio" id="radio2" name="entry.223576826"
+                                        value="法人建築の相談">
+                                    <label for="radio2" class="label"><span class="radio-text">法人建築の相談</span></label>
                                 </div>
-                                <div class="form__flex-box"><input type="radio" name="entry.223576826" value="リフォームの相談">
-                                    <p>リフォームの相談</p>
+                                <div class="form__flex-box">
+                                    <input class="visibility-hidden" type="radio" id="radio3" name="entry.223576826"
+                                        value="リフォームの相談">
+                                    <label for="radio3" class="label"><span class="radio-text">リフォームの相談</span></label>
                                 </div>
-                                <div class="form__flex-box"><input type="radio" name="entry.223576826" value="公共工事の相談">
-                                    <p>公共工事の相談</p>
+                                <div class="form__flex-box">
+                                    <input class="visibility-hidden" type="radio" id="radio4" name="entry.223576826"
+                                        value="公共工事の相談">
+                                    <label for="radio4" class="label"><span class="radio-text">公共工事の相談</span></label>
                                 </div>
-                                <div class="form__flex-box form__flex-box-last"><input type="radio"
-                                        name="entry.223576826" value="その他">
-                                    <p>その他</p>
+                                <div class="form__flex-box form__flex-box-last">
+                                    <input class="visibility-hidden" type="radio" id="radio5" name="entry.223576826"
+                                        value="その他">
+                                    <label for="radio5" class="label"><span class="radio-text">その他</span></label>
                                 </div>
                             </div>
                             <div class="form__box">
@@ -187,8 +196,10 @@
                                     placeholder="大阪府大阪市中央区北区南町5-6-7" autocomplete="street-address" required>
                             </div>
                             <div class="form__checkbox">
-                                <input type="checkbox" id="confirmation" name="entry.1010145299" value="確認済み" required>
-                                <label for="confirmation">入力内容に間違いないことを確認しました</label>
+                                <input class="visibility-hidden" type="checkbox" id="confirmation"
+                                    name="entry.1010145299" value="確認済み" required>
+                                <label for="confirmation" class="label"><span
+                                        class="checkbox-text">入力内容に間違いないことを確認しました</span></label>
                             </div>
                             <div class="form__btn">
                                 <button id="js-submit01" class="submit__btn" type="submit">送信する</button>

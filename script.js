@@ -137,111 +137,122 @@ $(function () {
 
 //====================== スムーズスクロール機能 ======================//
 
-$('a[href*="#"]').click(function (event) {
-    event.preventDefault(); // リンクのデフォルト動作を無効にする
+// $('a[href*="#"]').click(function (event) {
+//     event.preventDefault(); // リンクのデフォルト動作を無効にする
 
-    // クリックされたリンクのhref属性からハッシュ部分のみを取得
-    var href = $(this).attr('href');
-    var hash = href.split('#')[1]; // `#`以降の部分を取得
-    var elmHash = '#' + hash; // `#`を追加してセレクタとして使える形にする
+//     // クリックされたリンクのhref属性からハッシュ部分のみを取得
+//     var href = $(this).attr('href');
+//     var hash = href.split('#')[1]; // `#`以降の部分を取得
+//     var elmHash = '#' + hash; // `#`を追加してセレクタとして使える形にする
 
-    // 現在のページのパスとリンクのパスが一致するかを確認
-    if (href.startsWith(location.pathname) || href.startsWith("#")) {
-        var pos;
+//     // 現在のページのパスとリンクのパスが一致するかを確認
+//     if (href.startsWith(location.pathname) || href.startsWith("#")) {
+//         var pos;
 
-        // 対象の要素が存在する場合にのみ処理を行う
-        if ($(elmHash).length) {
-            // レスポンシブ対応のため、ウィンドウの幅に応じてスクロール位置を調整
-            if ($(window).width() <= 768) {
-                pos = $(elmHash).offset().top - 102;
-            } else {
-                pos = $(elmHash).offset().top - 102;
+//         // 対象の要素が存在する場合にのみ処理を行う
+//         if ($(elmHash).length) {
+//             // レスポンシブ対応のため、ウィンドウの幅に応じてスクロール位置を調整
+//             if ($(window).width() <= 768) {
+//                 pos = $(elmHash).offset().top - 102;
+//             } else {
+//                 pos = $(elmHash).offset().top - 102;
+//             }
+
+//             // アニメーションでスクロールを実行
+//             $('body,html').animate({ scrollTop: pos }, 700);
+//         }
+//     } else {
+//         // 別のページへのリンクの場合、通常のリンク動作を実行
+//         window.location.href = href;
+//     }
+// });
+
+// ページ内のスムーススクロール
+jQuery(function () {
+    jQuery('a[href*="#"]').click(function (e) {
+        var target = jQuery(this.hash === "" ? "html" : this.hash);
+        if (target.length) {
+            e.preventDefault();
+            var headerHeight = jQuery("header").outerHeight();
+            var position = target.offset().top - headerHeight - 20;
+            jQuery("html, body").animate({ scrollTop: position }, 500, "swing");
+
+            if (!target.is("html")) {
+                // URLにハッシュを含める
+                history.pushState(null, '', this.hash);
             }
-
-            // アニメーションでスクロールを実行
-            $('body,html').animate({ scrollTop: pos }, 700);
         }
-    } else {
-        // 別のページへのリンクの場合、通常のリンク動作を実行
-        window.location.href = href;
-    }
+    });
 });
+
+// 別ページ遷移後のスムーススクロール
+var urlHash = location.hash;
+if (urlHash) {
+    var target = jQuery(urlHash);
+    if (target.length) {
+        // ページトップから開始（ブラウザ差異を考慮して併用）
+        history.replaceState(null, '', window.location.pathname);
+        jQuery("html,body").stop().scrollTop(0);
+
+        jQuery(window).on("load", function () {
+            var headerHeight = jQuery("header").outerHeight();
+            var position = target.offset().top - headerHeight - 20;
+            jQuery("html, body").animate({ scrollTop: position }, 500, "swing");
+
+            // ハッシュを再設定
+            history.replaceState(null, '', window.location.pathname + urlHash);
+        });
+    }
+}
 
 //============== 別ページから飛んできた時のスムーズスクロール処理 ==============//
 
-$(function () {
-    var hash = location.hash; // URLのハッシュ（#以降の部分）を取得
-    if (hash) {
-        var target = $(hash); // ハッシュを使用して対象要素を取得
-        if (target.length) {
-            $(window).on('load', function () {
-                history.replaceState('', '', './'); // ハッシュを取り除いて再読み込み時にスムーズスクロールを防ぐ
+// $(function () {
+//     var hash = location.hash; // URLのハッシュ（#以降の部分）を取得
+//     if (hash) {
+//         var target = $(hash); // ハッシュを使用して対象要素を取得
+//         if (target.length) {
+//             $(window).on('load', function () {
+//                 history.replaceState('', '', './'); // ハッシュを取り除いて再読み込み時にスムーズスクロールを防ぐ
 
-                var position = target.offset().top - $('#header').innerHeight();
+//                 var position = target.offset().top - $('#header').innerHeight();
 
-                // アニメーションでスクロールを実行（600msで目的の位置に移動）
-                $('body,html').animate({ scrollTop: position }, 300, 'swing');
-            });
+//                 // アニメーションでスクロールを実行（600msで目的の位置に移動）
+//                 $('body,html').animate({ scrollTop: position }, 300, 'swing');
+//             });
+//         }
+//     }
+// });
+
+//======================フォームのsubmit制御================//
+
+$(document).ready(function () {
+
+    const $submitBtn = $('#js-submit01')
+    $('#form input').on('change', function () {
+        let isFormValid = true;
+
+        // 各ラジオボタンとテキストフィールドが空でないか確認
+        $('#form input[type="radio"], #form input[type="text"], #form input[type="email"], #form input[type="tel"]').each(function () {
+            if ($(this).val() === "") {
+                isFormValid = false;
+            }
+        });
+
+        // チェックボックスがチェックされているか確認
+        if (!$('#form input[type="checkbox"]').is(':checked')) {
+            isFormValid = false;
         }
-    }
+
+        // すべての条件が満たされていれば、送信ボタンを有効化
+        $submitBtn.prop('disabled', !isFormValid);
+    });
+
 });
 
+
+
 //==============フォーム　thanksページに遷移================//
-
-// $(document).ready(function () {
-
-//     $('#form').submit(function (event) {
-//         var formData = $('#form').serialize();
-//         $.ajax({
-//             url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
-//             data: formData,
-//             type: "POST",
-//             dataType: "xml",
-//             statusCode: {
-//                 0: function () {
-//                     $(".end-message").slideDown();
-//                     $(".submit-btn").fadeOut();
-//                     //window.location.href = "thanks.html";
-//                 },
-//                 200: function () {
-//                     $(".false-message").slideDown();
-//                 }
-//             }
-//         });
-//         event.preventDefault();
-//     });
-
-// });
-// $("#js-submit01").click(function (event) {
-//     event.preventDefault(); // フォームのデフォルト送信動作をキャンセル
-
-//     // Googleフォームにデータを送信
-//     $.ajax({
-//         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3AcngBLN-yuXmdbGd0UyaqMT-cR_p8-yrs-eRguDggacFYg/formResponse",
-//         data: $("#form").serialize(), // フォームデータをシリアライズ
-//         type: "POST",
-//         dataType: "xml",
-//         statusCode: {
-//             0: function () {
-//                 // 送信成功時のリダイレクト
-//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
-//             },
-//             200: function () {
-//                 // 送信成功時のリダイレクト
-//                 window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
-//             }
-//         },
-//         success: function () {
-//             // 送信完了後にフォームをリセット
-//             $('#form')[0].reset();
-//         }
-//     });
-// });
-
-// $("#js-submit01").click(function (event) {
-//     // Googleフォームにデータを送信
-//     $('#form').submit();  // フォームを通常の方法で送信
-// });
 
 
 $("#js-submit01").click(function (event) {
@@ -332,42 +343,42 @@ $("#js-submit01").click(function (event) {
 
 
 
-//==============input type="radio"のタブキーで各ラジオへのフォーカス================//
+// //==============input type="radio"のタブキーで各ラジオへのフォーカス================//
 
-$(document).ready(function () {
-    // 全てのラジオボタンを取得
-    const radioGroups = $('input[type="radio"]');
+// $(document).ready(function () {
+//     // 全てのラジオボタンを取得
+//     const radioGroups = $('input[type="radio"]');
 
-    radioGroups.each(function (index) {
-        $(this).on('keydown', function (event) {
-            if (event.key === "Tab" && !event.shiftKey) {
-                // デフォルトのタブ操作を無効化
-                event.preventDefault();
+//     radioGroups.each(function (index) {
+//         $(this).on('keydown', function (event) {
+//             if (event.key === "Tab" && !event.shiftKey) {
+//                 // デフォルトのタブ操作を無効化
+//                 event.preventDefault();
 
-                // 次のラジオボタンにフォーカスを移動
-                if (index < radioGroups.length - 1) {
-                    radioGroups.eq(index + 1).focus();
-                } else {
-                    // 最後のラジオボタンの場合は次のフォーカス可能な要素に移動
-                    $(this).closest('form').find('input, textarea, select').eq(index + 1).focus();
-                }
-            }
+//                 // 次のラジオボタンにフォーカスを移動
+//                 if (index < radioGroups.length - 1) {
+//                     radioGroups.eq(index + 1).focus();
+//                 } else {
+//                     // 最後のラジオボタンの場合は次のフォーカス可能な要素に移動
+//                     $(this).closest('form').find('input, textarea, select').eq(index + 1).focus();
+//                 }
+//             }
 
-            if (event.key === "Tab" && event.shiftKey) {
-                // デフォルトのシフト+タブ操作を無効化
-                event.preventDefault();
+//             if (event.key === "Tab" && event.shiftKey) {
+//                 // デフォルトのシフト+タブ操作を無効化
+//                 event.preventDefault();
 
-                // 前のラジオボタンにフォーカスを移動
-                if (index > 0) {
-                    radioGroups.eq(index - 1).focus();
-                } else {
-                    // 最初のラジオボタンの場合は前のフォーカス可能な要素に移動
-                    $(this).closest('form').find('input, textarea, select').eq(index - 1).focus();
-                }
-            }
-        });
-    });
-});
+//                 // 前のラジオボタンにフォーカスを移動
+//                 if (index > 0) {
+//                     radioGroups.eq(index - 1).focus();
+//                 } else {
+//                     // 最初のラジオボタンの場合は前のフォーカス可能な要素に移動
+//                     $(this).closest('form').find('input, textarea, select').eq(index - 1).focus();
+//                 }
+//             }
+//         });
+//     });
+// });
 
 // ===================== fadeUpアニメーション =====================
 // ふわっ

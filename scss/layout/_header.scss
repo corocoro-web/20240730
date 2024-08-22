@@ -317,12 +317,15 @@
             z-index: 3;
         }
 
-        /*ナビゲーションの縦スクロール*/
-        &__lists {
+        &__container {
             /*ナビの数が増えた場合縦スクロール*/
             width: 100%;
             height: 100vh;
             /*表示する高さ*/
+        }
+
+        /*ナビゲーションの縦スクロール*/
+        &__lists {
             overflow: auto;
             -webkit-overflow-scrolling: touch;
         }
