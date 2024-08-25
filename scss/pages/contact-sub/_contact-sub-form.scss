@@ -3,10 +3,10 @@
 
 .form {
     &-inner {
-        padding: 17px 0 72px;
+        padding: 17px 0 70px;
 
         @include mq($lg) {
-            padding: 17px 20px 72px;
+            padding: 17px 20px 70px;
         }
 
         @include mq($md) {
@@ -24,7 +24,7 @@
     }
 
     &__label {
-        margin-bottom: 20px;
+        margin-bottom: 27px;
 
         @include mq($sp) {
             margin-bottom: 15px;
@@ -38,6 +38,10 @@
                 gap: 10px;
             }
         }
+    }
+
+    &__label-radio{
+        margin-bottom: 21px;
     }
 
     &__required {
@@ -72,7 +76,7 @@
 
     &__input {
         width: 100%;
-        padding: 20px 0 19px 16px;
+        padding: 21px 0 18px 15px;
         font-size: 1rem;
         font-weight: 700;
         line-height: 1.0;
@@ -90,7 +94,7 @@
         }
 
         &-last {
-            margin-bottom: 51px;
+            margin-bottom: 47px;
 
             @include mq($md) {
                 margin-bottom: 35px;
@@ -99,7 +103,7 @@
     }
 
     &__checkbox {
-        margin-bottom: 70px;
+        margin-bottom: 64px;
         text-align: center;
         display: flex;
         gap: 8px;
@@ -109,23 +113,6 @@
             margin-bottom: 35px;
         }
     }
-
-    &__btn {
-        display: block;
-        /* display: inline-block; ではなく、blockに変更 */
-        text-align: center;
-        /* ボタンを中央寄せに */
-        margin: 0 auto;
-        /* 左右の余白を均等に */
-
-        // &:focus-visible {
-        //     border: 2px solid red;
-        //     transform: scale(1.05);
-        //     /* ボタンを少し大きくして目立たせる */
-        // }
-    }
-
-
 }
 
 .form__end-message {
@@ -152,7 +139,7 @@
 .radio-text {
     cursor: pointer;
     display: inline-block;
-    padding: 5px 0 5px 30px;
+    padding: 5px 0 5px 24px;
     position: relative;
 }
 
@@ -165,10 +152,10 @@ input[type="radio"]:checked+label .radio-text::after {
 .radio-text::before {
     content: '';
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     position: absolute;
-    left: 5px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     border: 1px solid $blue;
@@ -184,7 +171,7 @@ input[type="radio"]:checked+label .radio-text::after {
     background-color: $blue;
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 4px;
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
@@ -194,11 +181,11 @@ input[type="radio"]:checked+label .radio-text::after {
 .checkbox-text::before {
     content: '';
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     position: absolute;
     top: 50%;
-    left: 5px;
+    left: 0;
     transform: translateY(-50%);
     border: 1px solid $blue;
 }
@@ -209,8 +196,8 @@ input[type="radio"]:checked+label .radio-text::after {
     width: 4px;
     height: 10px;
     position: absolute;
-    top: 47%;
-    left: 6px;
+    top: 48%;
+    left: 0;
     transform: rotate(45deg) skewY(0deg) translateY(-50%);
     transform-origin: center right;
     border-right: 2px solid $blue;

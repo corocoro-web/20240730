@@ -24,7 +24,7 @@
         }
 
         @include mq($lg) {
-            padding: 126px 20px 26px;
+            padding: 125px 20px 26px;
         }
     }
 
@@ -45,10 +45,10 @@
     &__info-logo img {
         display: inline-block;
         width: 222px;
-        margin-bottom: 39px;
+        margin-bottom: 37px;
 
         @include mq($md) {
-            margin-bottom: 36px;
+            margin-bottom: 35px;
             ;
         }
     }
@@ -69,16 +69,44 @@
         display: flex;
 
         & dt {
-            margin-right: 15px;
+            margin-right: 16px;
+
+            @include mq($md) {
+                margin-bottom: 20px;
+                margin-right: 15px;
+            }
+        }
+
+        & dd {
             margin-bottom: 16px;
+        }
+
+        // 定休日とその内容に特定のスタイルを適用
+        &-last {
+
+            dt,
+            dd {
+                margin-bottom: 6px; // 定休日のdtとddにのみ適用
+            }
+        }
+    }
+
+    // 他のすべてのdt, ddに16pxを適用しないために個別に調整
+    &__info-wrapper:not(&__info-wrapper-last) {
+        dt {
+            margin-bottom: 16px; // 他のすべてのdtに16pxを適用
 
             @include mq($md) {
                 margin-bottom: 20px;
             }
         }
 
-        & dd {
-            margin-bottom: 16px;
+        dd {
+            margin-bottom: 16px; // 他のすべてのddに16pxを適用
+
+            @include mq($md) {
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -91,11 +119,11 @@
     }
 
     &-nav {
-        padding-top: 28px;
+        padding-top: 25px;
 
         @include mq($sp) {
-            padding-top: 50px;
-            padding-bottom: 22px;
+            padding-top: 60px;
+            padding-bottom: 21px;
         }
 
         &__lists {
@@ -158,10 +186,10 @@
     }
 
     &__copy {
-        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 1rem);
+        font-size: clamp(0.75rem, 0.662rem + 0.38vw, 0.875rem);
         font-weight: 400;
         line-height: 1.0;
-        margin-right: 56px;
+        margin-right: 36px;
 
         @include mq($sp) {
             margin-right: 0;

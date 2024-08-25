@@ -18,7 +18,7 @@
         z-index: -1;
         top: 0;
         right: 0;
-        width: 63%;
+        width: 62.5%;
         height: 563px;
 
         @include mq($lg) {
@@ -49,9 +49,7 @@
 
         & img {
             width: 100%;
-            height: 671px;
             border-radius: 50px;
-            aspect-ratio: 1120/661;
             object-fit: cover;
 
             @include mq($md) {
@@ -63,25 +61,39 @@
     }
 }
 
-.contact-sub-main-inner,
-.thanks-main-inner {
-    position: absolute;
+.about-main-inner img {
+    height: 661px;
+    aspect-ratio: 1120/661;
+    object-fit: cover;
 
-    @include mq($lg){
-        position: static;
+    @include mq($md) {
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
+}
 
-    & img {
-        width: 99%;
-        height: 656px;
-        border-radius: 50px;
-        aspect-ratio: 1120/656;
-        object-fit: cover;
+.service-main-inner img {
+    height: 671px;
+    aspect-ratio: 1120/671;
+    object-fit: cover;
 
-        @include mq($md) {
-            height: auto;
-            aspect-ratio: auto;
-            object-fit: contain;
-        }
+    @include mq($md) {
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+}
+
+.contact-sub-main-inner img,
+.thanks-main-inner img {
+    height: 656px;
+    aspect-ratio: 1120/656;
+    object-fit: cover;
+
+    @include mq($md) {
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
 }

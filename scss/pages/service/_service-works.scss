@@ -10,8 +10,16 @@
             padding: 35px 20px 37px;
         }
 
+        &-last {
+            padding: 35px 20px 72px 0;
+
+            @include mq($lg) {
+                padding: 35px 20px 37px;
+            }
+        }
+
         & img {
-            width: 83%;
+            width: 84%;
             margin-bottom: 56px;
 
             @include mq($lg) {
@@ -26,6 +34,7 @@
 
     &__wrapper {
         padding: 0 50px;
+        max-width: 960px;
 
         @include mq($md) {
             padding: 0;
@@ -33,7 +42,7 @@
     }
 
     &__ttl {
-        padding-bottom: 39px;
+        padding-bottom: 38px;
         border-bottom: 1px solid $l-blue;
 
         @include mq($md) {
@@ -56,6 +65,11 @@
         font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
         font-weight: 700;
         line-height: 1.8;
+
+        @include mq(1300px) {
+            min-width: 100%;
+        }
+
     }
 
     &__txt-right {
@@ -63,24 +77,30 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.8;
+
+        @include mq(1300px) {
+            min-width: 100%;
+        }
     }
 
     &__images {
         display: flex;
-        flex-wrap: wrap;
         gap: 62px;
+
+        @include mq($lg) {
+            flex-wrap: wrap;
+        }
 
         @include mq($md) {
             gap: 40px;
         }
 
         & img {
-            width: 352px;
+            width: 100%;
+            height: auto;
+            max-width: 352px;
             margin-bottom: 20px;
-
-            @include mq($lg) {
-                width: 100%;
-            }
+            object-fit: contain;
         }
     }
 

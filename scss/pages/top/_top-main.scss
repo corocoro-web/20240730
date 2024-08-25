@@ -22,7 +22,7 @@
         z-index: -1;
         top: 0;
         right: 0;
-        width: 63%;
+        width: 62.5%;
         height: 727px;
 
         @include mq($lg) {
@@ -63,7 +63,7 @@
         min-width: 540px;
         height: 177px;
         right: 10%;
-        bottom: 65px;
+        bottom: 63px;
 
         @include mq($md) {
             min-width: 500px;
@@ -156,7 +156,7 @@
         @include mq($sp) {
             width: 134px;
             top: -34px;
-            left: 61%;
+            left: 63%;
         }
     }
 
@@ -217,7 +217,7 @@
         @include mq($sp) {
             width: 82px;
             top: 171px;
-            left: 34%;
+            left: 36%;
         }
     }
 
@@ -245,7 +245,7 @@
         @include mq($sp) {
             width: 88px;
             top: 206px;
-            left: 76%;
+            left: 79%;
         }
     }
 

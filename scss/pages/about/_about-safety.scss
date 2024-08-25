@@ -3,7 +3,7 @@
 
 .safety {
     &-inner {
-        padding: 22px 20px 163px 0;
+        padding: 29px 20px 168px 0;
 
         @include mq($lg) {
             padding: 22px 20px 30px;
@@ -12,6 +12,9 @@
 
     &__ttl {
         margin-bottom: 86px;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
 
         @include mq($md) {
             margin-bottom: 40px;
@@ -19,7 +22,7 @@
     }
 
     &__item {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     &__item-ttl {
@@ -32,7 +35,7 @@
     &__item-content {
         display: flex;
         flex-wrap: wrap;
-        gap: 44px;
+        gap: 36px;
 
         & img {
             width: 267px;

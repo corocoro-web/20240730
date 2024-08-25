@@ -10,8 +10,8 @@
         position: absolute;
         width: 165px;
         height: 198px;
-        top: 50px;
-        left: 46%;
+        top: 53px;
+        left: 46.5%;
 
         @include mq(1300px) {
             left: 71%;
@@ -31,7 +31,7 @@
     }
 
     &-inner {
-        padding: 64px 0 0 1px;
+        padding: 64px 0;
 
         @include mq($lg) {
             padding: 64px 20px 0;
@@ -46,7 +46,7 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.8;
-        margin-bottom: 64px;
+        margin-bottom: 63px;
         max-width: 422px;
 
         @include mq($md) {
@@ -81,7 +81,7 @@
         &-list {
             width: 209px;
             border: 3px solid $blue;
-            padding: 4px 0 8px;
+            padding: 4px 0 9px;
             text-align: center;
             font-weight: 700;
 

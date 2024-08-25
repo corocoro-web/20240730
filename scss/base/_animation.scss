@@ -161,7 +161,7 @@
 
 .fadeUp {
     animation-name: fadeUpAnime;
-    animation-duration: 1.5s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -185,58 +185,104 @@
     opacity: 0;
 }
 
+/*---------------メインビジュアルimaages--------------------------*/
+
+.main__image02 {
+    animation-delay: 0.1s;
+}
+
+.main__image03 {
+    animation-delay: 0.2s;
+}
+
+.main__image04 {
+    animation-delay: 0.3s;
+}
+
+.main__image05 {
+    animation-delay: 0.4s;
+}
 
 /*==================================================
 パタッ
 ===================================*/
-/* 左へ */
-.flipLeft {
-    animation-name: flipLeftAnime;
-    animation-duration: 1s;
+
+
+/* 下へ */
+.flipDown {
+    animation-name: flipDownAnime;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
-    perspective-origin: left center;
     opacity: 0;
 }
 
-@keyframes flipLeftAnime {
+@keyframes flipDownAnime {
     from {
-        transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+        transform: perspective(2500px) rotateX(100deg);
         opacity: 0;
     }
 
     to {
-        transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+        transform: perspective(2500px) rotateX(0);
         opacity: 1;
     }
 }
 
+// /*==================================================
+// じわっ
+// ===================================*/
+
+// /* ぼかしから出現 */
+// .blur {
+//     animation-name: blurAnime;
+//     animation-duration: 1.5s;
+//     animation-fill-mode: forwards;
+// }
+
+// @keyframes blurAnime {
+//     from {
+//         filter: blur(10px);
+//         transform: scale(1.02);
+//         opacity: 0;
+//     }
+
+//     to {
+//         filter: blur(0);
+//         transform: scale(1);
+//         opacity: 1;
+//     }
+// }
+
+// /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+
+// .blurTrigger {
+//     opacity: 0;
+// }
+
+
 /*==================================================
-じわっ
+ボンッ、ヒュッ
 ===================================*/
 
-/* ぼかしから出現 */
-.blur {
-    animation-name: blurAnime;
-    animation-duration: 1.5s;
+/* 拡大 */
+.zoomIn {
+    animation-name: zoomInAnime;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
 }
 
-@keyframes blurAnime {
+@keyframes zoomInAnime {
     from {
-        filter: blur(10px);
-        transform: scale(1.02);
+        transform: scale(0.6);
         opacity: 0;
     }
 
     to {
-        filter: blur(0);
         transform: scale(1);
         opacity: 1;
     }
 }
 
-/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
-
-.blurTrigger {
+.zoomInTrigger {
     opacity: 0;
 }

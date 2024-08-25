@@ -4,14 +4,19 @@
 .btn--more {
     position: relative;
     display: inline-block;
-    padding: 22px 0;
+    padding: 21px 0;
     width: 240px;
     font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
     font-weight: 700;
     border-radius: 10px;
     border: 1px solid $black;
     text-align: center;
-    letter-spacing: 0.1em;
+
+    @include mq($md) {
+        letter-spacing: 0.08em;
+        padding: 22px 0
+    }
+
 
     &::after {
         content: "●";
@@ -40,7 +45,7 @@
     border-radius: 10px;
     background-color: $white;
     padding: 22px 40px 22px 68px;
-    margin-left: 64px;
+    margin: 6px 0 2px 64px;
     width: 284px;
 
     @include mq(1300px) {
@@ -63,7 +68,7 @@
         background-color: $black;
         width: 20px;
         height: 20px;
-        top: 22px;
+        top: 20px;
         left: 40px;
         z-index: 1;
         color: $white;
@@ -74,9 +79,9 @@
         position: absolute;
         width: 10px;
         height: 10px;
-        font-size: 0.625rem;
-        top: 29px;
-        right: 20px;
+        font-size: 0.687rem;
+        top: 24px;
+        right: 21px;
     }
 
     &:hover {
@@ -90,17 +95,43 @@
     }
 }
 
-.submit__btn {
+.sub-intro__link-btn {
     position: relative;
     display: inline-block;
-    padding: 22px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    width: 208px;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    padding: 11px 0 33px;
+    text-align: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 49%;
+        top: 72%;
+        transform: translateY(-50%) rotate(45deg);
+        /* 45度回転させて右向き矢印を作成 */
+        width: 5px;
+        height: 5px;
+        border-bottom: 2px solid $blue;
+        border-right: 2px solid $blue;
+    }
+}
+
+.submit__btn {
+    position: relative;
+    display: block;
+    padding: 18px 0;
+    margin: 0 auto;
     width: 284px;
     font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
     font-weight: 700;
     border-radius: 10px;
     color: $white;
     background-color: $blue;
-    border: 3px solid $blue;
+    border: 1px solid $blue;
     text-align: center;
 
     &::after {
@@ -109,8 +140,8 @@
         width: 10px;
         height: 10px;
         font-size: 1.25rem;
-        top: 21px;
-        right: 20px;
+        top: 17px;
+        right: 21px;
 
     }
 
@@ -155,4 +186,9 @@
         background-color: $white;
         opacity: 1.0;
     }
+}
+
+.thanks__btn{
+    border: none;
+    margin: 46px 0 105px;
 }

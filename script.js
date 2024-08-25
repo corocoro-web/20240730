@@ -4,7 +4,12 @@ $(".header__openbtn").click(function () { //ボタンがクリックされたら
     $(".header-nav-sp").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
 
-$(".header-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+// $(".header-nav-sp a").click(function () {//ナビゲーションのリンクがクリックされたら
+//     $(".header__openbtn").removeClass('active');//ボタンの activeクラスを除去し
+//     $(".header-nav-sp").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+// });
+
+$('a[href*="#"]').on('click', function () {//ナビゲーションのリンクがクリックされたら
     $(".header__openbtn").removeClass('active');//ボタンの activeクラスを除去し
     $(".header-nav-sp").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
@@ -50,12 +55,20 @@ $(function () {
                 // ローディングを数秒後に非表示にする
                 $(".loading").addClass('is-active');
                 $(".loading-animation").removeClass('is-active');
-            }, 3000); // ローディングを表示する時間
+                startAnimations(); // ローディング後にアニメーションを開始
+            }, 2000); // ローディングを表示する時間
         }
     }
     webStorage();
 });
 
+// アニメーションを開始する関数を定義
+function startAnimations() {
+    fadeUpAnime(); // fadeUpアニメーションを呼び出し
+    // 他のアニメーションもここで呼び出すことができます
+    flipDownAnime(); // flipDownアニメーションを呼び出し
+    zoomInAnime(); // blurアニメーションを呼び出し
+}
 
 
 //======================モーダル（Micromodal）================//
@@ -67,53 +80,7 @@ MicroModal.init({
 
 
 
-//======================アコーディオン================//
-
-// $(function () {
-//     // ホバーイベントを設定
-//     $('.header-nav__accordion-ttl').hover(
-//         function () {
-//             // ホバーされたときの処理
-//             const $details = $(this).closest('details');
-//             const $content = $details.find('.header-nav__accordion-box');
-
-//             $details.attr('open', 'open'); // details要素を開く
-//             $content.stop(true, true).slideDown(300); // コンテンツをスライドダウンして表示
-//         },
-//         function () {
-//             // ホバーが外れたときの処理
-//             const $details = $(this).closest('details');
-//             const $content = $details.find('.header-nav__accordion-box');
-
-//             setTimeout(function () {
-//                 // 他のホバー対象がない場合に閉じる
-//                 if (!$details.is(':hover') && !$content.is(':hover')) {
-//                     $content.stop(true, true).slideUp(300, function () {
-//                         $details.removeAttr('open'); // details要素を閉じる
-//                     });
-//                 }
-//             }, 100); // 少し遅延を加えることでホバー切り替えをスムーズに
-//         }
-//     );
-// });
-
-// $(function () {
-//     // マウスオーバーした時の動作
-//     $(".header-nav__accordion-ttl").hover(
-//         function () {
-//             // 下にスライドして表示
-//             $(".header-nav__accordion-box:not(:animated)", this).slideDown();
-//             // アイコンを '-' に変更
-//             $(this).find(".header-nav__accordion-icon").text("-");
-//         },
-//         function () {
-//             // 上にスライドして非表示になる
-//             $(".header-nav__accordion-box", this).slideUp();
-//             // アイコンを '+' に戻す
-//             $(this).find(".header-nav__accordion-icon").text("+");
-//         }
-//     );
-// });
+//======================ドロワーメニュー================//
 
 $(function () {
     // マウスオーバーした時の動作
@@ -137,35 +104,6 @@ $(function () {
 
 //====================== スムーズスクロール機能 ======================//
 
-// $('a[href*="#"]').click(function (event) {
-//     event.preventDefault(); // リンクのデフォルト動作を無効にする
-
-//     // クリックされたリンクのhref属性からハッシュ部分のみを取得
-//     var href = $(this).attr('href');
-//     var hash = href.split('#')[1]; // `#`以降の部分を取得
-//     var elmHash = '#' + hash; // `#`を追加してセレクタとして使える形にする
-
-//     // 現在のページのパスとリンクのパスが一致するかを確認
-//     if (href.startsWith(location.pathname) || href.startsWith("#")) {
-//         var pos;
-
-//         // 対象の要素が存在する場合にのみ処理を行う
-//         if ($(elmHash).length) {
-//             // レスポンシブ対応のため、ウィンドウの幅に応じてスクロール位置を調整
-//             if ($(window).width() <= 768) {
-//                 pos = $(elmHash).offset().top - 102;
-//             } else {
-//                 pos = $(elmHash).offset().top - 102;
-//             }
-
-//             // アニメーションでスクロールを実行
-//             $('body,html').animate({ scrollTop: pos }, 700);
-//         }
-//     } else {
-//         // 別のページへのリンクの場合、通常のリンク動作を実行
-//         window.location.href = href;
-//     }
-// });
 
 // ページ内のスムーススクロール
 jQuery(function () {
@@ -173,8 +111,19 @@ jQuery(function () {
         var target = jQuery(this.hash === "" ? "html" : this.hash);
         if (target.length) {
             e.preventDefault();
+
             var headerHeight = jQuery("header").outerHeight();
-            var position = target.offset().top - headerHeight - 20;
+            var windowWidth = jQuery(window).width();
+            var position;
+
+            if (windowWidth <= 1024) {
+                // 1024px以下のときはヘッダーを考慮
+                position = target.offset().top - headerHeight;
+            } else {
+                // それ以外のときはヘッダーを考慮しない
+                position = target.offset().top;
+            }
+
             jQuery("html, body").animate({ scrollTop: position }, 500, "swing");
 
             if (!target.is("html")) {
@@ -195,8 +144,18 @@ if (urlHash) {
         jQuery("html,body").stop().scrollTop(0);
 
         jQuery(window).on("load", function () {
-            var headerHeight = jQuery("header").outerHeight();
-            var position = target.offset().top - headerHeight - 20;
+            var headerHeight = jQuery(".header").outerHeight();
+            var windowWidth = jQuery(window).width();
+            var position;
+
+            if (windowWidth <= 1024) {
+                // 1024px以下のときはヘッダーを考慮
+                position = target.offset().top - headerHeight - 20;
+            } else {
+                // それ以外のときはヘッダーを考慮しない
+                position = target.offset().top;
+            }
+
             jQuery("html, body").animate({ scrollTop: position }, 500, "swing");
 
             // ハッシュを再設定
@@ -205,24 +164,8 @@ if (urlHash) {
     }
 }
 
-//============== 別ページから飛んできた時のスムーズスクロール処理 ==============//
 
-// $(function () {
-//     var hash = location.hash; // URLのハッシュ（#以降の部分）を取得
-//     if (hash) {
-//         var target = $(hash); // ハッシュを使用して対象要素を取得
-//         if (target.length) {
-//             $(window).on('load', function () {
-//                 history.replaceState('', '', './'); // ハッシュを取り除いて再読み込み時にスムーズスクロールを防ぐ
 
-//                 var position = target.offset().top - $('#header').innerHeight();
-
-//                 // アニメーションでスクロールを実行（600msで目的の位置に移動）
-//                 $('body,html').animate({ scrollTop: position }, 300, 'swing');
-//             });
-//         }
-//     }
-// });
 
 //======================フォームのsubmit制御================//
 
@@ -384,7 +327,7 @@ $("#js-submit01").click(function (event) {
 // ふわっ
 function fadeUpAnime() {
     $('.fadeUpTrigger').each(function () {
-        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+        var elemPos = $(this).offset().top - 10; // 要素より40px上の位置
         var scroll = $(window).scrollTop(); // 現在のスクロール位置
         var windowHeight = $(window).height(); // ウィンドウの高さ
 
@@ -396,27 +339,29 @@ function fadeUpAnime() {
     });
 }
 
-// ===================== flipLeftアニメーション =====================
+// ===================== flipDownアニメーション =====================
 // パタッ
-function flipLeftAnime() {
-    $('.flipLeftTrigger').each(function () {
-        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+
+function flipDownAnime() {
+    $('.flipDownTrigger').each(function () {
+        var elemPos = $(this).offset().top - 10; // 要素より50px上の位置
         var scroll = $(window).scrollTop(); // 現在のスクロール位置
         var windowHeight = $(window).height(); // ウィンドウの高さ
 
         if (scroll >= elemPos - windowHeight) {
-            $(this).addClass('flipLeft'); // flipLeftクラスを追加
+            $(this).addClass('flipDown'); // flipDownクラスを追加
         } else {
-            $(this).removeClass('flipLeft'); // flipLeftクラスを削除
+            $(this).removeClass('flipDown'); // flipDownクラスを削除
         }
     });
 }
+
 
 // ===================== blurTriggerアニメーション =====================
 // じわっ
 function blurAnime() {
     $('.blurTrigger').each(function () {
-        var elemPos = $(this).offset().top - 50; // 要素より50px上の位置
+        var elemPos = $(this).offset().top - 10; // 要素より40px上の位置
         var scroll = $(window).scrollTop(); // 現在のスクロール位置
         var windowHeight = $(window).height(); // ウィンドウの高さ
 
@@ -428,16 +373,49 @@ function blurAnime() {
     });
 }
 
+// ===================== zoomInアニメーション =====================
+// ボンッ
+function zoomInAnime() {
+    $('.zoomInTrigger').each(function () { //zoomInTriggerというクラス名が
+        var elemPos = $(this).offset().top - 50;//要素より、40px上の
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('zoomIn');// 画面内に入ったらzoomInというクラス名を追記
+        } else {
+            $(this).removeClass('zoomIn');// 画面外に出たらzoomInというクラス名を外す
+        }
+    });
+}
+
 // ===================== スクロール時にアニメーションを呼ぶ =====================
 $(window).on('scroll', function () {
     fadeUpAnime(); // fadeUpアニメーションを呼び出し
-    flipLeftAnime(); // flipLeftアニメーションを呼び出し
-    blurAnime(); // blurアニメーションを呼び出し
+    flipDownAnime(); // flipDownアニメーションを呼び出し
+    zoomInAnime(); // blurアニメーションを呼び出し
 });
 
 // ===================== ページ読み込み時にアニメーションを呼ぶ =====================
 $(window).on('load', function () {
     fadeUpAnime(); // fadeUpアニメーションを呼び出し
-    flipLeftAnime(); // flipLeftアニメーションを呼び出し
-    blurAnime(); // blurアニメーションを呼び出し
+    flipDownAnime(); // flipDownアニメーションを呼び出し
+    zoomInAnime(); // blurアニメーションを呼び出し
+});
+
+
+// ===================== news line-height １行と２行以上の設定=====================
+$(function () {
+    $('.modal__btn dd').each(function () {
+        var lineHeightSingle = 1.0;
+        var lineHeightMulti = 1.8;
+        var lineHeight = parseFloat($(this).css('line-height'));
+        var fontSize = parseFloat($(this).css('font-size'));
+        var lineCount = Math.round($(this).height() / lineHeight);
+
+        if (lineCount > 1) {
+            $(this).css('line-height', lineHeightMulti);
+        } else {
+            $(this).css('line-height', lineHeightSingle);
+        }
+    });
 });

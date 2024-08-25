@@ -12,6 +12,9 @@
 
     &__ttl {
         margin-bottom: 64px;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
 
         @include mq($lg) {
             margin-bottom: 40px;
