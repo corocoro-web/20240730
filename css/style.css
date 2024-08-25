@@ -2033,7 +2033,7 @@ img {
   }
 }
 .modal__btn:hover::after {
-  transform: scale(1.5);
+  transform: translateX(8px);
 }
 
 .modal__overlay {
@@ -2148,12 +2148,10 @@ img {
   margin-bottom: 30px;
 }
 .modal__container li {
-  list-style-type: disc;
   font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
-  margin-left: 16px;
-  margin-bottom: 16px;
+  margin-left: 8px;
 }
 @media (max-width: 768px) {
   .modal__container li {
@@ -2161,9 +2159,20 @@ img {
     line-height: 1.5;
   }
 }
+.modal__container li:before {
+  position: relative;
+  content: "";
+  width: 3px;
+  height: 3px;
+  display: inline-block; /* インラインブロックにする */
+  background-color: #000;
+  border-radius: 50%;
+  top: -5px;
+  margin-right: 8px;
+}
 
 .modal__container01 p {
-  margin-bottom: 61px;
+  margin-bottom: 32px;
 }
 @media (max-width: 768px) {
   .modal__container01 p {
