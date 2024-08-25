@@ -39,36 +39,88 @@ $(function () {
 //======================ローディング================//
 
 $(function () {
+    // ローディングの処理
     var webStorage = function () {
         if (sessionStorage.getItem('access')) {
-            /*
-              2回目以降アクセス時の処理
-            */
             $(".loading").addClass('is-active');
-        } else {
-            /*
-              初回アクセス時の処理
-            */
-            sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
-            $(".loading-animation").addClass('is-active'); // loadingアニメーションを表示
             setTimeout(function () {
-                // ローディングを数秒後に非表示にする
+                enableScrollAnimations(); // アニメーションを有効化
+            }, 1000); // ローディングが非表示になった後にアニメーションを有効化
+        } else {
+            sessionStorage.setItem('access', 'true'); // 初回アクセス時に保存
+            $(".loading-animation").addClass('is-active'); // ローディングアニメーションを表示
+            setTimeout(function () {
                 $(".loading").addClass('is-active');
                 $(".loading-animation").removeClass('is-active');
-                startAnimations(); // ローディング後にアニメーションを開始
-            }, 2000); // ローディングを表示する時間
+                setTimeout(function () {
+                    enableScrollAnimations(); // アニメーションを有効化
+                }, 0); // ローディングが非表示になった後にアニメーションを有効化
+            }, 2000); // ローディングの表示時間
         }
     }
     webStorage();
 });
 
-// アニメーションを開始する関数を定義
-function startAnimations() {
-    fadeUpAnime(); // fadeUpアニメーションを呼び出し
-    // 他のアニメーションもここで呼び出すことができます
-    flipDownAnime(); // flipDownアニメーションを呼び出し
-    zoomInAnime(); // blurアニメーションを呼び出し
+// アニメーションを有効化する関数
+function enableScrollAnimations() {
+    $(window).on('scroll', function () {
+        fadeUpAnime();
+        flipDownAnime();
+        zoomInAnime();
+    });
+
+    // ページ読み込み時にもアニメーションを呼ぶ
+    fadeUpAnime();
+    flipDownAnime();
+    zoomInAnime();
 }
+
+// ===================== fadeUpアニメーション =====================
+function fadeUpAnime() {
+    $('.fadeUpTrigger').each(function () {
+        var elemPos = $(this).offset().top - 10;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('fadeUp');
+        } else {
+            $(this).removeClass('fadeUp');
+        }
+    });
+}
+
+// ===================== flipDownアニメーション =====================
+function flipDownAnime() {
+    $('.flipDownTrigger').each(function () {
+        var elemPos = $(this).offset().top - 10;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('flipDown');
+        } else {
+            $(this).removeClass('flipDown');
+        }
+    });
+}
+
+// ===================== zoomInアニメーション =====================
+function zoomInAnime() {
+    $('.zoomInTrigger').each(function () {
+        var elemPos = $(this).offset().top - 50;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
+        if (scroll >= elemPos - windowHeight) {
+            $(this).addClass('zoomIn');
+        } else {
+            $(this).removeClass('zoomIn');
+        }
+    });
+}
+
+
 
 
 //======================モーダル（Micromodal）================//
@@ -323,84 +375,6 @@ $("#js-submit01").click(function (event) {
 //     });
 // });
 
-// ===================== fadeUpアニメーション =====================
-// ふわっ
-function fadeUpAnime() {
-    $('.fadeUpTrigger').each(function () {
-        var elemPos = $(this).offset().top - 10; // 要素より40px上の位置
-        var scroll = $(window).scrollTop(); // 現在のスクロール位置
-        var windowHeight = $(window).height(); // ウィンドウの高さ
-
-        if (scroll >= elemPos - windowHeight) {
-            $(this).addClass('fadeUp'); // fadeUpクラスを追加
-        } else {
-            $(this).removeClass('fadeUp'); // fadeUpクラスを削除
-        }
-    });
-}
-
-// ===================== flipDownアニメーション =====================
-// パタッ
-
-function flipDownAnime() {
-    $('.flipDownTrigger').each(function () {
-        var elemPos = $(this).offset().top - 10; // 要素より50px上の位置
-        var scroll = $(window).scrollTop(); // 現在のスクロール位置
-        var windowHeight = $(window).height(); // ウィンドウの高さ
-
-        if (scroll >= elemPos - windowHeight) {
-            $(this).addClass('flipDown'); // flipDownクラスを追加
-        } else {
-            $(this).removeClass('flipDown'); // flipDownクラスを削除
-        }
-    });
-}
-
-
-// ===================== blurTriggerアニメーション =====================
-// じわっ
-function blurAnime() {
-    $('.blurTrigger').each(function () {
-        var elemPos = $(this).offset().top - 10; // 要素より40px上の位置
-        var scroll = $(window).scrollTop(); // 現在のスクロール位置
-        var windowHeight = $(window).height(); // ウィンドウの高さ
-
-        if (scroll >= elemPos - windowHeight) {
-            $(this).addClass('blur'); // blurクラスを追加
-        } else {
-            $(this).removeClass('blur'); // blurクラスを削除
-        }
-    });
-}
-
-// ===================== zoomInアニメーション =====================
-// ボンッ
-function zoomInAnime() {
-    $('.zoomInTrigger').each(function () { //zoomInTriggerというクラス名が
-        var elemPos = $(this).offset().top - 50;//要素より、40px上の
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        if (scroll >= elemPos - windowHeight) {
-            $(this).addClass('zoomIn');// 画面内に入ったらzoomInというクラス名を追記
-        } else {
-            $(this).removeClass('zoomIn');// 画面外に出たらzoomInというクラス名を外す
-        }
-    });
-}
-
-// ===================== スクロール時にアニメーションを呼ぶ =====================
-$(window).on('scroll', function () {
-    fadeUpAnime(); // fadeUpアニメーションを呼び出し
-    flipDownAnime(); // flipDownアニメーションを呼び出し
-    zoomInAnime(); // blurアニメーションを呼び出し
-});
-
-// ===================== ページ読み込み時にアニメーションを呼ぶ =====================
-$(window).on('load', function () {
-    fadeUpAnime(); // fadeUpアニメーションを呼び出し
-    flipDownAnime(); // flipDownアニメーションを呼び出し
-    zoomInAnime(); // blurアニメーションを呼び出し
-});
 
 
 // ===================== news line-height １行と２行以上の設定=====================
