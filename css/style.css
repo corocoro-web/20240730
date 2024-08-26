@@ -353,7 +353,7 @@ img {
 }
 
 .sub-intro__ttl {
-  font-size: clamp(2rem, 1.824rem + 0.75vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.824rem + 0.75vw, 2.5rem);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 64px;
@@ -2653,6 +2653,11 @@ img {
     margin-bottom: 40px;
   }
 }
+@media (max-width: 768px) {
+  .philosophy__ttl {
+    font-size: 1.5rem;
+  }
+}
 .philosophy img {
   max-width: 923px;
   width: 100%;
@@ -2680,6 +2685,11 @@ img {
 @media (max-width: 1024px) {
   .overview__ttl {
     margin-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .overview__ttl {
+    font-size: 1.5rem;
   }
 }
 .overview__container {
@@ -2733,6 +2743,11 @@ img {
   font-weight: 700;
   line-height: 1;
   color: #4282B8;
+}
+@media (max-width: 768px) {
+  .overview__img--ceo-name {
+    font-size: 1.5rem;
+  }
 }
 .overview__list dl {
   display: flex;
@@ -2792,6 +2807,7 @@ img {
 @media (max-width: 768px) {
   .safety__ttl {
     margin-bottom: 40px;
+    font-size: 1.5rem;
   }
 }
 .safety__item {

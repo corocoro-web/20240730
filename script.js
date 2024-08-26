@@ -202,7 +202,7 @@ if (urlHash) {
 
             if (windowWidth <= 1024) {
                 // 1024px以下のときはヘッダーを考慮
-                position = target.offset().top - headerHeight - 20;
+                position = target.offset().top - headerHeight;//さらに調整するときは- 20など追記
             } else {
                 // それ以外のときはヘッダーを考慮しない
                 position = target.offset().top;
