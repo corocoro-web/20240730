@@ -255,7 +255,7 @@ $("#js-submit01").click(function (event) {
 
     // チェックボックスが選択されているか確認
     if (!$("#confirmation").is(":checked")) {
-        alert("チェックボックスを確認してください。");
+        alert("全て入力されているか確認してください。");
         return;
     }
 
@@ -268,11 +268,11 @@ $("#js-submit01").click(function (event) {
         statusCode: {
             0: function () {
                 // 送信成功時のリダイレクト
-                window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+                window.location.href = "https://corocoro-web.com/aobotan/contact/thanks"; // カスタムサンクスページのURL
             },
             200: function () {
                 // 送信成功時のリダイレクト
-                window.location.href = "/contact/thanks"; // カスタムサンクスページのURL
+                window.location.href = "https://corocoro-web.com/aobotan/contact/thanks"; // カスタムサンクスページのURL
             }
         }
     });

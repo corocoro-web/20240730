@@ -3,7 +3,7 @@
 
 .form {
     &-inner {
-        padding: 17px 0 70px;
+        padding: 17px 0 70px 2px;
 
         @include mq($lg) {
             padding: 17px 20px 70px;
@@ -123,8 +123,11 @@
     display: none;
 }
 
-/* 共通 */
-.visibility-hidden {
+
+//radioとcheckboxのスタイル//
+
+/* デフォルトのinput要素を視覚的に隠すスタイル */
+.visibility-input {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -132,23 +135,21 @@
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
     border: 0;
 }
 
+/* ラジオボタンとチェックボックスのテキストスタイル */
 .checkbox-text,
 .radio-text {
     cursor: pointer;
     display: inline-block;
     padding: 5px 0 5px 24px;
     position: relative;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="checkbox"]:checked+label .checkbox-text::after,
-input[type="radio"]:checked+label .radio-text::after {
-    opacity: 1;
-}
-
-/* ラジオボタン */
+/* カスタムラジオボタンのスタイル */
 .radio-text::before {
     content: '';
     display: block;
@@ -158,7 +159,8 @@ input[type="radio"]:checked+label .radio-text::after {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid $blue;
+    border: 1px solid #3273dc;
+    /* カスタムボーダーカラー */
     border-radius: 50%;
 }
 
@@ -168,7 +170,8 @@ input[type="radio"]:checked+label .radio-text::after {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: $blue;
+    background-color: #3273dc;
+    /* チェック時のカスタムカラー */
     position: absolute;
     top: 50%;
     left: 4px;
@@ -177,7 +180,7 @@ input[type="radio"]:checked+label .radio-text::after {
     transition: opacity 0.2s ease-in-out;
 }
 
-/* チェックボックス */
+/* カスタムチェックボックスのスタイル */
 .checkbox-text::before {
     content: '';
     display: block;
@@ -187,7 +190,8 @@ input[type="radio"]:checked+label .radio-text::after {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    border: 1px solid $blue;
+    border: 1px solid #3273dc;
+    /* カスタムボーダーカラー */
 }
 
 .checkbox-text::after {
@@ -200,15 +204,37 @@ input[type="radio"]:checked+label .radio-text::after {
     left: 0;
     transform: rotate(45deg) skewY(0deg) translateY(-50%);
     transform-origin: center right;
-    border-right: 2px solid $blue;
-    border-bottom: 2px solid $blue;
+    border-right: 2px solid #3273dc;
+    /* チェック時のカスタムカラー */
+    border-bottom: 2px solid #3273dc;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
 
-#js-submit01:disabled {
-    cursor: not-allowed;
-    /* カーソルを禁止マークに */
-    opacity: 0.5;
-    /* 不透明度を低くして薄く表示 */
+/* チェックされている時のスタイル */
+input[type="checkbox"]:checked+label .checkbox-text::after,
+input[type="radio"]:checked+label .radio-text::after {
+    opacity: 1;
+}
+
+/* フォーカス時のスタイル */
+input[type="checkbox"]:focus+label .checkbox-text::before,
+input[type="radio"]:focus+label .radio-text::before {
+    box-shadow: 0 0 0 2px #3273dc;
+    /* フォーカス時のシャドウ */
+}
+
+/* フォーカスが当たる要素全体のスタイル */
+input:focus-visible {
+    outline: none;
+    /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 0 2px #3273dc;
+    /* カスタムフォーカススタイル */
+}
+
+.submit__btn:focus-visible {
+    outline: none;
+    /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 0 2px $black;
+    /* カスタムフォーカススタイル */
 }

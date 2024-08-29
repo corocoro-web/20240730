@@ -31,7 +31,7 @@
     }
 
     &-inner {
-        padding: 64px 0;
+        padding: 64px 0 0;
 
         @include mq($lg) {
             padding: 64px 20px 0;
@@ -114,6 +114,16 @@
 
         @include mq($md) {
             width: 100%;
+        }
+
+        &::before {
+            content: "";
+            width: 52px;
+            height: 1px;
+            background: #4282B8;
+            position: absolute;
+            top: 50%;
+            left: -54px;
         }
 
         &-txt {

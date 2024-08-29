@@ -390,6 +390,7 @@ img {
   padding: 21px 0;
   width: 240px;
   font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+  color: #000;
   font-weight: 700;
   border-radius: 10px;
   border: 1px solid #000;
@@ -461,8 +462,8 @@ img {
   position: absolute;
   width: 10px;
   height: 10px;
-  font-size: 0.687rem;
-  top: 24px;
+  font-size: 0.625rem;
+  top: 25px;
   right: 21px;
 }
 .contact__btn:hover {
@@ -513,12 +514,13 @@ img {
   text-align: center;
 }
 .submit__btn::after {
-  content: "●";
+  content: "";
   position: absolute;
   width: 10px;
   height: 10px;
-  font-size: 1.25rem;
-  top: 17px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 25px;
   right: 21px;
 }
 .submit__btn:hover {
@@ -562,7 +564,6 @@ img {
 }
 
 .thanks__btn {
-  border: none;
   margin: 46px 0 105px;
 }
 
@@ -1332,7 +1333,7 @@ img {
   .main__copy {
     left: 5%;
     bottom: 107px;
-    min-width: 349px;
+    min-width: 351px;
   }
 }
 .main__copy-ttl {
@@ -2013,6 +2014,7 @@ img {
   font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
   font-weight: 700;
   line-height: 1;
+  color: #000;
 }
 .modal__btn:hover {
   color: #4282B8;
@@ -3012,7 +3014,7 @@ img {
   }
 }
 .contact-sub-inner {
-  padding: 64px 0;
+  padding: 64px 0 0;
 }
 @media (max-width: 1024px) {
   .contact-sub-inner {
@@ -3091,6 +3093,15 @@ img {
     width: 100%;
   }
 }
+.contact-sub__tel::before {
+  content: "";
+  width: 52px;
+  height: 1px;
+  background: #4282B8;
+  position: absolute;
+  top: 50%;
+  left: -54px;
+}
 .contact-sub__tel-txt {
   font-size: 1rem;
   font-weight: 700;
@@ -3111,7 +3122,7 @@ img {
 }
 
 .form-inner {
-  padding: 17px 0 70px;
+  padding: 17px 0 70px 2px;
 }
 @media (max-width: 1024px) {
   .form-inner {
@@ -3224,8 +3235,8 @@ img {
   display: none;
 }
 
-/* 共通 */
-.visibility-hidden {
+/* デフォルトのinput要素を視覚的に隠すスタイル */
+.visibility-input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3233,23 +3244,21 @@ img {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   border: 0;
 }
 
+/* ラジオボタンとチェックボックスのテキストスタイル */
 .checkbox-text,
 .radio-text {
   cursor: pointer;
   display: inline-block;
   padding: 5px 0 5px 24px;
   position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type=checkbox]:checked + label .checkbox-text::after,
-input[type=radio]:checked + label .radio-text::after {
-  opacity: 1;
-}
-
-/* ラジオボタン */
+/* カスタムラジオボタンのスタイル */
 .radio-text::before {
   content: "";
   display: block;
@@ -3259,7 +3268,8 @@ input[type=radio]:checked + label .radio-text::after {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  border: 1px solid #4282B8;
+  border: 1px solid #3273dc;
+  /* カスタムボーダーカラー */
   border-radius: 50%;
 }
 
@@ -3269,7 +3279,8 @@ input[type=radio]:checked + label .radio-text::after {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #4282B8;
+  background-color: #3273dc;
+  /* チェック時のカスタムカラー */
   position: absolute;
   top: 50%;
   left: 4px;
@@ -3278,7 +3289,7 @@ input[type=radio]:checked + label .radio-text::after {
   transition: opacity 0.2s ease-in-out;
 }
 
-/* チェックボックス */
+/* カスタムチェックボックスのスタイル */
 .checkbox-text::before {
   content: "";
   display: block;
@@ -3288,7 +3299,8 @@ input[type=radio]:checked + label .radio-text::after {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  border: 1px solid #4282B8;
+  border: 1px solid #3273dc;
+  /* カスタムボーダーカラー */
 }
 
 .checkbox-text::after {
@@ -3301,15 +3313,37 @@ input[type=radio]:checked + label .radio-text::after {
   left: 0;
   transform: rotate(45deg) skewY(0deg) translateY(-50%);
   transform-origin: center right;
-  border-right: 2px solid #4282B8;
-  border-bottom: 2px solid #4282B8;
+  border-right: 2px solid #3273dc;
+  /* チェック時のカスタムカラー */
+  border-bottom: 2px solid #3273dc;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
-#js-submit01:disabled {
-  cursor: not-allowed;
-  /* カーソルを禁止マークに */
-  opacity: 0.5;
-  /* 不透明度を低くして薄く表示 */
+/* チェックされている時のスタイル */
+input[type=checkbox]:checked + label .checkbox-text::after,
+input[type=radio]:checked + label .radio-text::after {
+  opacity: 1;
+}
+
+/* フォーカス時のスタイル */
+input[type=checkbox]:focus + label .checkbox-text::before,
+input[type=radio]:focus + label .radio-text::before {
+  box-shadow: 0 0 0 2px #3273dc;
+  /* フォーカス時のシャドウ */
+}
+
+/* フォーカスが当たる要素全体のスタイル */
+input:focus-visible {
+  outline: none;
+  /* デフォルトのアウトラインを削除 */
+  box-shadow: 0 0 0 2px #3273dc;
+  /* カスタムフォーカススタイル */
+}
+
+.submit__btn:focus-visible {
+  outline: none;
+  /* デフォルトのアウトラインを削除 */
+  box-shadow: 0 0 0 2px #000;
+  /* カスタムフォーカススタイル */
 }/*# sourceMappingURL=style.css.map */

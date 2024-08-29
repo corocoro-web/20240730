@@ -7,6 +7,7 @@
     padding: 21px 0;
     width: 240px;
     font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
+    color: $black;
     font-weight: 700;
     border-radius: 10px;
     border: 1px solid $black;
@@ -79,8 +80,8 @@
         position: absolute;
         width: 10px;
         height: 10px;
-        font-size: 0.687rem;
-        top: 24px;
+        font-size: 0.625rem;
+        top: 25px;
         right: 21px;
     }
 
@@ -135,14 +136,14 @@
     text-align: center;
 
     &::after {
-        content: "●";
+        content: "";
         position: absolute;
         width: 10px;
         height: 10px;
-        font-size: 1.25rem;
-        top: 17px;
+        border-radius: 50%;
+        background-color: $white;
+        top: 25px;
         right: 21px;
-
     }
 
     &:hover {
@@ -188,7 +189,6 @@
     }
 }
 
-.thanks__btn{
-    border: none;
+.thanks__btn {
     margin: 46px 0 105px;
 }
