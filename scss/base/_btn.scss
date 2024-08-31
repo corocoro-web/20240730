@@ -150,6 +150,18 @@
         color: $blue;
         background-color: $white;
         opacity: 1.0;
+
+        &::after {
+            background-color: $blue; 
+        }
+    }
+
+
+    &:disabled {
+        cursor: not-allowed;
+        /* 無効時のカーソル */
+        opacity: 0.6;
+        /* 無効時の透明度 */
     }
 }
 

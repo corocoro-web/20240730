@@ -528,6 +528,15 @@ img {
   background-color: #fff;
   opacity: 1;
 }
+.submit__btn:hover::after {
+  background-color: #4282B8;
+}
+.submit__btn:disabled {
+  cursor: not-allowed;
+  /* 無効時のカーソル */
+  opacity: 0.6;
+  /* 無効時の透明度 */
+}
 
 .contact-sub__btn {
   position: relative;
@@ -2011,6 +2020,7 @@ img {
   }
 }
 .modal__btn dd {
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
   font-weight: 700;
   line-height: 1;
